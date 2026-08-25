@@ -1,0 +1,10 @@
+  weights  KV    host     minVRAM  card  s/paper   corpus  residency
+  ----------------------------------------------------------------------------------------------------
+  Q4_K_M   q4_0  laptop     3.61G    4G   120.0s  138.0m  PARTIAL (23-37 of 37)
+  Q4_K_M   q4_0  T4         3.61G    4G    58.3s   67.0m  full (37/37)
+  Q4_K_M   f16   T4         6.44G    8G    42.7s   49.1m  full (37/37)
+  Q8_0     f16   T4         8.10G   12G    49.9s   57.4m  full (37/37)
+
+  minVRAM = measured weight buffer + maximum KV cache footprint + compute buffer.
+  Accuracy benchmarks independently sourced via `make values`.
+  OPTIMUM: Q4_K_M weights + f16 KV (6.44 GiB footprint).

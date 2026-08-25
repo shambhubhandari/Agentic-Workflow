@@ -1,0 +1,273 @@
+{
+  "paper_key": "10.48550_arxiv.1703.09071",
+  "doi": "10.48550/arxiv.1703.09071",
+  "formula": "PdSe2",
+  "structure_path": null,
+  "claimed_property": "lattice_b",
+  "claimed_value": 5.92,
+  "claimed_unit": "A",
+  "paper_method": {
+    "code": {
+      "reported": true,
+      "value": "vasp",
+      "evidence": "Vienna ab Initio Simulation Package (VASP)[43, 44]",
+      "confidence": null
+    },
+    "code_version": {
+      "reported": true,
+      "value": "43, 44",
+      "evidence": "Vienna ab Initio Simulation Package (VASP)[43, 44]",
+      "confidence": null
+    },
+    "xc_functional": {
+      "reported": true,
+      "value": "pbe",
+      "evidence": "The exchange-correlation energy was treated within the Generalized Gradient Approximation (GGA)[45] using Perdew, Burke, and Ernzerhof (PBE) functional",
+      "confidence": null
+    },
+    "pseudopotential_type": {
+      "reported": true,
+      "value": "pa",
+      "evidence": "Projector Augmented Wave (PAW)[46] method was used to calculate the interaction between the frozen core and valence electron",
+      "confidence": null
+    },
+    "k_mesh": {
+      "reported": true,
+      "value": "7x7x1",
+      "evidence": "An k-point mesh size of 7  7  1 was used for the Brilloin zone sampling",
+      "confidence": null
+    },
+    "smearing": {
+      "reported": false,
+      "value": null,
+      "evidence": "The paper does not explicitly state the smearing method or parameters",
+      "confidence": null
+    },
+    "force_threshold_ev_ang": {
+      "reported": true,
+      "value": 0.02,
+      "evidence": "with a threshold for total energy of 10-5 eV and atomic force components of 0.02 eV/ Å",
+      "confidence": null
+    },
+    "energy_threshold_ev": {
+      "reported": true,
+      "value": 0.00001,
+      "evidence": "with a threshold for total energy of 10-5 eV and atomic force components of 0.02 eV/ Å",
+      "confidence": null
+    },
+    "spin_polarised": {
+      "reported": false,
+      "value": null,
+      "evidence": "The paper does not explicitly state whether spin polarization was used",
+      "confidence": null
+    },
+    "dispersion_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": "The paper does not explicitly state dispersion correction parameters",
+      "confidence": null
+    },
+    "plane_wave_cutoff_ev": {
+      "reported": true,
+      "value": 450.0,
+      "evidence": "An energy cutoff of 450 eV",
+      "confidence": null
+    },
+    "augmentation_cutoff_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": "The paper does not explicitly state augmentation cutoff parameters",
+      "confidence": null
+    },
+    "mesh_cutoff_ry": {
+      "reported": false,
+      "value": null,
+      "evidence": "The paper does not explicitly state mesh cutoff parameters for SIESTA",
+      "confidence": null
+    },
+    "basis_size": {
+      "reported": false,
+      "value": null,
+      "evidence": "The paper does not explicitly state basis size parameters for SIESTA",
+      "confidence": null
+    },
+    "pao_energy_shift_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": "The paper does not explicitly state PAO energy shift parameters",
+      "confidence": null
+    },
+    "basis_split_norm": {
+      "reported": false,
+      "value": null,
+      "evidence": "The paper does not explicitly state basis split norm parameters",
+      "confidence": null
+    },
+    "vacuum_spacing_ang": {
+      "reported": true,
+      "value": 20.0,
+      "evidence": "The 2D carbon network was separated from its periodic image by a vacuum of length 20Å in the perpendicular direction",
+      "confidence": null
+    },
+    "dipole_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": "The paper does not explicitly state dipole correction parameters",
+      "confidence": null
+    },
+    "thickness_for_gpa_conversion_ang": {
+      "reported": false,
+      "value": null,
+      "evidence": "The paper does not explicitly state thickness for GPa conversion",
+      "confidence": null
+    },
+    "elastic_units_reported": {
+      "reported": false,
+      "value": null,
+      "evidence": "The paper does not explicitly state elastic units",
+      "confidence": null
+    }
+  },
+  "stage": "compared",
+  "parameters": {
+    "reasoning": "The paper uses VASP with a 2D PdSe2 monolayer. It states a plane-wave cutoff of 450 eV, but SIESTA uses NAO basis so this has no equivalent. The k-point mesh is 7x7x1, so kgrid = [7,7,1]. The functional is PBE (GGA), so xc = 'GGA/PBE' and xc_authors = 'Perdew, Burke'. The paper specifies a vacuum of 20Å perpendicular to the 2D plane, so vacuum_spacing = 20.0. Basis size is not reported, so we assume DZP (standard for production). Mesh cutoff is not reported, so we choose 300 Ry (200-400 Ry for light elements). The paper does not report augmentation_cutoff, basis_split_norm, etc., so these are unmapped. SIESTA requires vacuum_spacing=1 for 2D systems, but the paper states 20Å, so we use that value directly.",
+    "unmapped": [
+      "the paper's plane-wave cutoff (450 eV) has no NAO equivalent, so a mesh cutoff of 300 Ry was chosen independently",
+      "the paper does not report augmentation_cutoff, so SIESTA requires it but it cannot be mapped from the paper",
+      "the paper does not report basis_split_norm, so SIESTA requires it but it cannot be mapped from the paper",
+      "the paper does not report pao_energy_shift, so SIESTA requires it but it cannot be mapped from the paper",
+      "the paper does not report energy_threshold (1e-5 eV) or force_threshold (0.02 eV/Å), so SIESTA requires these but they cannot be mapped from the paper"
+    ],
+    "derived_from": [
+      {
+        "setting": "basis",
+        "justification": "the paper does not report basis_size, so DZP is assumed as standard for production"
+      },
+      {
+        "setting": "mesh_cutoff_ry",
+        "justification": "the paper does not report mesh_cutoff_ry, so 300 Ry was chosen (200-400 Ry for light elements)"
+      },
+      {
+        "setting": "kgrid",
+        "justification": "the paper states k_mesh = 7x7x1"
+      },
+      {
+        "setting": "xc",
+        "justification": "the paper states xc_functional = pbe"
+      },
+      {
+        "setting": "xc_authors",
+        "justification": "the paper states xc_functional = pbe, so authors are Perdew, Burke"
+      }
+    ],
+    "basis": "DZP",
+    "mesh_cutoff_ry": 300.0,
+    "kgrid": [
+      7,
+      7,
+      1
+    ],
+    "xc": "GGA",
+    "xc_authors": "PBE"
+  },
+  "steps": [
+    {
+      "iteration": 1,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 300.0,
+        "kgrid": [
+          7,
+          7,
+          1
+        ]
+      },
+      "energy_ev": -20561.683314,
+      "cell": [
+        5.734835,
+        6.00722,
+        20.23074
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": null,
+      "delta_cell_pct": null,
+      "seconds": 123.6,
+      "decision": "increase_mesh: mesh cutoff 300.0 -> 400.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 2,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 400.0,
+        "kgrid": [
+          7,
+          7,
+          1
+        ]
+      },
+      "energy_ev": -20561.652435,
+      "cell": [
+        5.73321,
+        6.002306,
+        20.20348
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": 0.005146500000288749,
+      "delta_cell_pct": 0.08180156544958078,
+      "seconds": 180.8,
+      "decision": "increase_mesh: mesh cutoff 400.0 -> 500.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 3,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 500.0,
+        "kgrid": [
+          7,
+          7,
+          1
+        ]
+      },
+      "energy_ev": -20561.643458,
+      "cell": [
+        5.733054,
+        6.002448,
+        20.191665
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": 0.001496166666887196,
+      "delta_cell_pct": 0.0027209887654490402,
+      "seconds": 243.1,
+      "decision": "stop: converged: dE = 1.5 meV/atom, dcell = 0.00% between the last two settings",
+      "error": null
+    }
+  ],
+  "our_value": 6.002448,
+  "our_a": 5.733054,
+  "our_b": 6.002448,
+  "verdict": "inconclusive",
+  "rationale": "calibration insufficient (2 distinct structure(s) calibrated of 6 required (CN2, PdSe2)); a threshold comparison is not defined. Provisional comparison was divergent: difference 1.39% exceeds the stated tolerance (1.00%); our SIESTA recomputation does not reproduce the published value",
+  "failure_class": null,
+  "abandoned_reason": null,
+  "critic_verdict": "pass",
+  "critic_reasoning": "The verification is sound for a verdict. The symmetry check shows b/a = 1.047 for an orthorhombic prototype, which is consistent with the prototype (no symmetry constraint known). The convergence check shows the run satisfied the arithmetic convergence test (delta_energy_mev_per_atom = 1.5 < tolerance 5.0, delta_cell_pct = 0.003 < tolerance 0.5). The units and structure_file checks are not applicable here as the state has no value to check, but this does not block the verdict since the paper claim and our result are in the same units (A). The difference in lattice_b (5.92 vs 6.0024) is physically plausible and not suspiciously close to a factor of 2 or unit conversion. The material PdSe2 is the same as reported in the paper. The convergence history shows three iterations all converged, so the run is stable. Therefore, the comparison is sound and no concerns are raised that would block the verdict.",
+  "critic_concerns": [
+    {
+      "category": "symmetry",
+      "severity": "warning",
+      "detail": "b/a = 1.047 for orthorhombic prototype, but no symmetry constraint known for this prototype. This is acceptable as the prototype is orthorhombic and the b/a ratio is within typical ranges for such structures without requiring tetragonal symmetry (which would need b/a ≈ 1). The check is consistent with the prototype as no specific symmetry constraint is known for this prototype type, so it does not block the verdict but is a minor note for awareness.",
+      "check": "Verify that the b/a ratio is consistent with the orthorhombic prototype (no tetragonal constraint needed for this structure)"
+    }
+  ],
+  "critic_tools_used": [
+    "check_symmetry",
+    "convergence_status"
+  ],
+  "provisional_verdict": null,
+  "config_fingerprint": "d42be0976558",
+  "tolerance_used": 0.01,
+  "total_seconds": 583.6,
+  "n_calculations": 3
+}

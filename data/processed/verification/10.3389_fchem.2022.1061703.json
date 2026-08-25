@@ -1,0 +1,239 @@
+{
+  "paper_key": "10.3389_fchem.2022.1061703",
+  "doi": "10.3389/fchem.2022.1061703",
+  "formula": "PdTe2",
+  "structure_path": null,
+  "claimed_property": "lattice_b",
+  "claimed_value": 6.44,
+  "claimed_unit": "A",
+  "paper_method": {
+    "code": {
+      "reported": true,
+      "value": "vasp",
+      "evidence": "All calculations were performed based on the density functional theory with the projector-augmented plane wave method used in the Vienna ab initio simulation package (VASP)",
+      "confidence": null
+    },
+    "code_version": {
+      "reported": true,
+      "value": "v.5.4",
+      "evidence": "All calculations were performed based on the density functional theory with the projector-augmented plane wave method used in the Vienna ab initio simulation package (VASP)",
+      "confidence": null
+    },
+    "xc_functional": {
+      "reported": true,
+      "value": "PBE",
+      "evidence": "The electron exchange-correlation energy was described by GGA-PBE",
+      "confidence": null
+    },
+    "pseudopotential_type": {
+      "reported": true,
+      "value": "PAW",
+      "evidence": "The electron exchange-correlation energy was described by GGA-PBE",
+      "confidence": null
+    },
+    "k_mesh": {
+      "reported": true,
+      "value": "12 × 11 × 1",
+      "evidence": "The k-point meshes were set as 12 × 11 × 1 to ensure the energy convergence.",
+      "confidence": null
+    },
+    "smearing": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "force_threshold_ev_ang": {
+      "reported": true,
+      "value": 0.0001,
+      "evidence": "the forces on atoms were less than 10^-4 eV Å^-1",
+      "confidence": null
+    },
+    "energy_threshold_ev": {
+      "reported": true,
+      "value": 0.00001,
+      "evidence": "the energy change per atom was less than 10^-5 eV",
+      "confidence": null
+    },
+    "spin_polarised": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "dispersion_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "plane_wave_cutoff_ev": {
+      "reported": true,
+      "value": 500.0,
+      "evidence": "The cut-off energy was set to 500 eV",
+      "confidence": null
+    },
+    "augmentation_cutoff_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "mesh_cutoff_ry": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "basis_size": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "pao_energy_shift_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "basis_split_norm": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "vacuum_spacing_ang": {
+      "reported": true,
+      "value": 20.0,
+      "evidence": "We took a 20 Å thick vacuum slab insertion to model the periodic structure of the monolayers.",
+      "confidence": null
+    },
+    "dipole_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "thickness_for_gpa_conversion_ang": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "elastic_units_reported": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    }
+  },
+  "stage": "compared",
+  "parameters": {
+    "reasoning": "The paper describes a 2D PdTe2 monolayer calculation using VASP with PBE functional. SIESTA uses NAO basis, so plane-wave parameters have no direct equivalent. The paper states a plane-wave cutoff of 500 eV, but SIESTA has no NAO equivalent for this. The k-grid is given as 12×11×1, which is a 3D grid but the system is 2D, so vacuum axis must have exactly 1 division. The paper does not specify an NAO basis size, so DZP is chosen as standard. The paper uses PBE functional, which SIESTA can map to GGA/PBE. The paper does not state a mesh_cutoff_ry, so we choose 300 Ry for light elements. The paper does not mention any parameters that SIESTA needs but the paper didn't state, so we list those in unmapped.",
+    "unmapped": [
+      "the paper's plane-wave cutoff (500 eV) has no NAO equivalent, so a mesh cutoff of 300 Ry was chosen independently",
+      "the paper's k-grid (12×11×1) is 3D but the system is 2D, so the vacuum axis must have exactly 1 division (as required by SIESTA for 2D systems)",
+      "the paper did not specify an NAO basis size, so DZP is used as the standard production choice",
+      "the paper did not state a mesh_cutoff_ry, so 300 Ry is chosen for light elements",
+      "the paper did not specify a dispersion correction, but SIESTA requires it for accurate band gaps (though not used here as PBE is standard)"
+    ],
+    "derived_from": [
+      {
+        "setting": "basis",
+        "justification": "the paper did not specify an NAO basis size, so DZP is used as the standard production choice"
+      },
+      {
+        "setting": "mesh_cutoff_ry",
+        "justification": "the paper did not state a mesh_cutoff_ry, so 300 Ry is chosen for light elements"
+      },
+      {
+        "setting": "kgrid",
+        "justification": "the paper states k-grid as 12×11×1, but for 2D systems the vacuum axis must have exactly 1 division"
+      },
+      {
+        "setting": "xc",
+        "justification": "the paper states xc_functional as PBE, which SIESTA maps to GGA/PBE"
+      },
+      {
+        "setting": "xc_authors",
+        "justification": "the paper states xc_functional as PBE, which SIESTA maps to GGA/PBE"
+      }
+    ],
+    "basis": "DZP",
+    "mesh_cutoff_ry": 300.0,
+    "kgrid": [
+      12,
+      11,
+      1
+    ],
+    "xc": "GGA",
+    "xc_authors": "PBE"
+  },
+  "steps": [
+    {
+      "iteration": 1,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 300.0,
+        "kgrid": [
+          12,
+          11,
+          1
+        ]
+      },
+      "energy_ev": -18780.465866,
+      "cell": [
+        6.112695,
+        6.476986,
+        20.402552
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": null,
+      "delta_cell_pct": null,
+      "seconds": 222.8,
+      "decision": "increase_mesh: mesh cutoff 300.0 -> 400.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 2,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 400.0,
+        "kgrid": [
+          12,
+          11,
+          1
+        ]
+      },
+      "energy_ev": -18780.447507,
+      "cell": [
+        6.111118,
+        6.476251,
+        20.378856
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": 0.0030598333329786933,
+      "delta_cell_pct": 0.025798767973866873,
+      "seconds": 272.2,
+      "decision": "stop: converged: dE = 3.1 meV/atom, dcell = 0.03% between the last two settings",
+      "error": null
+    }
+  ],
+  "our_value": 6.476251,
+  "our_a": 6.111118,
+  "our_b": 6.476251,
+  "verdict": "inconclusive",
+  "rationale": "calibration insufficient (2 distinct structure(s) calibrated of 6 required (CN2, PdSe2)); a threshold comparison is not defined. Provisional comparison was consistent: difference 0.56% is within the stated tolerance (1.00%)",
+  "failure_class": null,
+  "abandoned_reason": null,
+  "critic_verdict": "unavailable",
+  "critic_reasoning": "ProviderError: qwen3:4b returned no schema-valid object: Unterminated string starting at: line 2 column 16 (char 17)",
+  "critic_concerns": [],
+  "critic_tools_used": [],
+  "provisional_verdict": null,
+  "config_fingerprint": "d42be0976558",
+  "tolerance_used": 0.01,
+  "total_seconds": 567.2,
+  "n_calculations": 2
+}

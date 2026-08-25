@@ -1,0 +1,61 @@
+# =============================================================================
+# .gitignore — the AZURE/RELEASE variant.
+#
+# The development repository excluded every generated artefact, on the principle
+# that a result in the tree which disagrees with the current code is worse than
+# no result at all. This copy inverts that for one specific reason: it exists to
+# be CLONED ONTO A FRESH MACHINE AND REPRODUCED, and a clone that arrives without
+# the retrieved corpus cannot be reproduced at all — the publisher endpoints that
+# served those 69 manuscripts return 403 non-deterministically.
+#
+# So the inputs and the published artefacts are TRACKED here, and `reference/`
+# keeps an immutable checksummed copy of the latter. What stays ignored is what
+# is genuinely scratch: run directories, logs, caches, the venv.
+# =============================================================================
+
+# --- genuinely regenerable scratch -------------------------------------------
+# ~30 files per calculation, hundreds of MB. The scientific record is the .fdf
+# settings, and those are recorded inside each verdict in data/processed/verification/.
+data/interim/siesta_runs/
+data/interim/corpus_terms/
+logs/*.log
+logs/setup/
+*.log
+
+# --- environment and secrets --------------------------------------------------
+.env
+.env.*
+!.env.example
+.venv/
+opt/
+
+# --- python -------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# --- siesta run artefacts loose in the tree -----------------------------------
+*.XV
+*.DM
+*.HSX
+*.bands
+submit/
+
+# --- latex --------------------------------------------------------------------
+manuscript/build/
+manuscript/*.aux
+manuscript/*.fls
+manuscript/*.fdb_latexmk
+manuscript/*.blg
+manuscript/*.synctex.gz
+manuscript/References_pdf/
+
+# --- development snapshots ----------------------------------------------------
+backup/
+.ipynb_checkpoints/

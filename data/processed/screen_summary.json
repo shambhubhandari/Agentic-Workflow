@@ -1,0 +1,8 @@
+{
+  "n_screened": 4,
+  "n_ok": 4,
+  "median_lattice_error_pct": 5.19,
+  "worst_lattice_error_pct": 24.8,
+  "total_seconds": 3.2,
+  "model": "MACE-MP small"
+}

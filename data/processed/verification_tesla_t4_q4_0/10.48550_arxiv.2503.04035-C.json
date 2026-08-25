@@ -1,0 +1,256 @@
+{
+  "paper_key": "10.48550_arxiv.2503.04035",
+  "doi": "10.48550/arxiv.2503.04035",
+  "formula": "C",
+  "structure_path": null,
+  "claimed_property": "lattice_a",
+  "claimed_value": 3.68,
+  "claimed_unit": "A",
+  "paper_method": {
+    "code": {
+      "reported": true,
+      "value": "vasp",
+      "evidence": "All calculations were performed using the Vienna ab initio Simulation Package (VASP)",
+      "confidence": null
+    },
+    "code_version": {
+      "reported": true,
+      "value": "33-34",
+      "evidence": "All calculations were performed using the Vienna ab initio Simulation Package (VASP)33-34",
+      "confidence": null
+    },
+    "xc_functional": {
+      "reported": true,
+      "value": "pbe",
+      "evidence": "The exchange-correlation energy was described by the generalized gradient approximation (GGA) with the Perdew-Burke-Ernzerhof (PBE) exchange functional",
+      "confidence": null
+    },
+    "pseudopotential_type": {
+      "reported": true,
+      "value": "paug",
+      "evidence": "The projector-augmented wave (PAW) method",
+      "confidence": null
+    },
+    "k_mesh": {
+      "reported": true,
+      "value": "3x3x1",
+      "evidence": "Gamma-centered k-point meshes in the Brillouin zone were used for Crystal Orbital Hamilton Populations (COHP) and Bader charge calculations (3 × 3 × 1)",
+      "confidence": null
+    },
+    "smearing": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not reported in the paper",
+      "confidence": null
+    },
+    "force_threshold_ev_ang": {
+      "reported": true,
+      "value": 0.02,
+      "evidence": "force on each atom was less than 0.02 eV/Å",
+      "confidence": null
+    },
+    "energy_threshold_ev": {
+      "reported": true,
+      "value": 0.00001,
+      "evidence": "convergence accuracy for energy was 10-5 eV within the calculations",
+      "confidence": null
+    },
+    "spin_polarised": {
+      "reported": true,
+      "value": true,
+      "evidence": "Spin-polarization was considered in the process of adsorption and dissociation of the oxygen molecule",
+      "confidence": null
+    },
+    "dispersion_correction": {
+      "reported": true,
+      "value": "dft-d3",
+      "evidence": "the van der Waals corrections were applied as parametrized in the semiempirical DFT-D3 method",
+      "confidence": null
+    },
+    "plane_wave_cutoff_ev": {
+      "reported": true,
+      "value": 500.0,
+      "evidence": "The energy cutoff of the plane wave basis was set to 500 eV",
+      "confidence": null
+    },
+    "augmentation_cutoff_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not reported in the paper",
+      "confidence": null
+    },
+    "mesh_cutoff_ry": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not reported in the paper",
+      "confidence": null
+    },
+    "basis_size": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not reported in the paper",
+      "confidence": null
+    },
+    "pao_energy_shift_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not reported in the paper",
+      "confidence": null
+    },
+    "basis_split_norm": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not reported in the paper",
+      "confidence": null
+    },
+    "vacuum_spacing_ang": {
+      "reported": true,
+      "value": 12.0,
+      "evidence": "A vacuum region exceeding 12 Å was maintained in all simulations to prevent interactions between periodic images",
+      "confidence": null
+    },
+    "dipole_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not reported in the paper",
+      "confidence": null
+    },
+    "thickness_for_gpa_conversion_ang": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not reported in the paper",
+      "confidence": null
+    },
+    "elastic_units_reported": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not reported in the paper",
+      "confidence": null
+    }
+  },
+  "stage": "compared",
+  "parameters": {
+    "reasoning": "The paper used VASP with PBE functional, a 3x3x1 k-grid, a plane-wave cutoff of 500 eV, and a vacuum of 12 Å. SIESTA uses NAO basis, so plane-wave cutoff has no equivalent. The paper states a vacuum of 12 Å, which is critical for 2D systems. SIESTA requires vacuum spacing to be 1 along the vacuum axis for 2D systems. The paper used dft-d3 for dispersion, which SIESTA supports. The paper did not state basis size, so we choose DZP as standard. The paper did not state mesh_cutoff_ry, so we choose 300 Ry for C (light element). The paper used PBE, so SIESTA uses GGA/PBE. The paper did not state k-spacing, so we use 3x3x1 grid. The paper did not state basis_split_norm, so we assume standard value. The paper did not state augmentation_cutoff_ev, so we skip. The paper did not state pao_energy_shift_ev, so we skip. The paper did not state smearing, so we skip. The paper did not state thickness_for_gpa_conversion_ang, so we skip. The paper did not state elastic_units_reported, so we skip. The paper did not state energy_threshold_ev, so we skip. The paper did not state force_threshold_ev_ang, so we skip. The paper did not state dipole_correction, so we skip. The paper did not state dispersion_correction, so we skip. The paper did not state code_version, so we skip. The paper did not state code, so we skip.",
+    "unmapped": [
+      "the paper's plane-wave cutoff (500 eV) has no NAO equivalent, so a mesh cutoff of 300 Ry was chosen independently",
+      "the paper's vacuum spacing (12 Å) is critical for 2D systems but SIESTA requires exactly 1 division along the vacuum axis, so the vacuum spacing is set to 12 Å as stated",
+      "the paper's basis size is not reported, so SIESTA uses DZP as the standard production basis",
+      "the paper's augmentation_cutoff_ev is not reported, so SIESTA does not use this parameter",
+      "the paper's pao_energy_shift_ev is not reported, so SIESTA does not use this parameter",
+      "the paper's smearing is not reported, so SIESTA uses a default smearing scheme",
+      "the paper's thickness_for_gpa_conversion_ang is not reported, so SIESTA does not use this parameter",
+      "the paper's elastic_units_reported is not reported, so SIESTA does not use this parameter",
+      "the paper's energy_threshold_ev (1e-5 eV) is not directly applicable to SIESTA's convergence criteria, so SIESTA uses its own defaults",
+      "the paper's force_threshold_ev_ang (0.02 eV/Å) is not directly applicable to SIESTA's force convergence, so SIESTA uses its own defaults",
+      "the paper's dipole_correction is not reported, so SIESTA does not use this parameter",
+      "the paper's dispersion_correction (dft-d3) is supported by SIESTA, so it is mapped to the same value"
+    ],
+    "derived_from": [
+      {
+        "setting": "basis",
+        "justification": "the paper did not state a basis size, so SIESTA uses DZP as the standard production basis"
+      },
+      {
+        "setting": "mesh_cutoff_ry",
+        "justification": "the paper did not state a mesh cutoff, so a value of 300 Ry was chosen for carbon (light element)"
+      },
+      {
+        "setting": "kgrid",
+        "justification": "the paper states a 3x3x1 k-grid for Gamma-centered k-points"
+      },
+      {
+        "setting": "xc",
+        "justification": "the paper states PBE functional, so SIESTA uses GGA/PBE"
+      },
+      {
+        "setting": "xc_authors",
+        "justification": "the paper states PBE functional, so SIESTA uses GGA/PBE"
+      }
+    ],
+    "basis": "DZP",
+    "mesh_cutoff_ry": 300.0,
+    "kgrid": [
+      3,
+      3,
+      1
+    ],
+    "xc": "GGA",
+    "xc_authors": "PBE"
+  },
+  "steps": [
+    {
+      "iteration": 1,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 300.0,
+        "kgrid": [
+          3,
+          3,
+          1
+        ]
+      },
+      "energy_ev": -972.043318,
+      "cell": [
+        3.853675,
+        4.570131,
+        18.275356
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": null,
+      "delta_cell_pct": null,
+      "seconds": 274.3,
+      "decision": "increase_mesh: mesh cutoff 300.0 -> 400.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 2,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 400.0,
+        "kgrid": [
+          3,
+          3,
+          1
+        ]
+      },
+      "energy_ev": -972.043312,
+      "cell": [
+        3.852075,
+        4.56751,
+        18.274772
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": 9.999999974752427e-7,
+      "delta_cell_pct": 0.0573506536245797,
+      "seconds": 377.7,
+      "decision": "stop: converged: dE = 0.0 meV/atom, dcell = 0.06% between the last two settings",
+      "error": null
+    }
+  ],
+  "our_value": 3.852075,
+  "our_a": 3.852075,
+  "our_b": 4.56751,
+  "verdict": "inconclusive",
+  "rationale": "held at review (symmetry: b/a = 1.1857 departs from tetragonal by 18.6%; the relaxation has left the prototype and the comparison may be against a different structure). Provisional comparison was inconclusive: calibration insufficient (2 distinct structure(s) calibrated of 6 required (CN2, PdSe2)); a threshold comparison is not defined. Provisional comparison was divergent: difference 4.68% exceeds the stated tolerance (1.00%); our SIESTA recomputation does not reproduce the published value",
+  "failure_class": null,
+  "abandoned_reason": null,
+  "critic_verdict": "hold",
+  "critic_reasoning": "The symmetry check shows that the b/a ratio (1.1857) departs from the tetragonal prototype by 18.6%, indicating that the relaxation has left the prototype. This is a critical issue because the comparison is meaningless if the structure has changed. The convergence check shows that the run satisfied the arithmetic convergence test (delta_energy_mev_per_atom = 0.0, delta_cell_pct = 0.042 < 0.5 tolerance), so convergence is not an issue. The units check is not runnable because the state has no value to check. However, the primary concern here is the symmetry check, which is blocking. The paper claims a lattice constant of 3.68 Å, but our result shows a different structure (a=3.8521, b=4.5675), which is not consistent with the tetragonal prototype. This means the comparison is against a different structure, so the verdict must be held until the structure is confirmed to be the same as the paper's. The units check is not applicable here because the units are not specified in the provided data, but the main issue is the structural mismatch.",
+  "critic_concerns": [
+    {
+      "category": "symmetry",
+      "severity": "blocking",
+      "detail": "b/a = 1.1857 departs from tetragonal by 18.6%; the relaxation has left the prototype and the comparison may be against a different structure",
+      "check": "Verify that the structure is still tetragonal with b/a close to 1 (e.g., 1.01-1.05) by checking the final cell parameters and the symmetry of the structure."
+    }
+  ],
+  "critic_tools_used": [
+    "check_symmetry",
+    "convergence_status"
+  ],
+  "provisional_verdict": "inconclusive",
+  "config_fingerprint": "d42be0976558",
+  "tolerance_used": 0.01,
+  "total_seconds": 696.3,
+  "n_calculations": 2
+}

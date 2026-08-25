@@ -1,0 +1,20 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Shambhu B. Sharma
+
+Everything under `data/` in this repository — including the expert label set, the
+extraction outputs, the verification records and the reported-values registry — is
+licensed under CC BY 4.0.
+
+    https://creativecommons.org/licenses/by/4.0/
+
+You are free to share and adapt this material for any purpose, including commercially,
+provided you give appropriate credit, link to the licence, and indicate if changes were
+made.
+
+Source code in this repository is licensed separately under the MIT Licence; see LICENSE.
+
+`data/external/` holds third-party assets not produced by this work and not covered by
+this licence: pseudopotentials distributed under their own terms, and reference
+geometries retrieved from OPTIMADE providers. Article full text is not redistributed
+here at all.

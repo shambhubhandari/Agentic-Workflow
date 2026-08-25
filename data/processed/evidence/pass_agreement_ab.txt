@@ -1,0 +1,17 @@
+pass_a.jsonl  vs  pass_b.jsonl
+  papers compared      : 69
+  field decisions      : 1321/1380 agree = 95.7%
+  papers with any diff : 13/69
+     10.1016_j.ijhydene.2024.03.016            1 field(s)   A= 1  B= 0
+     10.1038_s41598-023-27563-x                5 field(s)   A=17  B=12
+     10.1039_d0cp06509a                        2 field(s)   A=12  B=14
+     10.1103_m33v-xwn3                         2 field(s)   A=10  B= 8
+     10.48550_arxiv.2202.03963                17 field(s)   A= 0  B=17
+     10.48550_arxiv.2312.06394                 3 field(s)   A= 9  B= 8
+     10.48550_arxiv.2401.05429                 1 field(s)   A= 9  B= 8
+     10.48550_arxiv.2406.13096                 8 field(s)   A=10  B=18
+     10.48550_arxiv.2412.16857                 6 field(s)   A= 6  B= 0
+     10.48550_arxiv.2507.17247                 5 field(s)   A=10  B=11
+     10.48550_arxiv.2508.00704                 7 field(s)   A= 7  B= 0
+     10.48550_arxiv.2510.13107                 1 field(s)   A=12  B=11
+     W7169923838                               1 field(s)   A= 8  B= 9

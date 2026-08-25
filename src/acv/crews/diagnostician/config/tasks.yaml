@@ -1,0 +1,23 @@
+version: 1
+
+diagnose_failure:
+  description: >
+    A SIESTA calculation failed. Classify it using exactly one class:
+
+      scf_not_converged       the SCF cycle hit its iteration limit
+      geometry_not_converged  SCF fine, relaxation did not reach the force tolerance
+      out_of_memory           allocation failure, or killed by the OOM reaper
+      timeout                 wall clock exceeded
+      input_error             malformed fdf, bad block, inconsistent species
+      pseudopotential_error   missing, unreadable or mismatched pseudopotential
+      disk_full               no space left
+      unknown                 none of the above fit
+
+    You MUST copy one line VERBATIM from the output into `evidence_line`. Do not
+    paraphrase and do not compose a line. If nothing in the output supports a class,
+    choose `unknown` with an empty evidence_line — that is the correct answer, not a
+    failure.
+  expected_output: >
+    A Diagnosis with the class, a verbatim evidence line, and brief reasoning. Whether a
+    retry actually happens is decided in code from the class, not by you.
+  agent: diagnostician

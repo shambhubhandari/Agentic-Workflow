@@ -1,0 +1,321 @@
+{
+  "paper_key": "10.1038_srep33060",
+  "doi": "10.1038/srep33060",
+  "formula": "C",
+  "structure_path": null,
+  "claimed_property": "lattice_a",
+  "claimed_value": 3.64,
+  "claimed_unit": "A",
+  "paper_method": {
+    "code": {
+      "reported": true,
+      "value": "vasp",
+      "evidence": "All of the calculations were carried out by using the Vienna ab initio Simulation Package (VASP)50 code based on the density functional theory (DFT).",
+      "confidence": null
+    },
+    "code_version": {
+      "reported": true,
+      "value": "50",
+      "evidence": "All of the calculations were carried out by using the Vienna ab initio Simulation Package (VASP)50 code based on the density functional theory (DFT).",
+      "confidence": null
+    },
+    "xc_functional": {
+      "reported": true,
+      "value": "pbe",
+      "evidence": "The generalized gradient approximation with Perdew, Burke, and Ernzerhof (PBE)51 parameterization was used to describe the exchange-correction interaction among electrons",
+      "confidence": null
+    },
+    "pseudopotential_type": {
+      "reported": true,
+      "value": "pa",
+      "evidence": "the projector augmented wave psedopotential (PAW)52 method was adopted to deal with the ion-electron interaction",
+      "confidence": null
+    },
+    "k_mesh": {
+      "reported": true,
+      "value": "15x15x1",
+      "evidence": "The Monkhorst-Pack scheme53 of a 15 ×​ 15 ×​ 1 Γ -centered k point mesh was applied for the structural optimizations and electronic structure studies.",
+      "confidence": null
+    },
+    "smearing": {
+      "reported": false,
+      "value": null,
+      "evidence": "The paper does not explicitly state the smearing method or parameters.",
+      "confidence": null
+    },
+    "force_threshold_ev_ang": {
+      "reported": true,
+      "value": 0.02,
+      "evidence": "All the atoms were fully relaxed with the energy and force convergences up to 10−5 eV and 0.02 eV/Å, respectively.",
+      "confidence": null
+    },
+    "energy_threshold_ev": {
+      "reported": true,
+      "value": 0.00001,
+      "evidence": "All the atoms were fully relaxed with the energy and force convergences up to 10−5 eV and 0.02 eV/Å, respectively.",
+      "confidence": null
+    },
+    "spin_polarised": {
+      "reported": false,
+      "value": null,
+      "evidence": "The paper states that the penta-AlN2 is a ferromagnetic semiconductor, which requires spin polarization.",
+      "confidence": null
+    },
+    "dispersion_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": "The paper does not explicitly state any dispersion correction method.",
+      "confidence": null
+    },
+    "plane_wave_cutoff_ev": {
+      "reported": true,
+      "value": 400.0,
+      "evidence": "The cutoff energy for the plane-wave basis set was chosen to be 400 eV.",
+      "confidence": null
+    },
+    "augmentation_cutoff_ev": {
+      "reported": true,
+      "value": 15.0,
+      "evidence": "a vacuum space of of 15 Å in z direction was adopt to minimize the interaction between the sheet structure and its neighboring periodic images.",
+      "confidence": null
+    },
+    "mesh_cutoff_ry": {
+      "reported": false,
+      "value": null,
+      "evidence": "The paper does not explicitly state the mesh cutoff for SIESTA.",
+      "confidence": null
+    },
+    "basis_size": {
+      "reported": false,
+      "value": null,
+      "evidence": "The paper does not explicitly state the basis size for SIESTA.",
+      "confidence": null
+    },
+    "pao_energy_shift_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": "The paper does not explicitly state the PAO energy shift.",
+      "confidence": null
+    },
+    "basis_split_norm": {
+      "reported": false,
+      "value": null,
+      "evidence": "The paper does not explicitly state the basis split norm.",
+      "confidence": null
+    },
+    "vacuum_spacing_ang": {
+      "reported": true,
+      "value": 15.0,
+      "evidence": "a vacuum space of of 15 Å in z direction was adopt to minimize the interaction between the sheet structure and its neighboring periodic images.",
+      "confidence": null
+    },
+    "dipole_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": "The paper does not explicitly state dipole correction.",
+      "confidence": null
+    },
+    "thickness_for_gpa_conversion_ang": {
+      "reported": false,
+      "value": null,
+      "evidence": "The paper does not explicitly state the thickness for GPa conversion.",
+      "confidence": null
+    },
+    "elastic_units_reported": {
+      "reported": true,
+      "value": "N/m",
+      "evidence": "The elastic modulus tensors C11, C22, C12, and C66 can be obtained by analyzing the second partial derivative of strain energy with respect to strain, which are calculated to be 115.73, 115.73, 1.93, and 51.62 N/m for penta-AlN2.",
+      "confidence": null
+    }
+  },
+  "stage": "compared",
+  "parameters": {
+    "reasoning": "The paper uses VASP with PBE functional, a 15x15x1 k-mesh, 400 eV plane-wave cutoff, and 15 Å vacuum spacing. SIESTA uses NAO basis, so plane-wave cutoff has no equivalent. The paper does not specify basis size or mesh cutoff, so we choose DZP as standard. For a 2D system, vacuum axis must have exactly 1 division. The paper states k-mesh as 15x15x1, so kgrid is 15x15x1. The paper uses PBE functional, so xc_authors is GGA/PBE. The paper does not specify smearing, dispersion, or other parameters, so we note these as unmapped.",
+    "unmapped": [
+      "the paper's plane-wave cutoff (400 eV) has no NAO equivalent, so a mesh cutoff of 300 Ry was chosen independently",
+      "the paper's basis_size and basis_split_norm were not reported, so SIESTA requires these but the paper did not state them",
+      "the paper's smearing and dispersion_correction were not reported, so SIESTA requires these but the paper did not state them",
+      "the paper's elastic_units_reported (ElasticUnits.N_PER_M) was not used in SIESTA, so SIESTA uses its own units for elastic moduli",
+      "the paper's pao_energy_shift_ev was not reported, so SIESTA requires this but the paper did not state it"
+    ],
+    "derived_from": [
+      {
+        "setting": "basis",
+        "justification": "The paper does not specify basis size, so DZP is the standard production choice for SIESTA"
+      },
+      {
+        "setting": "mesh_cutoff_ry",
+        "justification": "The paper does not specify mesh cutoff, so 300 Ry was chosen for light elements (C) with standard NAO basis"
+      },
+      {
+        "setting": "kgrid",
+        "justification": "The paper states a 15x15x1 k-mesh, so kgrid is 15x15x1"
+      },
+      {
+        "setting": "xc",
+        "justification": "The paper uses PBE functional, so xc is GGA/PBE"
+      },
+      {
+        "setting": "xc_authors",
+        "justification": "The paper uses PBE functional, so xc_authors is GGA/PBE"
+      }
+    ],
+    "basis": "DZP",
+    "mesh_cutoff_ry": 300.0,
+    "kgrid": [
+      15,
+      15,
+      1
+    ],
+    "xc": "GGA",
+    "xc_authors": "PBE"
+  },
+  "steps": [
+    {
+      "iteration": 1,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 300.0,
+        "kgrid": [
+          15,
+          15,
+          1
+        ]
+      },
+      "energy_ev": -978.877115,
+      "cell": [
+        3.79594,
+        4.566169,
+        17.844651
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": null,
+      "delta_cell_pct": null,
+      "seconds": 1058.3,
+      "decision": "increase_mesh: mesh cutoff 300.0 -> 400.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 2,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 400.0,
+        "kgrid": [
+          15,
+          15,
+          1
+        ]
+      },
+      "energy_ev": -971.990946,
+      "cell": [
+        3.845472,
+        4.541815,
+        18.023533
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": 1.1476948333333326,
+      "delta_cell_pct": 1.3048678324736465,
+      "seconds": 604.7,
+      "decision": "increase_mesh: mesh cutoff 400.0 -> 500.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 3,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 500.0,
+        "kgrid": [
+          15,
+          15,
+          1
+        ]
+      },
+      "energy_ev": -978.877332,
+      "cell": [
+        3.796606,
+        4.565849,
+        17.859289
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": -1.1477310000000027,
+      "delta_cell_pct": 1.2707412770135853,
+      "seconds": 1481.3,
+      "decision": "increase_mesh: mesh cutoff 500.0 -> 700.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 4,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 700.0,
+        "kgrid": [
+          15,
+          15,
+          1
+        ]
+      },
+      "energy_ev": -971.990999,
+      "cell": [
+        3.845688,
+        4.542382,
+        18.022838
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": 1.1477221666666726,
+      "delta_cell_pct": 1.2927862411848858,
+      "seconds": 1008.9,
+      "decision": "increase_mesh: mesh cutoff 700.0 -> 900.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 5,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 900.0,
+        "kgrid": [
+          15,
+          15,
+          1
+        ]
+      },
+      "energy_ev": -971.991036,
+      "cell": [
+        3.84566,
+        4.542385,
+        18.023366
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": -6.166666670045136e-6,
+      "delta_cell_pct": 0.0007280881860389346,
+      "seconds": 1421.4,
+      "decision": "stop: converged: dE = 0.0 meV/atom, dcell = 0.00% between the last two settings",
+      "error": null
+    }
+  ],
+  "our_value": 3.84566,
+  "our_a": 3.84566,
+  "our_b": 4.542385,
+  "verdict": "inconclusive",
+  "rationale": "held at review (symmetry: The b/a ratio is 1.181, which departs from tetragonal by 18.1%. The relaxation has left the prototype, so the comparison may be against a different structure.). Provisional comparison was inconclusive: calibration insufficient (2 distinct structure(s) calibrated of 6 required (CN2, PdSe2)); a threshold comparison is not defined. Provisional comparison was divergent: difference 5.65% exceeds the stated tolerance (1.00%); our SIESTA recomputation does not reproduce the published value",
+  "failure_class": null,
+  "abandoned_reason": null,
+  "critic_verdict": "hold",
+  "critic_reasoning": "The symmetry check shows that the b/a ratio is 1.181, which is significantly different from the tetragonal prototype (b/a = 1). This indicates that the relaxation has left the structural prototype, making the comparison meaningless. The convergence check shows that the run satisfied the arithmetic convergence test, but the symmetry issue is a blocking concern that must be addressed before a verdict can be issued.",
+  "critic_concerns": [
+    {
+      "category": "symmetry",
+      "severity": "blocking",
+      "detail": "The b/a ratio is 1.181, which departs from tetragonal by 18.1%. The relaxation has left the prototype, so the comparison may be against a different structure.",
+      "check": "Verify that the relaxation remains close to b/a = 1 for a tetragonal structure (within 5% of 1) before comparing to the paper's claim."
+    }
+  ],
+  "critic_tools_used": [
+    "check_symmetry",
+    "convergence_status"
+  ],
+  "provisional_verdict": "inconclusive",
+  "config_fingerprint": "d42be0976558",
+  "tolerance_used": 0.01,
+  "total_seconds": 5638.9,
+  "n_calculations": 5
+}

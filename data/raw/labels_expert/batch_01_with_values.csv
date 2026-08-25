@@ -1,0 +1,16 @@
+paper_no,paper_key,year,pdf,code,xc_functional,pseudopotential,k_mesh,cutoff (mesh),force_threshold,energy_threshold,vacuum,basis_size,notes,title
+1,10.1002_adma.201906238,2020,GET,na,na,na,na,na ,na,na,na ,na,This is just abstract,Two‐Dimensional Palladium Diselenide with Strong In‐Plane Optical Anis
+2,10.1016_j.apsusc.2026.167411,2026,GET,VASP,GGA-PBE,PAW,9 9 1,550 Ev,0.01 eV/a,1.10^-4,20,plane,,Pentagonal PdTe2 monolayer for sustainable solar-driven hydrogen produ
+3,10.1016_j.cplett.2020.138229,2020,yes,Dmol3,LDA,Semi-core,14 14 1,na,0.002 Ha/Å, 1 × 10−5,30A,DNP,cutoff n/a confirmed: Dmol3 orbital radius is not a plane-wave or mesh cutoff,O2 adsorption on defective Penta-Graphene lattices: A DFT study
+4,10.1016_j.ijhydene.2024.03.016,2024,yes,Gaussian16,B3LYP,na,na,na,n,n,na,6-31G,"Gaussian16 + 6-31G is all-electron: no pseudopotential applies. Original label ""Double-Z"" described basis-set quality.",First-principles study of penta-CN2 quantum dots for efficient Hydroge
+5,10.1016_j.ssc.2015.12.012,2016,yes,ABINIT,LDA and GGA,TM ,18 18 1,50HA,n,1 meV,10,plane,,Computing the band structure and energy gap of penta-graphene by using
+6,10.1021_acs.jpcc.5b04726,2015,GET,VASP,GGA-PBE,PAW,20 20 1,500eV,0.002 Ev/Å,n,20,plane,,σ–π-Band Inversion in a Novel Two-Dimensional Material
+7,10.1021_acs.nanolett.6b01536,2016,yes,QE,GGA-PBE,USSP,8 8 1,50 RY,0.01 eV/a,10-5,20 A,plane,,Hydrogenation of Penta-Graphene Leads to Unexpected Large Improvement 
+8,10.1021_acs.nanolett.6b03921,2017,yes,VASP,GGA-PBE,PAW,n ,800 Ev,0.1,1.10^-4,20 A,plane,,Novel Two-Dimensional Silicon Dioxide with in-Plane Negative Poisson’s
+9,10.1021_jacs.7b04865,2017,GET,VASP,GGA-PBE,PAW,12 12 8,350 Ev,0.001,n,na,plane,,PdSe2: Pentagonal Two-Dimensional Layers with High Air Stability for E
+10,10.1038_s41535-025-00793-0,2025,yes,VASP,GGA-PBE,PAW,15 15 1,600 Ev,0.015,1.10^-6,n,plane,,Altermagnetism and strain induced altermagnetic transition in Cairo pe
+11,10.1038_s41598-020-64791-x,2020,yes,SIESTA,GGA-PBE,TM ,21 21 3,200 Ry,0.001,1.10^-4,n,DZP,,Tuning Penta-Graphene Electronic Properties Through Engineered Line De
+12,10.1038_srep31840,2016,yes,VASP,GGA-PBE,PAW,15 15 1,400 Ev,0.02,1.10^-4,15,plane,,Penta-BxNy sheet: a density functional theory study of two-dimensional
+13,10.1038_srep33060,2016,yes,VASP,GGA-PBE,PAW,15 15 1,400 Ev,0.002 Ev/Å,1.10^-8,15,plane,,Half-metallicity and ferromagnetism in penta-AlN2 nanostructure
+14,10.1039_c7nr06835b,2017,GET,na,na,na,na,na,na,na,na,na,This is just abstract,Novel penta-graphene nanotubes: strain-induced structural and semicond
+15,10.1063_1.4930086,2015,yes,VASP,GGA-PBE,n,14 14 1,500eV,n,1.10^-4,n,plane,,"Pentagonal monolayer crystals of carbon, boron nitride, and silver azi"

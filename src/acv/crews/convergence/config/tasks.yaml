@@ -1,0 +1,27 @@
+version: 1
+
+choose_next_setting:
+  description: >
+    Decide how to converge a SIESTA calculation of a 2D monolayer, given the history of
+    what has already been run.
+
+    Convergence requires two successive settings agreeing to better than the stated
+    energy and cell tolerances. That test is applied in code; you are told whether it has
+    been met and why not.
+
+    Choose ONE action:
+      increase_mesh  - step the real-space mesh cutoff up. Do this when the ENERGY is
+                       still moving but the cell is stable.
+      improve_basis  - step the basis up (SZ<SZP<DZ<DZP<TZP). Do this when the CELL is
+                       still moving. Basis quality dominates geometry in an NAO code and
+                       is the usual cause of a wrong lattice parameter.
+      denser_k       - increase in-plane k-sampling. Rarely the cause for an insulator
+                       with a reasonable grid.
+      stop           - further refinement will not help.
+
+    You may only move UP a ladder. A proposal that makes the calculation cheaper will be
+    refused in code: converging by reducing cost is not convergence.
+  expected_output: >
+    A Decision with the action, brief reasoning, and an explicit expectation of what the
+    next calculation will show.
+  agent: convergence

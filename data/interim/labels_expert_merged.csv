@@ -1,0 +1,244 @@
+paper_no,paper_key,title,year,field,field_hint,reported,value,unit,evidence_quote,in_retrieved_text,notes,batch
+1,10.1002_adma.201906238,Two‐Dimensional Palladium Diselenide with Strong In‐Plane Optical Anis,2020,code,,n/a,,,,,This is just abstract,1
+1,10.1002_adma.201906238,Two‐Dimensional Palladium Diselenide with Strong In‐Plane Optical Anis,2020,xc_functional,,n/a,,,,,This is just abstract,1
+1,10.1002_adma.201906238,Two‐Dimensional Palladium Diselenide with Strong In‐Plane Optical Anis,2020,pseudopotential_type,,n/a,,,,,This is just abstract,1
+1,10.1002_adma.201906238,Two‐Dimensional Palladium Diselenide with Strong In‐Plane Optical Anis,2020,k_mesh,,n/a,,,,,This is just abstract,1
+1,10.1002_adma.201906238,Two‐Dimensional Palladium Diselenide with Strong In‐Plane Optical Anis,2020,cutoff,,n/a,,,,,This is just abstract,1
+1,10.1002_adma.201906238,Two‐Dimensional Palladium Diselenide with Strong In‐Plane Optical Anis,2020,force_threshold_ev_ang,,n/a,,,,,This is just abstract,1
+1,10.1002_adma.201906238,Two‐Dimensional Palladium Diselenide with Strong In‐Plane Optical Anis,2020,energy_threshold_ev,,n/a,,,,,This is just abstract,1
+1,10.1002_adma.201906238,Two‐Dimensional Palladium Diselenide with Strong In‐Plane Optical Anis,2020,vacuum_spacing_ang,,n/a,,,,,This is just abstract,1
+1,10.1002_adma.201906238,Two‐Dimensional Palladium Diselenide with Strong In‐Plane Optical Anis,2020,basis_size,,n/a,,,,,This is just abstract,1
+2,10.1016_j.apsusc.2026.167411,Pentagonal PdTe2 monolayer for sustainable solar-driven hydrogen produ,2026,code,,y,VASP,,,y,,1
+2,10.1016_j.apsusc.2026.167411,Pentagonal PdTe2 monolayer for sustainable solar-driven hydrogen produ,2026,xc_functional,,y,GGA-PBE,,,y,,1
+2,10.1016_j.apsusc.2026.167411,Pentagonal PdTe2 monolayer for sustainable solar-driven hydrogen produ,2026,pseudopotential_type,,y,PAW,,,y,,1
+2,10.1016_j.apsusc.2026.167411,Pentagonal PdTe2 monolayer for sustainable solar-driven hydrogen produ,2026,k_mesh,,y,9 9 1,,,y,,1
+2,10.1016_j.apsusc.2026.167411,Pentagonal PdTe2 monolayer for sustainable solar-driven hydrogen produ,2026,cutoff,,y,550,Ev,,y,,1
+2,10.1016_j.apsusc.2026.167411,Pentagonal PdTe2 monolayer for sustainable solar-driven hydrogen produ,2026,force_threshold_ev_ang,,y,0.01,eV/a,,y,,1
+2,10.1016_j.apsusc.2026.167411,Pentagonal PdTe2 monolayer for sustainable solar-driven hydrogen produ,2026,energy_threshold_ev,,y,0.0001,,,n,,1
+2,10.1016_j.apsusc.2026.167411,Pentagonal PdTe2 monolayer for sustainable solar-driven hydrogen produ,2026,vacuum_spacing_ang,,y,20,,,y,,1
+2,10.1016_j.apsusc.2026.167411,Pentagonal PdTe2 monolayer for sustainable solar-driven hydrogen produ,2026,basis_size,,n/a,,,,,,1
+3,10.1016_j.cplett.2020.138229,O2 adsorption on defective Penta-Graphene lattices: A DFT study,2020,code,,y,Dmol3,,,y,cutoff n/a confirmed: Dmol3 orbital radius is not a plane-wave or mesh cutoff,1
+3,10.1016_j.cplett.2020.138229,O2 adsorption on defective Penta-Graphene lattices: A DFT study,2020,xc_functional,,y,LDA,,,y,cutoff n/a confirmed: Dmol3 orbital radius is not a plane-wave or mesh cutoff,1
+3,10.1016_j.cplett.2020.138229,O2 adsorption on defective Penta-Graphene lattices: A DFT study,2020,pseudopotential_type,,y,Semi-core,,,y,cutoff n/a confirmed: Dmol3 orbital radius is not a plane-wave or mesh cutoff,1
+3,10.1016_j.cplett.2020.138229,O2 adsorption on defective Penta-Graphene lattices: A DFT study,2020,k_mesh,,y,14 14 1,,,y,cutoff n/a confirmed: Dmol3 orbital radius is not a plane-wave or mesh cutoff,1
+3,10.1016_j.cplett.2020.138229,O2 adsorption on defective Penta-Graphene lattices: A DFT study,2020,cutoff,,n/a,,,,,cutoff n/a confirmed: Dmol3 orbital radius is not a plane-wave or mesh cutoff,1
+3,10.1016_j.cplett.2020.138229,O2 adsorption on defective Penta-Graphene lattices: A DFT study,2020,force_threshold_ev_ang,,y,0.002,Ha/Å,,y,cutoff n/a confirmed: Dmol3 orbital radius is not a plane-wave or mesh cutoff,1
+3,10.1016_j.cplett.2020.138229,O2 adsorption on defective Penta-Graphene lattices: A DFT study,2020,energy_threshold_ev,,y,1e-05,,,y,cutoff n/a confirmed: Dmol3 orbital radius is not a plane-wave or mesh cutoff,1
+3,10.1016_j.cplett.2020.138229,O2 adsorption on defective Penta-Graphene lattices: A DFT study,2020,vacuum_spacing_ang,,y,30,A,,y,cutoff n/a confirmed: Dmol3 orbital radius is not a plane-wave or mesh cutoff,1
+3,10.1016_j.cplett.2020.138229,O2 adsorption on defective Penta-Graphene lattices: A DFT study,2020,basis_size,,y,DNP,,,y,cutoff n/a confirmed: Dmol3 orbital radius is not a plane-wave or mesh cutoff,1
+4,10.1016_j.ijhydene.2024.03.016,First-principles study of penta-CN2 quantum dots for efficient Hydroge,2024,code,,y,Gaussian16,,,y,"Gaussian16 + 6-31G is all-electron: no pseudopotential applies. Original label ""Double-Z"" described basis-set quality.",1
+4,10.1016_j.ijhydene.2024.03.016,First-principles study of penta-CN2 quantum dots for efficient Hydroge,2024,xc_functional,,y,B3LYP,,,y,"Gaussian16 + 6-31G is all-electron: no pseudopotential applies. Original label ""Double-Z"" described basis-set quality.",1
+4,10.1016_j.ijhydene.2024.03.016,First-principles study of penta-CN2 quantum dots for efficient Hydroge,2024,pseudopotential_type,,n/a,,,,,"Gaussian16 + 6-31G is all-electron: no pseudopotential applies. Original label ""Double-Z"" described basis-set quality.",1
+4,10.1016_j.ijhydene.2024.03.016,First-principles study of penta-CN2 quantum dots for efficient Hydroge,2024,k_mesh,,n/a,,,,,"Gaussian16 + 6-31G is all-electron: no pseudopotential applies. Original label ""Double-Z"" described basis-set quality.",1
+4,10.1016_j.ijhydene.2024.03.016,First-principles study of penta-CN2 quantum dots for efficient Hydroge,2024,cutoff,,n/a,,,,,"Gaussian16 + 6-31G is all-electron: no pseudopotential applies. Original label ""Double-Z"" described basis-set quality.",1
+4,10.1016_j.ijhydene.2024.03.016,First-principles study of penta-CN2 quantum dots for efficient Hydroge,2024,force_threshold_ev_ang,,n,,,,,"Gaussian16 + 6-31G is all-electron: no pseudopotential applies. Original label ""Double-Z"" described basis-set quality.",1
+4,10.1016_j.ijhydene.2024.03.016,First-principles study of penta-CN2 quantum dots for efficient Hydroge,2024,energy_threshold_ev,,n,,,,,"Gaussian16 + 6-31G is all-electron: no pseudopotential applies. Original label ""Double-Z"" described basis-set quality.",1
+4,10.1016_j.ijhydene.2024.03.016,First-principles study of penta-CN2 quantum dots for efficient Hydroge,2024,vacuum_spacing_ang,,n/a,,,,,"Gaussian16 + 6-31G is all-electron: no pseudopotential applies. Original label ""Double-Z"" described basis-set quality.",1
+4,10.1016_j.ijhydene.2024.03.016,First-principles study of penta-CN2 quantum dots for efficient Hydroge,2024,basis_size,,y,6-31G,,,y,"Gaussian16 + 6-31G is all-electron: no pseudopotential applies. Original label ""Double-Z"" described basis-set quality.",1
+5,10.1016_j.ssc.2015.12.012,Computing the band structure and energy gap of penta-graphene by using,2016,code,,y,ABINIT,,,y,,1
+5,10.1016_j.ssc.2015.12.012,Computing the band structure and energy gap of penta-graphene by using,2016,xc_functional,,y,LDA and GGA,,,y,,1
+5,10.1016_j.ssc.2015.12.012,Computing the band structure and energy gap of penta-graphene by using,2016,pseudopotential_type,,y,TM,,,y,,1
+5,10.1016_j.ssc.2015.12.012,Computing the band structure and energy gap of penta-graphene by using,2016,k_mesh,,y,18 18 1,,,y,,1
+5,10.1016_j.ssc.2015.12.012,Computing the band structure and energy gap of penta-graphene by using,2016,cutoff,,y,50,HA,,y,,1
+5,10.1016_j.ssc.2015.12.012,Computing the band structure and energy gap of penta-graphene by using,2016,force_threshold_ev_ang,,n,,,,,,1
+5,10.1016_j.ssc.2015.12.012,Computing the band structure and energy gap of penta-graphene by using,2016,energy_threshold_ev,,y,1,meV,,y,,1
+5,10.1016_j.ssc.2015.12.012,Computing the band structure and energy gap of penta-graphene by using,2016,vacuum_spacing_ang,,y,10,,,y,,1
+5,10.1016_j.ssc.2015.12.012,Computing the band structure and energy gap of penta-graphene by using,2016,basis_size,,n/a,,,,,,1
+6,10.1021_acs.jpcc.5b04726,σ–π-Band Inversion in a Novel Two-Dimensional Material,2015,code,,y,VASP,,,y,,1
+6,10.1021_acs.jpcc.5b04726,σ–π-Band Inversion in a Novel Two-Dimensional Material,2015,xc_functional,,y,GGA-PBE,,,?,,1
+6,10.1021_acs.jpcc.5b04726,σ–π-Band Inversion in a Novel Two-Dimensional Material,2015,pseudopotential_type,,y,PAW,,,y,,1
+6,10.1021_acs.jpcc.5b04726,σ–π-Band Inversion in a Novel Two-Dimensional Material,2015,k_mesh,,y,20 20 1,,,y,,1
+6,10.1021_acs.jpcc.5b04726,σ–π-Band Inversion in a Novel Two-Dimensional Material,2015,cutoff,,y,500,eV,,y,,1
+6,10.1021_acs.jpcc.5b04726,σ–π-Band Inversion in a Novel Two-Dimensional Material,2015,force_threshold_ev_ang,,y,0.002,Ev/Å,,n,,1
+6,10.1021_acs.jpcc.5b04726,σ–π-Band Inversion in a Novel Two-Dimensional Material,2015,energy_threshold_ev,,n,,,,,,1
+6,10.1021_acs.jpcc.5b04726,σ–π-Band Inversion in a Novel Two-Dimensional Material,2015,vacuum_spacing_ang,,y,20,,,y,,1
+6,10.1021_acs.jpcc.5b04726,σ–π-Band Inversion in a Novel Two-Dimensional Material,2015,basis_size,,n/a,,,,,,1
+7,10.1021_acs.nanolett.6b01536,Hydrogenation of Penta-Graphene Leads to Unexpected Large Improvement ,2016,code,,y,QE,,,y,,1
+7,10.1021_acs.nanolett.6b01536,Hydrogenation of Penta-Graphene Leads to Unexpected Large Improvement ,2016,xc_functional,,y,GGA-PBE,,,y,,1
+7,10.1021_acs.nanolett.6b01536,Hydrogenation of Penta-Graphene Leads to Unexpected Large Improvement ,2016,pseudopotential_type,,y,USSP,,,y,,1
+7,10.1021_acs.nanolett.6b01536,Hydrogenation of Penta-Graphene Leads to Unexpected Large Improvement ,2016,k_mesh,,y,8 8 1,,,y,,1
+7,10.1021_acs.nanolett.6b01536,Hydrogenation of Penta-Graphene Leads to Unexpected Large Improvement ,2016,cutoff,,y,50,RY,,y,,1
+7,10.1021_acs.nanolett.6b01536,Hydrogenation of Penta-Graphene Leads to Unexpected Large Improvement ,2016,force_threshold_ev_ang,,y,0.01,eV/a,,y,,1
+7,10.1021_acs.nanolett.6b01536,Hydrogenation of Penta-Graphene Leads to Unexpected Large Improvement ,2016,energy_threshold_ev,,y,1e-05,,,y,,1
+7,10.1021_acs.nanolett.6b01536,Hydrogenation of Penta-Graphene Leads to Unexpected Large Improvement ,2016,vacuum_spacing_ang,,y,20,A,,y,,1
+7,10.1021_acs.nanolett.6b01536,Hydrogenation of Penta-Graphene Leads to Unexpected Large Improvement ,2016,basis_size,,n/a,,,,,,1
+8,10.1021_acs.nanolett.6b03921,Novel Two-Dimensional Silicon Dioxide with in-Plane Negative Poisson’s,2017,code,,y,VASP,,,y,,1
+8,10.1021_acs.nanolett.6b03921,Novel Two-Dimensional Silicon Dioxide with in-Plane Negative Poisson’s,2017,xc_functional,,y,GGA-PBE,,,y,,1
+8,10.1021_acs.nanolett.6b03921,Novel Two-Dimensional Silicon Dioxide with in-Plane Negative Poisson’s,2017,pseudopotential_type,,y,PAW,,,y,,1
+8,10.1021_acs.nanolett.6b03921,Novel Two-Dimensional Silicon Dioxide with in-Plane Negative Poisson’s,2017,k_mesh,,n,,,,,,1
+8,10.1021_acs.nanolett.6b03921,Novel Two-Dimensional Silicon Dioxide with in-Plane Negative Poisson’s,2017,cutoff,,y,800,Ev,,y,,1
+8,10.1021_acs.nanolett.6b03921,Novel Two-Dimensional Silicon Dioxide with in-Plane Negative Poisson’s,2017,force_threshold_ev_ang,,y,0.1,,,y,,1
+8,10.1021_acs.nanolett.6b03921,Novel Two-Dimensional Silicon Dioxide with in-Plane Negative Poisson’s,2017,energy_threshold_ev,,y,0.0001,,,y,,1
+8,10.1021_acs.nanolett.6b03921,Novel Two-Dimensional Silicon Dioxide with in-Plane Negative Poisson’s,2017,vacuum_spacing_ang,,y,20,A,,y,,1
+8,10.1021_acs.nanolett.6b03921,Novel Two-Dimensional Silicon Dioxide with in-Plane Negative Poisson’s,2017,basis_size,,n/a,,,,,,1
+9,10.1021_jacs.7b04865,PdSe2: Pentagonal Two-Dimensional Layers with High Air Stability for E,2017,code,,y,VASP,,,y,,1
+9,10.1021_jacs.7b04865,PdSe2: Pentagonal Two-Dimensional Layers with High Air Stability for E,2017,xc_functional,,y,GGA-PBE,,,y,,1
+9,10.1021_jacs.7b04865,PdSe2: Pentagonal Two-Dimensional Layers with High Air Stability for E,2017,pseudopotential_type,,y,PAW,,,y,,1
+9,10.1021_jacs.7b04865,PdSe2: Pentagonal Two-Dimensional Layers with High Air Stability for E,2017,k_mesh,,y,12 12 8,,,y,,1
+9,10.1021_jacs.7b04865,PdSe2: Pentagonal Two-Dimensional Layers with High Air Stability for E,2017,cutoff,,y,350,Ev,,y,,1
+9,10.1021_jacs.7b04865,PdSe2: Pentagonal Two-Dimensional Layers with High Air Stability for E,2017,force_threshold_ev_ang,,y,0.001,,,y,,1
+9,10.1021_jacs.7b04865,PdSe2: Pentagonal Two-Dimensional Layers with High Air Stability for E,2017,energy_threshold_ev,,n,,,,,,1
+9,10.1021_jacs.7b04865,PdSe2: Pentagonal Two-Dimensional Layers with High Air Stability for E,2017,vacuum_spacing_ang,,n/a,,,,,,1
+9,10.1021_jacs.7b04865,PdSe2: Pentagonal Two-Dimensional Layers with High Air Stability for E,2017,basis_size,,n/a,,,,,,1
+10,10.1038_s41535-025-00793-0,Altermagnetism and strain induced altermagnetic transition in Cairo pe,2025,code,,y,VASP,,,y,,1
+10,10.1038_s41535-025-00793-0,Altermagnetism and strain induced altermagnetic transition in Cairo pe,2025,xc_functional,,y,GGA-PBE,,,y,,1
+10,10.1038_s41535-025-00793-0,Altermagnetism and strain induced altermagnetic transition in Cairo pe,2025,pseudopotential_type,,y,PAW,,,y,,1
+10,10.1038_s41535-025-00793-0,Altermagnetism and strain induced altermagnetic transition in Cairo pe,2025,k_mesh,,y,15 15 1,,,y,,1
+10,10.1038_s41535-025-00793-0,Altermagnetism and strain induced altermagnetic transition in Cairo pe,2025,cutoff,,y,600,Ev,,y,,1
+10,10.1038_s41535-025-00793-0,Altermagnetism and strain induced altermagnetic transition in Cairo pe,2025,force_threshold_ev_ang,,y,0.015,,,n,,1
+10,10.1038_s41535-025-00793-0,Altermagnetism and strain induced altermagnetic transition in Cairo pe,2025,energy_threshold_ev,,y,1e-06,,,y,,1
+10,10.1038_s41535-025-00793-0,Altermagnetism and strain induced altermagnetic transition in Cairo pe,2025,vacuum_spacing_ang,,n,,,,,,1
+10,10.1038_s41535-025-00793-0,Altermagnetism and strain induced altermagnetic transition in Cairo pe,2025,basis_size,,n/a,,,,,,1
+11,10.1038_s41598-020-64791-x,Tuning Penta-Graphene Electronic Properties Through Engineered Line De,2020,code,,y,SIESTA,,,y,,1
+11,10.1038_s41598-020-64791-x,Tuning Penta-Graphene Electronic Properties Through Engineered Line De,2020,xc_functional,,y,GGA-PBE,,,y,,1
+11,10.1038_s41598-020-64791-x,Tuning Penta-Graphene Electronic Properties Through Engineered Line De,2020,pseudopotential_type,,y,TM,,,y,,1
+11,10.1038_s41598-020-64791-x,Tuning Penta-Graphene Electronic Properties Through Engineered Line De,2020,k_mesh,,y,21 21 3,,,y,,1
+11,10.1038_s41598-020-64791-x,Tuning Penta-Graphene Electronic Properties Through Engineered Line De,2020,cutoff,,y,200,Ry,,y,,1
+11,10.1038_s41598-020-64791-x,Tuning Penta-Graphene Electronic Properties Through Engineered Line De,2020,force_threshold_ev_ang,,y,0.001,,,y,,1
+11,10.1038_s41598-020-64791-x,Tuning Penta-Graphene Electronic Properties Through Engineered Line De,2020,energy_threshold_ev,,y,0.0001,,,y,,1
+11,10.1038_s41598-020-64791-x,Tuning Penta-Graphene Electronic Properties Through Engineered Line De,2020,vacuum_spacing_ang,,n,,,,,,1
+11,10.1038_s41598-020-64791-x,Tuning Penta-Graphene Electronic Properties Through Engineered Line De,2020,basis_size,,y,DZP,,,y,,1
+12,10.1038_srep31840,Penta-BxNy sheet: a density functional theory study of two-dimensional,2016,code,,y,VASP,,,y,,1
+12,10.1038_srep31840,Penta-BxNy sheet: a density functional theory study of two-dimensional,2016,xc_functional,,y,GGA-PBE,,,y,,1
+12,10.1038_srep31840,Penta-BxNy sheet: a density functional theory study of two-dimensional,2016,pseudopotential_type,,y,PAW,,,y,,1
+12,10.1038_srep31840,Penta-BxNy sheet: a density functional theory study of two-dimensional,2016,k_mesh,,y,15 15 1,,,y,,1
+12,10.1038_srep31840,Penta-BxNy sheet: a density functional theory study of two-dimensional,2016,cutoff,,y,400,Ev,,y,,1
+12,10.1038_srep31840,Penta-BxNy sheet: a density functional theory study of two-dimensional,2016,force_threshold_ev_ang,,y,0.02,,,y,,1
+12,10.1038_srep31840,Penta-BxNy sheet: a density functional theory study of two-dimensional,2016,energy_threshold_ev,,y,0.0001,,,n,,1
+12,10.1038_srep31840,Penta-BxNy sheet: a density functional theory study of two-dimensional,2016,vacuum_spacing_ang,,y,15,,,y,,1
+12,10.1038_srep31840,Penta-BxNy sheet: a density functional theory study of two-dimensional,2016,basis_size,,n/a,,,,,,1
+13,10.1038_srep33060,Half-metallicity and ferromagnetism in penta-AlN2 nanostructure,2016,code,,y,VASP,,,y,,1
+13,10.1038_srep33060,Half-metallicity and ferromagnetism in penta-AlN2 nanostructure,2016,xc_functional,,y,GGA-PBE,,,y,,1
+13,10.1038_srep33060,Half-metallicity and ferromagnetism in penta-AlN2 nanostructure,2016,pseudopotential_type,,y,PAW,,,y,,1
+13,10.1038_srep33060,Half-metallicity and ferromagnetism in penta-AlN2 nanostructure,2016,k_mesh,,y,15 15 1,,,y,,1
+13,10.1038_srep33060,Half-metallicity and ferromagnetism in penta-AlN2 nanostructure,2016,cutoff,,y,400,Ev,,y,,1
+13,10.1038_srep33060,Half-metallicity and ferromagnetism in penta-AlN2 nanostructure,2016,force_threshold_ev_ang,,y,0.002,Ev/Å,,n,,1
+13,10.1038_srep33060,Half-metallicity and ferromagnetism in penta-AlN2 nanostructure,2016,energy_threshold_ev,,y,1e-08,,,y,,1
+13,10.1038_srep33060,Half-metallicity and ferromagnetism in penta-AlN2 nanostructure,2016,vacuum_spacing_ang,,y,15,,,y,,1
+13,10.1038_srep33060,Half-metallicity and ferromagnetism in penta-AlN2 nanostructure,2016,basis_size,,n/a,,,,,,1
+14,10.1039_c7nr06835b,Novel penta-graphene nanotubes: strain-induced structural and semicond,2017,code,,n/a,,,,,This is just abstract,1
+14,10.1039_c7nr06835b,Novel penta-graphene nanotubes: strain-induced structural and semicond,2017,xc_functional,,n/a,,,,,This is just abstract,1
+14,10.1039_c7nr06835b,Novel penta-graphene nanotubes: strain-induced structural and semicond,2017,pseudopotential_type,,n/a,,,,,This is just abstract,1
+14,10.1039_c7nr06835b,Novel penta-graphene nanotubes: strain-induced structural and semicond,2017,k_mesh,,n/a,,,,,This is just abstract,1
+14,10.1039_c7nr06835b,Novel penta-graphene nanotubes: strain-induced structural and semicond,2017,cutoff,,n/a,,,,,This is just abstract,1
+14,10.1039_c7nr06835b,Novel penta-graphene nanotubes: strain-induced structural and semicond,2017,force_threshold_ev_ang,,n/a,,,,,This is just abstract,1
+14,10.1039_c7nr06835b,Novel penta-graphene nanotubes: strain-induced structural and semicond,2017,energy_threshold_ev,,n/a,,,,,This is just abstract,1
+14,10.1039_c7nr06835b,Novel penta-graphene nanotubes: strain-induced structural and semicond,2017,vacuum_spacing_ang,,n/a,,,,,This is just abstract,1
+14,10.1039_c7nr06835b,Novel penta-graphene nanotubes: strain-induced structural and semicond,2017,basis_size,,n/a,,,,,This is just abstract,1
+15,10.1063_1.4930086,"Pentagonal monolayer crystals of carbon, boron nitride, and silver azi",2015,code,,y,VASP,,,y,,1
+15,10.1063_1.4930086,"Pentagonal monolayer crystals of carbon, boron nitride, and silver azi",2015,xc_functional,,y,GGA-PBE,,,y,,1
+15,10.1063_1.4930086,"Pentagonal monolayer crystals of carbon, boron nitride, and silver azi",2015,pseudopotential_type,,n,,,,,,1
+15,10.1063_1.4930086,"Pentagonal monolayer crystals of carbon, boron nitride, and silver azi",2015,k_mesh,,y,14 14 1,,,y,,1
+15,10.1063_1.4930086,"Pentagonal monolayer crystals of carbon, boron nitride, and silver azi",2015,cutoff,,y,500,eV,,y,,1
+15,10.1063_1.4930086,"Pentagonal monolayer crystals of carbon, boron nitride, and silver azi",2015,force_threshold_ev_ang,,n,,,,,,1
+15,10.1063_1.4930086,"Pentagonal monolayer crystals of carbon, boron nitride, and silver azi",2015,energy_threshold_ev,,y,0.0001,,,n,,1
+15,10.1063_1.4930086,"Pentagonal monolayer crystals of carbon, boron nitride, and silver azi",2015,vacuum_spacing_ang,,n,,,,,,1
+15,10.1063_1.4930086,"Pentagonal monolayer crystals of carbon, boron nitride, and silver azi",2015,basis_size,,n/a,,,,,,1
+16,10.1080_14686996.2016.1219970,Studying the electronic and phononic structure of penta-graphane,2016,code,,y,,,,?,,2
+16,10.1080_14686996.2016.1219970,Studying the electronic and phononic structure of penta-graphane,2016,xc_functional,,y,,,,?,,2
+16,10.1080_14686996.2016.1219970,Studying the electronic and phononic structure of penta-graphane,2016,pseudopotential_type,,y,,,,?,,2
+16,10.1080_14686996.2016.1219970,Studying the electronic and phononic structure of penta-graphane,2016,k_mesh,,y,,,,?,,2
+16,10.1080_14686996.2016.1219970,Studying the electronic and phononic structure of penta-graphane,2016,cutoff,,y,,,,?,,2
+16,10.1080_14686996.2016.1219970,Studying the electronic and phononic structure of penta-graphane,2016,force_threshold_ev_ang,,n,,,,,,2
+16,10.1080_14686996.2016.1219970,Studying the electronic and phononic structure of penta-graphane,2016,energy_threshold_ev,,y,,,,?,,2
+16,10.1080_14686996.2016.1219970,Studying the electronic and phononic structure of penta-graphane,2016,vacuum_spacing_ang,,y,,,,?,,2
+16,10.1080_14686996.2016.1219970,Studying the electronic and phononic structure of penta-graphane,2016,basis_size,,y,,,,?,,2
+17,10.1088_1367-2630_ac231c,Large bulk photovoltaic effect and second-harmonic generation in few-l,2021,code,,y,,,,?,,2
+17,10.1088_1367-2630_ac231c,Large bulk photovoltaic effect and second-harmonic generation in few-l,2021,xc_functional,,y,,,,?,,2
+17,10.1088_1367-2630_ac231c,Large bulk photovoltaic effect and second-harmonic generation in few-l,2021,pseudopotential_type,,y,,,,?,,2
+17,10.1088_1367-2630_ac231c,Large bulk photovoltaic effect and second-harmonic generation in few-l,2021,k_mesh,,y,,,,?,,2
+17,10.1088_1367-2630_ac231c,Large bulk photovoltaic effect and second-harmonic generation in few-l,2021,cutoff,,y,,,,?,,2
+17,10.1088_1367-2630_ac231c,Large bulk photovoltaic effect and second-harmonic generation in few-l,2021,force_threshold_ev_ang,,n,,,,,,2
+17,10.1088_1367-2630_ac231c,Large bulk photovoltaic effect and second-harmonic generation in few-l,2021,energy_threshold_ev,,y,,,,?,,2
+17,10.1088_1367-2630_ac231c,Large bulk photovoltaic effect and second-harmonic generation in few-l,2021,vacuum_spacing_ang,,y,,,,?,,2
+17,10.1088_1367-2630_ac231c,Large bulk photovoltaic effect and second-harmonic generation in few-l,2021,basis_size,,y,,,,?,,2
+18,10.1103_physrevb.88.054424,Ab initioinvestigation of the exchange interactions in Bi2Fe4O9: The C,2013,code,,y,,,,?,,2
+18,10.1103_physrevb.88.054424,Ab initioinvestigation of the exchange interactions in Bi2Fe4O9: The C,2013,xc_functional,,y,,,,?,,2
+18,10.1103_physrevb.88.054424,Ab initioinvestigation of the exchange interactions in Bi2Fe4O9: The C,2013,pseudopotential_type,,n,,,,,,2
+18,10.1103_physrevb.88.054424,Ab initioinvestigation of the exchange interactions in Bi2Fe4O9: The C,2013,k_mesh,,y,,,,?,,2
+18,10.1103_physrevb.88.054424,Ab initioinvestigation of the exchange interactions in Bi2Fe4O9: The C,2013,cutoff,,n/a,,,,,,2
+18,10.1103_physrevb.88.054424,Ab initioinvestigation of the exchange interactions in Bi2Fe4O9: The C,2013,force_threshold_ev_ang,,n,,,,,,2
+18,10.1103_physrevb.88.054424,Ab initioinvestigation of the exchange interactions in Bi2Fe4O9: The C,2013,energy_threshold_ev,,n,,,,,,2
+18,10.1103_physrevb.88.054424,Ab initioinvestigation of the exchange interactions in Bi2Fe4O9: The C,2013,vacuum_spacing_ang,,n/a,,,,,,2
+18,10.1103_physrevb.88.054424,Ab initioinvestigation of the exchange interactions in Bi2Fe4O9: The C,2013,basis_size,,n,,,,,,2
+19,10.1103_physrevb.96.094420,Spin-reorientation transitions in the Cairo pentagonal magnet Bi4Fe5O1,2017,code,,y,,,,?,,2
+19,10.1103_physrevb.96.094420,Spin-reorientation transitions in the Cairo pentagonal magnet Bi4Fe5O1,2017,xc_functional,,y,,,,?,,2
+19,10.1103_physrevb.96.094420,Spin-reorientation transitions in the Cairo pentagonal magnet Bi4Fe5O1,2017,pseudopotential_type,,n,,,,,,2
+19,10.1103_physrevb.96.094420,Spin-reorientation transitions in the Cairo pentagonal magnet Bi4Fe5O1,2017,k_mesh,,n,,,,,,2
+19,10.1103_physrevb.96.094420,Spin-reorientation transitions in the Cairo pentagonal magnet Bi4Fe5O1,2017,cutoff,,n,,,,,,2
+19,10.1103_physrevb.96.094420,Spin-reorientation transitions in the Cairo pentagonal magnet Bi4Fe5O1,2017,force_threshold_ev_ang,,n,,,,,,2
+19,10.1103_physrevb.96.094420,Spin-reorientation transitions in the Cairo pentagonal magnet Bi4Fe5O1,2017,energy_threshold_ev,,n,,,,,,2
+19,10.1103_physrevb.96.094420,Spin-reorientation transitions in the Cairo pentagonal magnet Bi4Fe5O1,2017,vacuum_spacing_ang,,n/a,,,,,,2
+19,10.1103_physrevb.96.094420,Spin-reorientation transitions in the Cairo pentagonal magnet Bi4Fe5O1,2017,basis_size,,n,,,,,,2
+20,10.1103_physrevb.98.085437,Electronic properties of a π-conjugated Cairo pentagonal lattice: Dire,2018,code,,y,,,,?,,2
+20,10.1103_physrevb.98.085437,Electronic properties of a π-conjugated Cairo pentagonal lattice: Dire,2018,xc_functional,,y,,,,?,,2
+20,10.1103_physrevb.98.085437,Electronic properties of a π-conjugated Cairo pentagonal lattice: Dire,2018,pseudopotential_type,,y,,,,?,,2
+20,10.1103_physrevb.98.085437,Electronic properties of a π-conjugated Cairo pentagonal lattice: Dire,2018,k_mesh,,y,,,,?,,2
+20,10.1103_physrevb.98.085437,Electronic properties of a π-conjugated Cairo pentagonal lattice: Dire,2018,cutoff,,y,,,,?,,2
+20,10.1103_physrevb.98.085437,Electronic properties of a π-conjugated Cairo pentagonal lattice: Dire,2018,force_threshold_ev_ang,,y,,,,?,,2
+20,10.1103_physrevb.98.085437,Electronic properties of a π-conjugated Cairo pentagonal lattice: Dire,2018,energy_threshold_ev,,y,,,,?,,2
+20,10.1103_physrevb.98.085437,Electronic properties of a π-conjugated Cairo pentagonal lattice: Dire,2018,vacuum_spacing_ang,,y,,,,?,,2
+20,10.1103_physrevb.98.085437,Electronic properties of a π-conjugated Cairo pentagonal lattice: Dire,2018,basis_size,,n/a,,,,,,2
+21,10.1103_physrevb.98.205425,Single-layer antiferromagnetic semiconductor CoS2 with pentagonal stru,2018,code,,y,,,,?,,2
+21,10.1103_physrevb.98.205425,Single-layer antiferromagnetic semiconductor CoS2 with pentagonal stru,2018,xc_functional,,y,,,,?,,2
+21,10.1103_physrevb.98.205425,Single-layer antiferromagnetic semiconductor CoS2 with pentagonal stru,2018,pseudopotential_type,,y,,,,?,,2
+21,10.1103_physrevb.98.205425,Single-layer antiferromagnetic semiconductor CoS2 with pentagonal stru,2018,k_mesh,,y,,,,?,,2
+21,10.1103_physrevb.98.205425,Single-layer antiferromagnetic semiconductor CoS2 with pentagonal stru,2018,cutoff,,y,,,,?,,2
+21,10.1103_physrevb.98.205425,Single-layer antiferromagnetic semiconductor CoS2 with pentagonal stru,2018,force_threshold_ev_ang,,y,,,,?,,2
+21,10.1103_physrevb.98.205425,Single-layer antiferromagnetic semiconductor CoS2 with pentagonal stru,2018,energy_threshold_ev,,n,,,,,,2
+21,10.1103_physrevb.98.205425,Single-layer antiferromagnetic semiconductor CoS2 with pentagonal stru,2018,vacuum_spacing_ang,,y,,,,?,,2
+21,10.1103_physrevb.98.205425,Single-layer antiferromagnetic semiconductor CoS2 with pentagonal stru,2018,basis_size,,n,,,,,,2
+22,10.1103_physrevlett.116.025501,Two Dimensional Ice from First Principles: Structures and Phase Transi,2016,code,,y,,,,?,,2
+22,10.1103_physrevlett.116.025501,Two Dimensional Ice from First Principles: Structures and Phase Transi,2016,xc_functional,,y,,,,?,,2
+22,10.1103_physrevlett.116.025501,Two Dimensional Ice from First Principles: Structures and Phase Transi,2016,pseudopotential_type,,y,,,,?,,2
+22,10.1103_physrevlett.116.025501,Two Dimensional Ice from First Principles: Structures and Phase Transi,2016,k_mesh,,y,,,,?,,2
+22,10.1103_physrevlett.116.025501,Two Dimensional Ice from First Principles: Structures and Phase Transi,2016,cutoff,,y,,,,?,,2
+22,10.1103_physrevlett.116.025501,Two Dimensional Ice from First Principles: Structures and Phase Transi,2016,force_threshold_ev_ang,,n,,,,,,2
+22,10.1103_physrevlett.116.025501,Two Dimensional Ice from First Principles: Structures and Phase Transi,2016,energy_threshold_ev,,n,,,,,,2
+22,10.1103_physrevlett.116.025501,Two Dimensional Ice from First Principles: Structures and Phase Transi,2016,vacuum_spacing_ang,,y,,,,?,,2
+22,10.1103_physrevlett.116.025501,Two Dimensional Ice from First Principles: Structures and Phase Transi,2016,basis_size,,n/a,,,,,,2
+23,10.1109_ted.2021.3119552,Performance Investigation of p-FETs Based on Highly Air-Stable Monolay,2021,code,,y,,,,?,,2
+23,10.1109_ted.2021.3119552,Performance Investigation of p-FETs Based on Highly Air-Stable Monolay,2021,xc_functional,,y,,,,?,,2
+23,10.1109_ted.2021.3119552,Performance Investigation of p-FETs Based on Highly Air-Stable Monolay,2021,pseudopotential_type,,y,,,,?,,2
+23,10.1109_ted.2021.3119552,Performance Investigation of p-FETs Based on Highly Air-Stable Monolay,2021,k_mesh,,y,,,,?,,2
+23,10.1109_ted.2021.3119552,Performance Investigation of p-FETs Based on Highly Air-Stable Monolay,2021,cutoff,,y,,,,?,,2
+23,10.1109_ted.2021.3119552,Performance Investigation of p-FETs Based on Highly Air-Stable Monolay,2021,force_threshold_ev_ang,,y,,,,?,,2
+23,10.1109_ted.2021.3119552,Performance Investigation of p-FETs Based on Highly Air-Stable Monolay,2021,energy_threshold_ev,,n,,,,,,2
+23,10.1109_ted.2021.3119552,Performance Investigation of p-FETs Based on Highly Air-Stable Monolay,2021,vacuum_spacing_ang,,y,,,,?,,2
+23,10.1109_ted.2021.3119552,Performance Investigation of p-FETs Based on Highly Air-Stable Monolay,2021,basis_size,,y,,,,?,,2
+24,10.1134_s0021364023600283,Bonding Duality and Optoelectronic Properties of Bilayer Carbon Struct,2023,code,,y,,,,?,,2
+24,10.1134_s0021364023600283,Bonding Duality and Optoelectronic Properties of Bilayer Carbon Struct,2023,xc_functional,,y,,,,?,,2
+24,10.1134_s0021364023600283,Bonding Duality and Optoelectronic Properties of Bilayer Carbon Struct,2023,pseudopotential_type,,y,,,,?,,2
+24,10.1134_s0021364023600283,Bonding Duality and Optoelectronic Properties of Bilayer Carbon Struct,2023,k_mesh,,y,,,,?,,2
+24,10.1134_s0021364023600283,Bonding Duality and Optoelectronic Properties of Bilayer Carbon Struct,2023,cutoff,,n,,,,,,2
+24,10.1134_s0021364023600283,Bonding Duality and Optoelectronic Properties of Bilayer Carbon Struct,2023,force_threshold_ev_ang,,y,,,,?,,2
+24,10.1134_s0021364023600283,Bonding Duality and Optoelectronic Properties of Bilayer Carbon Struct,2023,energy_threshold_ev,,y,,,,?,,2
+24,10.1134_s0021364023600283,Bonding Duality and Optoelectronic Properties of Bilayer Carbon Struct,2023,vacuum_spacing_ang,,y,,,,?,,2
+24,10.1134_s0021364023600283,Bonding Duality and Optoelectronic Properties of Bilayer Carbon Struct,2023,basis_size,,n/a,,,,,,2
+25,10.1186_s11671-018-2687-y,First-principles investigation of adsorption behaviors of small molecu,2018,code,,y,,,,?,,2
+25,10.1186_s11671-018-2687-y,First-principles investigation of adsorption behaviors of small molecu,2018,xc_functional,,y,,,,?,,2
+25,10.1186_s11671-018-2687-y,First-principles investigation of adsorption behaviors of small molecu,2018,pseudopotential_type,,n,,,,,,2
+25,10.1186_s11671-018-2687-y,First-principles investigation of adsorption behaviors of small molecu,2018,k_mesh,,y,,,,?,,2
+25,10.1186_s11671-018-2687-y,First-principles investigation of adsorption behaviors of small molecu,2018,cutoff,,n/a,,,,,,2
+25,10.1186_s11671-018-2687-y,First-principles investigation of adsorption behaviors of small molecu,2018,force_threshold_ev_ang,,y,,,,?,,2
+25,10.1186_s11671-018-2687-y,First-principles investigation of adsorption behaviors of small molecu,2018,energy_threshold_ev,,y,,,,?,,2
+25,10.1186_s11671-018-2687-y,First-principles investigation of adsorption behaviors of small molecu,2018,vacuum_spacing_ang,,y,,,,?,,2
+25,10.1186_s11671-018-2687-y,First-principles investigation of adsorption behaviors of small molecu,2018,basis_size,,n,,,,,,2
+26,10.1186_s11671-019-3097-5,First Principles Study of Penta-siligraphene as High-Performance Anode,2019,code,,y,,,,?,,2
+26,10.1186_s11671-019-3097-5,First Principles Study of Penta-siligraphene as High-Performance Anode,2019,xc_functional,,y,,,,?,,2
+26,10.1186_s11671-019-3097-5,First Principles Study of Penta-siligraphene as High-Performance Anode,2019,pseudopotential_type,,y,,,,?,,2
+26,10.1186_s11671-019-3097-5,First Principles Study of Penta-siligraphene as High-Performance Anode,2019,k_mesh,,y,,,,?,,2
+26,10.1186_s11671-019-3097-5,First Principles Study of Penta-siligraphene as High-Performance Anode,2019,cutoff,,y,,,,?,,2
+26,10.1186_s11671-019-3097-5,First Principles Study of Penta-siligraphene as High-Performance Anode,2019,force_threshold_ev_ang,,y,,,,?,,2
+26,10.1186_s11671-019-3097-5,First Principles Study of Penta-siligraphene as High-Performance Anode,2019,energy_threshold_ev,,n,,,,,,2
+26,10.1186_s11671-019-3097-5,First Principles Study of Penta-siligraphene as High-Performance Anode,2019,vacuum_spacing_ang,,n,,,,,,2
+26,10.1186_s11671-019-3097-5,First Principles Study of Penta-siligraphene as High-Performance Anode,2019,basis_size,,n,,,,,,2
+27,10.1186_s11671-019-3142-4,Penta-Graphene as a Potential Gas Sensor for NOx Detection,2019,code,,y,,,,?,,2
+27,10.1186_s11671-019-3142-4,Penta-Graphene as a Potential Gas Sensor for NOx Detection,2019,xc_functional,,y,,,,?,,2
+27,10.1186_s11671-019-3142-4,Penta-Graphene as a Potential Gas Sensor for NOx Detection,2019,pseudopotential_type,,n,,,,,,2
+27,10.1186_s11671-019-3142-4,Penta-Graphene as a Potential Gas Sensor for NOx Detection,2019,k_mesh,,y,,,,?,,2
+27,10.1186_s11671-019-3142-4,Penta-Graphene as a Potential Gas Sensor for NOx Detection,2019,cutoff,,y,,,,?,,2
+27,10.1186_s11671-019-3142-4,Penta-Graphene as a Potential Gas Sensor for NOx Detection,2019,force_threshold_ev_ang,,y,,,,?,,2
+27,10.1186_s11671-019-3142-4,Penta-Graphene as a Potential Gas Sensor for NOx Detection,2019,energy_threshold_ev,,n,,,,,,2
+27,10.1186_s11671-019-3142-4,Penta-Graphene as a Potential Gas Sensor for NOx Detection,2019,vacuum_spacing_ang,,y,,,,?,,2
+27,10.1186_s11671-019-3142-4,Penta-Graphene as a Potential Gas Sensor for NOx Detection,2019,basis_size,,n/a,,,,,,2

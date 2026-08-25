@@ -1,0 +1,254 @@
+{
+  "paper_key": "10.1038_srep31840",
+  "doi": "10.1038/srep31840",
+  "formula": "BN2",
+  "structure_path": null,
+  "claimed_property": "lattice_a",
+  "claimed_value": 3.63,
+  "claimed_unit": "A",
+  "paper_method": {
+    "code": {
+      "reported": true,
+      "value": "vasp",
+      "evidence": "Our first-principles calculations were performed within the framework of density functional theory with a plane wave basis set as implemented in the Vienna ab initio simulation package (VASP)",
+      "confidence": null
+    },
+    "code_version": {
+      "reported": true,
+      "value": "48,49",
+      "evidence": "Our first-principles calculations were performed within the framework of density functional theory with a plane wave basis set as implemented in the Vienna ab initio simulation package (VASP)",
+      "confidence": null
+    },
+    "xc_functional": {
+      "reported": true,
+      "value": "pbe",
+      "evidence": "The exchange and correlation energy was described by the generalized gradient approximation with Perdew, Burke, and Ernzerhof (PBE) parameterization",
+      "confidence": null
+    },
+    "pseudopotential_type": {
+      "reported": true,
+      "value": "paW",
+      "evidence": "The projector augmented-wave (PAW) method was used",
+      "confidence": null
+    },
+    "k_mesh": {
+      "reported": true,
+      "value": "15x15x1",
+      "evidence": "The Monkhorst-Pack k-mesh of 15 ×​ 15 ×​ 1 was applied to sample k points in the first Brillouin zone for integrating electronic properties",
+      "confidence": null
+    },
+    "smearing": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "force_threshold_ev_ang": {
+      "reported": true,
+      "value": 0.02,
+      "evidence": "All the atoms were fully relaxed with force converge up to 0.02 eV/Å",
+      "confidence": null
+    },
+    "energy_threshold_ev": {
+      "reported": true,
+      "value": 0.00001,
+      "evidence": "The calculated total energy was converged to 10−5 eV",
+      "confidence": null
+    },
+    "spin_polarised": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "dispersion_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "plane_wave_cutoff_ev": {
+      "reported": true,
+      "value": 400.0,
+      "evidence": "The cutoff energy for plane-wave basis set was chosen to be 400 eV",
+      "confidence": null
+    },
+    "augmentation_cutoff_ev": {
+      "reported": true,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "mesh_cutoff_ry": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "basis_size": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "pao_energy_shift_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "basis_split_norm": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "vacuum_spacing_ang": {
+      "reported": true,
+      "value": 15.0,
+      "evidence": "The nanostructure of penta-BxNy was placed in xy plane of the supercell with a 15 Å vacuum in z direction",
+      "confidence": null
+    },
+    "dipole_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "thickness_for_gpa_conversion_ang": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "elastic_units_reported": {
+      "reported": true,
+      "value": "N/m",
+      "evidence": "The penta-BN2 has a value of 224 N/m being close to the 271 N/m of h-BN monolayer",
+      "confidence": null
+    }
+  },
+  "stage": "compared",
+  "parameters": {
+    "reasoning": "The paper uses plane-wave DFT with PBE functional, 15x15x1 k-grid, 400 eV plane-wave cutoff, and 15 Å vacuum. SIESTA uses NAO basis. The paper does not specify an NAO basis, so we choose DZP as standard. The plane-wave cutoff has no NAO equivalent, so we choose a mesh cutoff of 300 Ry (200-400 Ry range for light elements). SIESTA cannot reproduce hybrid or meta-GGA functionals, so we use GGA/PBE. The vacuum axis must have exactly 1 division for 2D systems. The paper states a vacuum spacing of 15 Å, so we set vacuum=15.0. The paper does not state smearing, so we use default. The paper does not state basis_split_norm, so we use default. The paper does not state augmentation_cutoff, so we use default. The paper does not state energy_threshold, so we use default. The paper does not state force_threshold, so we use default. The paper does not state dipole_correction, so we use default. The paper does not state dispersion_correction, so we use default. The paper does not state thickness_for_gpa_conversion, so we use default. The paper does not state pao_energy_shift, so we use default. The paper does not state elastic_units, so we use default. The paper does not state spin_polarised, so we use default. The paper does not state code_version, so we use default. The paper does not state code, so we use default.",
+    "unmapped": [
+      "the paper's plane-wave cutoff (400 eV) has no NAO equivalent, so a mesh cutoff of 300 Ry was chosen independently",
+      "the paper's k-mesh (15x15x1) has no direct equivalent in SIESTA's k-grid, so we use 15x15x1 with vacuum=15.0",
+      "the paper's functional (PBE) is a GGA functional, but SIESTA cannot reproduce hybrid or meta-GGA functionals, so we use GGA/PBE",
+      "the paper does not specify an NAO basis, so we assume DZP as standard for production",
+      "the paper does not state a mesh cutoff, so we choose 300 Ry for light elements (200-400 Ry range)"
+    ],
+    "derived_from": [
+      {
+        "setting": "basis",
+        "justification": "the paper does not specify an NAO basis, so we assume DZP as standard for production"
+      },
+      {
+        "setting": "mesh_cutoff_ry",
+        "justification": "the paper does not state a mesh cutoff, so we choose 300 Ry for light elements (200-400 Ry range)"
+      },
+      {
+        "setting": "kgrid",
+        "justification": "the paper states k-mesh 15x15x1, so we use 15x15x1 with vacuum=15.0"
+      },
+      {
+        "setting": "xc",
+        "justification": "the paper states xc_functional: pbe, so we use GGA/PBE"
+      },
+      {
+        "setting": "xc_authors",
+        "justification": "the paper states xc_functional: pbe, so we use GGA/PBE"
+      }
+    ],
+    "basis": "DZP",
+    "mesh_cutoff_ry": 300.0,
+    "kgrid": [
+      15,
+      15,
+      1
+    ],
+    "xc": "GGA",
+    "xc_authors": "PBE"
+  },
+  "steps": [
+    {
+      "iteration": 1,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 300.0,
+        "kgrid": [
+          15,
+          15,
+          1
+        ]
+      },
+      "energy_ev": -1285.929582,
+      "cell": [
+        3.899447,
+        4.125776,
+        18.290498
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": null,
+      "delta_cell_pct": null,
+      "seconds": 287.0,
+      "decision": "increase_mesh: mesh cutoff 300.0 -> 400.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 2,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 400.0,
+        "kgrid": [
+          15,
+          15,
+          1
+        ]
+      },
+      "energy_ev": -1285.929823,
+      "cell": [
+        3.899009,
+        4.125443,
+        18.289759
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": -0.00004016666665999461,
+      "delta_cell_pct": 0.011232361922086348,
+      "seconds": 323.7,
+      "decision": "stop: converged: dE = 0.0 meV/atom, dcell = 0.01% between the last two settings",
+      "error": null
+    }
+  ],
+  "our_value": 3.899009,
+  "verdict": "inconclusive",
+  "rationale": "held at review (symmetry: b/a = 1.058 departs from tetragonal by 5.8%; the relaxation has left the prototype and the comparison may be against a different structure (symmetry check result: consistent: false, note: 'b/a = 1.058 departs from tetragonal by 5.8%'); calibration: Only 2 distinct structures calibrated out of 6 required; calibration not usable (calibration check result: error: 'calibration not usable; verdicts must be INCONCLUSIVE')). Provisional comparison was divergent: difference 7.41% exceeds the stated tolerance (1.00%); our SIESTA recomputation does not reproduce the published value",
+  "failure_class": null,
+  "abandoned_reason": null,
+  "critic_verdict": "hold",
+  "critic_reasoning": "The verification has multiple critical issues that prevent a confident verdict. The symmetry check shows that the b/a ratio (1.058) departs from tetragonal by 5.8%, indicating the relaxation has left the prototype structure. This means the comparison may be against a different material. The calibration check states that only 2 distinct structures were calibrated out of 6 required for a threshold, making the calibration unusable. The convergence check shows the run satisfied the arithmetic convergence test, but the calibration issue is more critical. The units and structure_file checks are not runnable due to missing values. Given these issues, the verdict must be held until these checks are resolved.",
+  "critic_concerns": [
+    {
+      "category": "symmetry",
+      "severity": "blocking",
+      "detail": "b/a = 1.058 departs from tetragonal by 5.8%; the relaxation has left the prototype and the comparison may be against a different structure (symmetry check result: consistent: false, note: 'b/a = 1.058 departs from tetragonal by 5.8%')",
+      "check": "Verify that the relaxation stayed near b/a = 1 for tetragonal structure"
+    },
+    {
+      "category": "calibration",
+      "severity": "blocking",
+      "detail": "Only 2 distinct structures calibrated out of 6 required; calibration not usable (calibration check result: error: 'calibration not usable; verdicts must be INCONCLUSIVE')",
+      "check": "Run additional calibrations to reach at least 6 distinct structures for a threshold"
+    }
+  ],
+  "critic_tools_used": [
+    "check_symmetry",
+    "convergence_status",
+    "calibration_for_structure"
+  ],
+  "provisional_verdict": "divergent",
+  "config_fingerprint": "1df1d9d0bd33",
+  "tolerance_used": 0.01,
+  "total_seconds": 681.9,
+  "n_calculations": 2
+}

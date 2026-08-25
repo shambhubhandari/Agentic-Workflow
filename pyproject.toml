@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "acv"
+version = "0.1.0"
+description = "How good is a 4B open-weights local LLM for agentic DFT workflows? A reproducibility case study"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Shambhu B. Sharma" }]
+keywords = ["dft", "siesta", "reproducibility", "materials-science", "2d-materials",
+            "local-llm", "open-weights", "ollama"]
+
+dependencies = [
+    "requests",
+    "python-dotenv",
+    "pyyaml",                  # configs/ is the source of truth for every tuned value
+    "pydantic>=2",
+    "matplotlib",              # report.plot() only; the rest of the pipeline is text
+]
+
+[project.optional-dependencies]
+# Tier 0.5 — independent cross-reference of extracted claims against public databases.
+# No compute required: for each penta composition we extract, ask whether a computed
+# value already exists elsewhere and at what rate the two agree.
+# Tier 0.5 — cross-reference against public databases. NO extra packages: the OPTIMADE
+# endpoints are plain HTTP and `crossref.py` queries them with `requests`, which keeps a
+# no-compute tier free of a dependency tree. The provider URLs are in configs/tier0.yaml.
+crossref = []
+
+# Tier 1 — universal machine-learned potentials for cheap screening.
+# TRIAGE ONLY. These are trained overwhelmingly on bulk Materials Project data, so their
+# accuracy on pentagonal 2D systems is unestablished. An MLIP disagreeing with a paper
+# most likely means the potential is out of domain, not that the paper is wrong.
+# Never used for a verdict — see plan.md 6.6, epistemic guardrail.
+screen = [
+    "mace-torch",              # MACE-MP foundation potential
+    "chgnet",                  # charge-informed universal potential
+    "matgl",                   # M3GNet
+]
+
+# Tier 2 — first-principles verification.
+# ASE only. AiiDA is deliberately NOT used (docs/plan.md 6.7): execution is
+# executors/local.py calling SIESTA directly under mpirun, and AiiDA's provenance is
+# replaced by hooks/provenance.py. phonopy and pymatgen belong to the parked
+# phonon/elastic work and are not imported by anything here -- declaring them would make
+# `pip install ".[verify]"` pull half a gigabyte for code that does not exist yet.
+verify = ["ase"]
+
+dev = ["pytest", "pytest-cov", "ruff", "mypy"]
+notebooks = ["jupyter", "seaborn", "pandas"]
+
+[project.scripts]
+acv = "acv.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

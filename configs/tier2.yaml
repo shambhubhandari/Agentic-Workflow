@@ -1,0 +1,56 @@
+# =============================================================================
+#                      ********* PIPELINE TIER 2 *********                     
+#                          SIESTA re-execution stage.                          
+# =============================================================================
+
+tolerance: 0.01
+
+# =============================================================================
+#                        ********* CONVERGENCE *********                       
+#                      SIESTA self-consistency tolerances.                     
+# =============================================================================
+convergence:
+  energy_tol_ev_per_atom: 0.005
+  cell_tol_pct: 0.5
+  max_iterations: 6
+  budget_seconds: 14400          # 4 h per claim
+
+  mesh_ladder:  [200, 300, 400, 500, 700, 900]
+  basis_ladder: [SZ, SZP, DZ, DZP, TZP]
+
+# =============================================================================
+#                     ********* TRANSLATOR GATES *********                     
+#                Structural guardrails for the Translator agent.               
+# =============================================================================
+translator_gates:
+  mesh_cutoff_ry: {min: 50, max: 2000, default: 350}
+  k_inplane_max_ratio: 2
+
+# =============================================================================
+#                          ********* TARGETS *********                         
+#                    Campaign scope and formula inclusions.                    
+# =============================================================================
+targets:
+  formulas: null
+
+  require_full_parameters: true
+
+  min_claims_for_consensus: 3
+  max_departure_from_consensus: 0.25
+
+# =============================================================================
+#                        ********* CALIBRATION *********                       
+#                          Reference set constraints.                          
+# =============================================================================
+calibration:
+  max_structures: 20
+  min_distinct_structures: 6
+
+# =============================================================================
+#                          ********* AGENTS *********                          
+#                    Subagent recursion and backoff limits.                    
+# =============================================================================
+agents:
+  critic_max_tool_rounds: 6
+  diagnostician_max_retries: 2
+  diagnostician_tail_lines: 120

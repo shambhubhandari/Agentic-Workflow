@@ -1,0 +1,20 @@
+{
+  "n_points": 4,
+  "n_usable": 4,
+  "distinct_structures": [
+    "CN2",
+    "PdSe2"
+  ],
+  "settings": {
+    "basis": "DZP",
+    "mesh_cutoff_ry": 350.0,
+    "kgrid": [
+      10,
+      10,
+      1
+    ]
+  },
+  "lattice": null,
+  "usable": false,
+  "note": "only 2 distinct pentagonal structure(s) calibrated; 6 required before a threshold is defined. Tier 2 verdicts are INCONCLUSIVE until the reference set is enlarged."
+}

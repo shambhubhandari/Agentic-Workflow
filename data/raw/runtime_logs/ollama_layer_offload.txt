@@ -1,0 +1,462 @@
+# Layer offload during the laptop q4_0 production campaign.
+# Source: ~/.local/ollama/serve-final.log  (3.4 MB, 2026-08-18 08:45, not tracked)
+# Extracted with: grep -E 'n_ctx *=|offloaded [0-9]+/[0-9]+ layers|K \((f16|q8_0|q4_0)\)'
+# sha256 of the source log:
+#   ccfd902bb4afde8c32c42ddd17ae029cc0eb4c6fab697330a755a025716776cc  /home/sam/.local/ollama/serve-final.log
+
+load_tensors: offloaded 28/37 layers to GPU
+llama_context: n_ctx                 = 20480
+llama_kv_cache: size =  810.00 MiB ( 20480 cells,  36 layers,  1/1 seqs), K (q4_0):  405.00 MiB, V (q4_0):  405.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 20480
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 28/37 layers to GPU
+llama_context: n_ctx                 = 20480
+llama_kv_cache: size =  810.00 MiB ( 20480 cells,  36 layers,  1/1 seqs), K (q4_0):  405.00 MiB, V (q4_0):  405.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 20480
+load_tensors: offloaded 23/37 layers to GPU
+llama_context: n_ctx                 = 32768
+llama_kv_cache: size = 1296.00 MiB ( 32768 cells,  36 layers,  1/1 seqs), K (q4_0):  648.00 MiB, V (q4_0):  648.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 32768
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 28/37 layers to GPU
+llama_context: n_ctx                 = 20480
+llama_kv_cache: size =  810.00 MiB ( 20480 cells,  36 layers,  1/1 seqs), K (q4_0):  405.00 MiB, V (q4_0):  405.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 20480
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 28/37 layers to GPU
+llama_context: n_ctx                 = 20480
+llama_kv_cache: size =  810.00 MiB ( 20480 cells,  36 layers,  1/1 seqs), K (q4_0):  405.00 MiB, V (q4_0):  405.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 20480
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 26/37 layers to GPU
+llama_context: n_ctx                 = 24576
+llama_kv_cache: size =  972.00 MiB ( 24576 cells,  36 layers,  1/1 seqs), K (q4_0):  486.00 MiB, V (q4_0):  486.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 24576
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 28/37 layers to GPU
+llama_context: n_ctx                 = 20480
+llama_kv_cache: size =  810.00 MiB ( 20480 cells,  36 layers,  1/1 seqs), K (q4_0):  405.00 MiB, V (q4_0):  405.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 20480
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 24/37 layers to GPU
+llama_context: n_ctx                 = 28672
+llama_kv_cache: size = 1134.00 MiB ( 28672 cells,  36 layers,  1/1 seqs), K (q4_0):  567.00 MiB, V (q4_0):  567.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 28672
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 24/37 layers to GPU
+llama_context: n_ctx                 = 28672
+llama_kv_cache: size = 1134.00 MiB ( 28672 cells,  36 layers,  1/1 seqs), K (q4_0):  567.00 MiB, V (q4_0):  567.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 28672
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 26/37 layers to GPU
+llama_context: n_ctx                 = 24576
+llama_kv_cache: size =  972.00 MiB ( 24576 cells,  36 layers,  1/1 seqs), K (q4_0):  486.00 MiB, V (q4_0):  486.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 24576
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 28/37 layers to GPU
+llama_context: n_ctx                 = 20480
+llama_kv_cache: size =  810.00 MiB ( 20480 cells,  36 layers,  1/1 seqs), K (q4_0):  405.00 MiB, V (q4_0):  405.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 20480
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 28/37 layers to GPU
+llama_context: n_ctx                 = 20480
+llama_kv_cache: size =  810.00 MiB ( 20480 cells,  36 layers,  1/1 seqs), K (q4_0):  405.00 MiB, V (q4_0):  405.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 20480
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 28/37 layers to GPU
+llama_context: n_ctx                 = 20480
+llama_kv_cache: size =  810.00 MiB ( 20480 cells,  36 layers,  1/1 seqs), K (q4_0):  405.00 MiB, V (q4_0):  405.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 20480
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 24/37 layers to GPU
+llama_context: n_ctx                 = 28672
+llama_kv_cache: size = 1134.00 MiB ( 28672 cells,  36 layers,  1/1 seqs), K (q4_0):  567.00 MiB, V (q4_0):  567.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 28672
+load_tensors: offloaded 28/37 layers to GPU
+llama_context: n_ctx                 = 20480
+llama_kv_cache: size =  810.00 MiB ( 20480 cells,  36 layers,  1/1 seqs), K (q4_0):  405.00 MiB, V (q4_0):  405.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 20480
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 28/37 layers to GPU
+llama_context: n_ctx                 = 20480
+llama_kv_cache: size =  810.00 MiB ( 20480 cells,  36 layers,  1/1 seqs), K (q4_0):  405.00 MiB, V (q4_0):  405.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 20480
+load_tensors: offloaded 23/37 layers to GPU
+llama_context: n_ctx                 = 32768
+llama_kv_cache: size = 1296.00 MiB ( 32768 cells,  36 layers,  1/1 seqs), K (q4_0):  648.00 MiB, V (q4_0):  648.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 32768
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 28/37 layers to GPU
+llama_context: n_ctx                 = 20480
+llama_kv_cache: size =  810.00 MiB ( 20480 cells,  36 layers,  1/1 seqs), K (q4_0):  405.00 MiB, V (q4_0):  405.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 20480
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 28/37 layers to GPU
+llama_context: n_ctx                 = 20480
+llama_kv_cache: size =  810.00 MiB ( 20480 cells,  36 layers,  1/1 seqs), K (q4_0):  405.00 MiB, V (q4_0):  405.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 20480
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 26/37 layers to GPU
+llama_context: n_ctx                 = 24576
+llama_kv_cache: size =  972.00 MiB ( 24576 cells,  36 layers,  1/1 seqs), K (q4_0):  486.00 MiB, V (q4_0):  486.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 24576
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 30/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 29/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 27/37 layers to GPU
+llama_context: n_ctx                 = 20480
+llama_kv_cache: size =  810.00 MiB ( 20480 cells,  36 layers,  1/1 seqs), K (q4_0):  405.00 MiB, V (q4_0):  405.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 20480
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 24/37 layers to GPU
+llama_context: n_ctx                 = 28672
+llama_kv_cache: size = 1134.00 MiB ( 28672 cells,  36 layers,  1/1 seqs), K (q4_0):  567.00 MiB, V (q4_0):  567.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 28672
+load_tensors: offloaded 29/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 24/37 layers to GPU
+llama_context: n_ctx                 = 28672
+llama_kv_cache: size = 1134.00 MiB ( 28672 cells,  36 layers,  1/1 seqs), K (q4_0):  567.00 MiB, V (q4_0):  567.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 28672
+load_tensors: offloaded 29/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 29/37 layers to GPU
+llama_context: n_ctx                 = 16384
+llama_kv_cache: size =  648.00 MiB ( 16384 cells,  36 layers,  1/1 seqs), K (q4_0):  324.00 MiB, V (q4_0):  324.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 16384
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 2048
+llama_kv_cache: size =   81.00 MiB (  2048 cells,  36 layers,  1/1 seqs), K (q4_0):   40.50 MiB, V (q4_0):   40.50 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 2048
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 34/37 layers to GPU
+llama_context: n_ctx                 = 8192
+llama_kv_cache: size =  324.00 MiB (  8192 cells,  36 layers,  1/1 seqs), K (q4_0):  162.00 MiB, V (q4_0):  162.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 8192
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 34/37 layers to GPU
+llama_context: n_ctx                 = 8192
+llama_kv_cache: size =  324.00 MiB (  8192 cells,  36 layers,  1/1 seqs), K (q4_0):  162.00 MiB, V (q4_0):  162.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 8192
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 34/37 layers to GPU
+llama_context: n_ctx                 = 8192
+llama_kv_cache: size =  324.00 MiB (  8192 cells,  36 layers,  1/1 seqs), K (q4_0):  162.00 MiB, V (q4_0):  162.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 8192
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 34/37 layers to GPU
+llama_context: n_ctx                 = 8192
+llama_kv_cache: size =  324.00 MiB (  8192 cells,  36 layers,  1/1 seqs), K (q4_0):  162.00 MiB, V (q4_0):  162.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 8192
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 34/37 layers to GPU
+llama_context: n_ctx                 = 8192
+llama_kv_cache: size =  324.00 MiB (  8192 cells,  36 layers,  1/1 seqs), K (q4_0):  162.00 MiB, V (q4_0):  162.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 8192
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 34/37 layers to GPU
+llama_context: n_ctx                 = 8192
+llama_kv_cache: size =  324.00 MiB (  8192 cells,  36 layers,  1/1 seqs), K (q4_0):  162.00 MiB, V (q4_0):  162.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 8192
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 34/37 layers to GPU
+llama_context: n_ctx                 = 8192
+llama_kv_cache: size =  324.00 MiB (  8192 cells,  36 layers,  1/1 seqs), K (q4_0):  162.00 MiB, V (q4_0):  162.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 8192
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 34/37 layers to GPU
+llama_context: n_ctx                 = 8192
+llama_kv_cache: size =  324.00 MiB (  8192 cells,  36 layers,  1/1 seqs), K (q4_0):  162.00 MiB, V (q4_0):  162.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 8192
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 34/37 layers to GPU
+llama_context: n_ctx                 = 8192
+llama_kv_cache: size =  324.00 MiB (  8192 cells,  36 layers,  1/1 seqs), K (q4_0):  162.00 MiB, V (q4_0):  162.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 8192
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 34/37 layers to GPU
+llama_context: n_ctx                 = 8192
+llama_kv_cache: size =  324.00 MiB (  8192 cells,  36 layers,  1/1 seqs), K (q4_0):  162.00 MiB, V (q4_0):  162.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 8192
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 34/37 layers to GPU
+llama_context: n_ctx                 = 8192
+llama_kv_cache: size =  324.00 MiB (  8192 cells,  36 layers,  1/1 seqs), K (q4_0):  162.00 MiB, V (q4_0):  162.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 8192
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 34/37 layers to GPU
+llama_context: n_ctx                 = 8192
+llama_kv_cache: size =  324.00 MiB (  8192 cells,  36 layers,  1/1 seqs), K (q4_0):  162.00 MiB, V (q4_0):  162.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 8192
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096
+load_tensors: offloaded 32/37 layers to GPU
+llama_context: n_ctx                 = 12288
+llama_kv_cache: size =  486.00 MiB ( 12288 cells,  36 layers,  1/1 seqs), K (q4_0):  243.00 MiB, V (q4_0):  243.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 12288
+load_tensors: offloaded 37/37 layers to GPU
+llama_context: n_ctx                 = 4096
+llama_kv_cache: size =  162.00 MiB (  4096 cells,  36 layers,  1/1 seqs), K (q4_0):   81.00 MiB, V (q4_0):   81.00 MiB
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 4096

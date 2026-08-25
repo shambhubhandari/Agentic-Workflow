@@ -1,0 +1,108 @@
+{
+  "n_extraction_records": 69,
+  "n_usable": 54,
+  "n_extracted_ok": 60,
+  "n_excluded_not_pentagonal": 6,
+  "status_breakdown": {
+    "not_computational": 8,
+    "ok": 60,
+    "failed": 1
+  },
+  "codes": {
+    "NOT STATED": 11,
+    "vasp": 29,
+    "castep": 2,
+    "abinit": 2,
+    "quantum_espresso": 5,
+    "siesta": 5
+  },
+  "reproducible_in_principle": 14,
+  "mean_fraction_reported": 0.7109053497942388,
+  "most_often_missing": [
+    [
+      "force_threshold_ev_ang",
+      23
+    ],
+    [
+      "energy_threshold_ev",
+      22
+    ],
+    [
+      "vacuum_spacing_ang",
+      21
+    ],
+    [
+      "pseudopotential_type",
+      15
+    ],
+    [
+      "code",
+      11
+    ],
+    [
+      "k_mesh",
+      9
+    ],
+    [
+      "xc_functional",
+      7
+    ],
+    [
+      "plane_wave_cutoff_ev",
+      7
+    ],
+    [
+      "mesh_cutoff_ry",
+      1
+    ],
+    [
+      "basis_size",
+      1
+    ]
+  ],
+  "elastic_units": {
+    "ElasticUnits.N_PER_M": 9,
+    "ElasticUnits.GPA": 3
+  },
+  "gpa_without_stated_thickness": 0,
+  "validation": {
+    "n_flagged_records": 24,
+    "n_flags": 31,
+    "by_field": {
+      "k_mesh": 5,
+      "xc_functional": 5,
+      "force_threshold_ev_ang": 5,
+      "augmentation_cutoff_ev": 5,
+      "pao_energy_shift_ev": 4,
+      "thickness_for_gpa_conversion_ang": 3,
+      "energy_threshold_ev": 2,
+      "mesh_cutoff_ry": 2
+    }
+  },
+  "k_sampling_style": {
+    "grid": 43,
+    "unparseable": 2
+  },
+  "provenance": {
+    "config_fingerprint": "d42be0976558",
+    "required_fields": {
+      "universal": [
+        "xc_functional",
+        "pseudopotential_type",
+        "k_mesh",
+        "force_threshold_ev_ang",
+        "energy_threshold_ev"
+      ],
+      "twod": [
+        "vacuum_spacing_ang"
+      ],
+      "plane_wave": [
+        "plane_wave_cutoff_ev"
+      ],
+      "nao": [
+        "mesh_cutoff_ry",
+        "basis_size"
+      ]
+    }
+  }
+}

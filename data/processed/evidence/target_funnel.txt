@@ -1,0 +1,26 @@
+prototype resolution: REGISTRY only
+papers reporting every required parameter: 19
+
+paper                                latt  num  resolved             runs?  why not
+----------------------------------------------------------------------------------------------------
+10.1021_acs.jpcc.5b04726                2    2  ['C2Si']             YES    
+10.1038_s41598-023-27563-x              2    0  []                   no     lattice value is None
+10.1038_srep31840                       4    4  ['BN2']              YES    
+10.1038_srep33060                       2    2  ['C', 'PdSe2']       YES    
+10.1103_physrevb.98.085437              2    2  ['NiP2']             YES    
+10.1103_physrevmaterials.2.114003       2    2  ['P2Pt']             YES    
+10.1109_ted.2021.3119552                2    2  ['PdSe2']            YES    
+10.3389_fchem.2022.1061703              4    4  ['C', 'PdSe2', 'PdTe YES    
+10.48550_arxiv.1701.03715               2    2  ['C2Si']             YES    
+10.48550_arxiv.1703.03789               2    2  ['C']                no     consensus filter
+10.48550_arxiv.1703.09071               2    2  ['C', 'PdSe2']       YES    
+10.48550_arxiv.2202.03963               2    2  ['PdSe2']            YES    
+10.48550_arxiv.2210.08267               4    4  []                   no     no prototype
+10.48550_arxiv.2401.05429               2    2  ['C']                no     consensus filter
+10.48550_arxiv.2406.13096               2    2  ['C']                no     consensus filter
+10.48550_arxiv.2503.04035               4    4  ['C']                YES    
+10.48550_arxiv.2507.17247               2    2  ['FeO2']             YES    
+10.48550_arxiv.2510.13107               2    2  []                   no     no prototype
+W7162894181                             3    3  ['Ge', 'Pb', 'Si']   YES    
+
+RUNS: 13 papers, 26 claims, 11 materials -> ['BN2', 'C', 'C2Si', 'FeO2', 'Ge', 'NiP2', 'P2Pt', 'Pb', 'PdSe2', 'PdTe2', 'Si']

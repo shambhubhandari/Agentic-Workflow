@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+title: "How good is a 4B open-weights local LLM for agentic DFT workflows? A reproducibility case study"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: Sharma
+    given-names: Shambhu B.
+license: MIT
+# Data under data/ is CC-BY-4.0; see LICENSE-DATA.
+repository-code: "https://github.com/shambhubhandari/Agentic-Workflow"
+abstract: >-
+  ACV reads published computational papers on pentagonal two-dimensional materials,
+  extracts the claimed result together with the method used to produce it, and re-runs
+  what can be re-run in SIESTA. An agentic layer translates each paper's stated method
+  into SIESTA settings, drives the convergence loop, diagnoses failures, and reviews a
+  finished calculation before a verdict is written. Verdicts describe the recomputation
+  rather than the paper: there is deliberately no outcome meaning "verified" or "refuted".
+keywords:
+  - reproducibility
+  - density functional theory
+  - SIESTA
+  - two-dimensional materials
+  - pentagonal monolayers
+  - LLM agents

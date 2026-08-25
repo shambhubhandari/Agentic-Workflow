@@ -1,0 +1,60 @@
+# =============================================================================
+#                          ********* CORPUS *********                          
+#                    Data source constraints and parameters.                   
+# =============================================================================
+search:
+  seed_terms:
+    - penta-graphene
+    - penta-monolayer
+    - pentagonal monolayer
+    - pentagonal nanosheet
+    - pentagonal lattice
+    - pentagonal two-dimensional
+    - Cairo pentagonal
+    - Cairo tiling
+    - Cairo lattice
+    - penta-SiC2
+    - penta-CN2
+    - penta-BN2
+    - penta-BCN
+    - penta-SiCN
+    - penta-PdSe2
+    - penta-NiN2
+
+  from_year: null                 # null = no lower bound; the corpus spans 2013-2026
+  require_computational: true     # abstract must show first-principles hints
+
+  max_papers: null
+
+  polite_pool_mailto: acv-research@ucl.ac.uk   # not a secret; buys faster OpenAlex service
+  max_retry_wait_s: 120
+
+# =============================================================================
+#                           ********* FETCH *********                          
+#                  Document retrieval and latency parameters.                  
+# =============================================================================
+fetch:
+  limit: null                  # how many papers to download. null = all retrievable
+
+  arxiv_delay_s: 3.0
+  oa_delay_s: 1.0
+
+# =============================================================================
+#                     ********* CORPUS ACCEPTANCE *********                    
+#                      Document validity and text bounds.                      
+# =============================================================================
+  min_useful_chars: 2000          # below this an LLM call is not worth making
+  min_body_chars: 12000           # a landing page or abstract stub is not an article
+  min_article_markers: 4          # "et al", "figure", ... — is this prose or a stub?
+  min_method_markers: 3           # does it describe a calculation at all?
+
+# =============================================================================
+#                          ********* EXTRACT *********                         
+#                 Extraction redundancy and length guardrails.                 
+# =============================================================================
+extract:
+  limit: null                  # how many papers to extract. null = all with cached text
+
+  passes: 3
+
+  max_chars: 120000

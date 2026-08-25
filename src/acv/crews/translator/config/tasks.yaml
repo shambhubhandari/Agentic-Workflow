@@ -1,0 +1,35 @@
+version: 1
+
+translate_method:
+  description: >
+    You are translating a published DFT calculation into equivalent SIESTA settings.
+
+    SIESTA uses a numerical atomic-orbital (NAO) basis, not plane waves. Some plane-wave
+    parameters have NO direct equivalent, and you must say so rather than invent a mapping.
+
+    1. `xc` / `xc_authors`: map the functional directly. PBE -> GGA/PBE, PBEsol ->
+       GGA/PBEsol, LDA -> LDA/CA. If the paper used a hybrid (HSE06, PBE0) or meta-GGA
+       (SCAN), SIESTA cannot reproduce it in a standard run: use GGA/PBE and record the
+       original in `unmapped`.
+
+    2. `kgrid`: use the paper's k-mesh if stated. For a 2D system the vacuum axis MUST
+       have exactly 1 division. If the paper gives a k-spacing rather than a grid,
+       estimate a grid and record how in `derived_from`.
+
+    3. `mesh_cutoff_ry`: SIESTA's real-space grid, NOT the plane-wave cutoff, and not
+       convertible from it. Choose 200-400 Ry for light elements, higher for first-row or
+       hard pseudopotentials, and record in `unmapped` that the plane-wave cutoff has no
+       NAO equivalent.
+
+    4. `basis`: SZ, SZP, DZ, DZP or TZP. Papers almost never state an NAO basis because
+       they used plane waves. DZP is the standard production choice; record the assumption.
+
+    5. `unmapped`: every parameter the paper stated that you could not map, and every
+       parameter you needed that the paper did not state. Be exhaustive — this list is a
+       result in its own right.
+
+    6. `reasoning`: brief, written before the values.
+  expected_output: >
+    A SiestaParameters object. Every field must be decided explicitly; none may be left
+    to a default.
+  agent: translator

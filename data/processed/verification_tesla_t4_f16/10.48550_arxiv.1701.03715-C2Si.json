@@ -1,0 +1,258 @@
+{
+  "paper_key": "10.48550_arxiv.1701.03715",
+  "doi": "10.48550/arxiv.1701.03715",
+  "formula": "C2Si",
+  "structure_path": null,
+  "claimed_property": "lattice_a",
+  "claimed_value": 4.41,
+  "claimed_unit": "A",
+  "paper_method": {
+    "code": {
+      "reported": true,
+      "value": "vasp",
+      "evidence": "The calculations are performed using the Vienna ab-initio simulation package (VASP)",
+      "confidence": null
+    },
+    "code_version": {
+      "reported": true,
+      "value": "not specified",
+      "evidence": "The calculations are performed using the Vienna ab-initio simulation package (VASP)",
+      "confidence": null
+    },
+    "xc_functional": {
+      "reported": true,
+      "value": "PBE",
+      "evidence": "The exchange-correlation energy is described by the generalized gradient approximation (GGA) using the Perdew-Burke-Ernzerhof (PBE) functional.",
+      "confidence": null
+    },
+    "pseudopotential_type": {
+      "reported": true,
+      "value": "projector-augmented-wave",
+      "evidence": "The calculationa are carried out by using the projector-augmented-wave pseudo potential method",
+      "confidence": null
+    },
+    "k_mesh": {
+      "reported": true,
+      "value": "13×13×1 for geometry optimization and 21×21×1 for self-consistent electronic structure calculations",
+      "evidence": "The Monkhorst-Pack scheme is performed for the Brillouin zone integration with k-point meshes of 13×13×1 and 21×21×1 for geometry optimization and self-consistent electronic structure calculations, respectively.",
+      "confidence": null
+    },
+    "smearing": {
+      "reported": false,
+      "value": null,
+      "evidence": "not reported",
+      "confidence": null
+    },
+    "force_threshold_ev_ang": {
+      "reported": true,
+      "value": 0.001,
+      "evidence": "the maximum Hellmann-Feynman force acting on each atom is 10−3 eV/Å",
+      "confidence": null
+    },
+    "energy_threshold_ev": {
+      "reported": true,
+      "value": 0.00001,
+      "evidence": "the energy convergence value between two consecutive steps is chosen as 10−5 eV",
+      "confidence": null
+    },
+    "spin_polarised": {
+      "reported": false,
+      "value": null,
+      "evidence": "not reported",
+      "confidence": null
+    },
+    "dispersion_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": "not reported",
+      "confidence": null
+    },
+    "plane_wave_cutoff_ev": {
+      "reported": true,
+      "value": 500.0,
+      "evidence": "a plane wave basis set with a kinetic energy cutoﬀof 500 eV",
+      "confidence": null
+    },
+    "augmentation_cutoff_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": "not reported",
+      "confidence": null
+    },
+    "mesh_cutoff_ry": {
+      "reported": false,
+      "value": null,
+      "evidence": "not reported",
+      "confidence": null
+    },
+    "basis_size": {
+      "reported": false,
+      "value": null,
+      "evidence": "not reported",
+      "confidence": null
+    },
+    "pao_energy_shift_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": "not reported",
+      "confidence": null
+    },
+    "basis_split_norm": {
+      "reported": false,
+      "value": null,
+      "evidence": "not reported",
+      "confidence": null
+    },
+    "vacuum_spacing_ang": {
+      "reported": true,
+      "value": 15.0,
+      "evidence": "To avoid artiﬁcial interaction between atom layers, the separation between the layers is set to be 15 Å for monolayer penta-SiC2.",
+      "confidence": null
+    },
+    "dipole_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": "not reported",
+      "confidence": null
+    },
+    "thickness_for_gpa_conversion_ang": {
+      "reported": false,
+      "value": null,
+      "evidence": "not reported",
+      "confidence": null
+    },
+    "elastic_units_reported": {
+      "reported": true,
+      "value": "N/m",
+      "evidence": "The calculated in-plane elastic constant C2D_11 = C2D_22 =140 N/m for penta-SiC2",
+      "confidence": null
+    }
+  },
+  "stage": "compared",
+  "parameters": {
+    "reasoning": "The paper uses VASP with a plane-wave basis set (500 eV cutoff) and PBE functional. SIESTA uses NAO basis, so plane-wave cutoff has no equivalent. The paper states a 2D monolayer with vacuum spacing of 15 Å, so the vacuum axis must have exactly 1 k-point. The paper specifies k-meshes (13×13×1 for geometry optimization, 21×21×1 for electronic structure), so kgrid will be set to 21 for electronic structure. Basis size: DZP is standard for production. Mesh cutoff: 300 Ry chosen for light elements (C2Si) as a safe value. XC functional: PBE maps to GGA/PBE. Unmapped parameters: plane-wave cutoff (no NAO equivalent), augmentation_cutoff_ev (not reported), basis_size (not reported), etc.",
+    "unmapped": [
+      "the paper's plane-wave cutoff (500 eV) has no NAO equivalent, so a mesh cutoff of 300 Ry was chosen independently",
+      "the paper does not report augmentation_cutoff_ev, which is required for pseudopotentials in SIESTA",
+      "the paper does not report basis_size, which is required for NAO basis construction",
+      "the paper does not report basis_split_norm, which is required for NAO basis construction",
+      "the paper does not report pao_energy_shift_ev, which is required for NAO basis construction",
+      "the paper does not report elastic_units_reported (140 N/m) as SIESTA does not handle elastic constants directly",
+      "the paper does not report thickness_for_gpa_conversion_ang, which is required for converting elastic constants to GPa",
+      "the paper does not report dipole_correction, which is required for dipole moment calculations",
+      "the paper does not report dispersion_correction, which is required for dispersion interactions",
+      "the paper does not report smearing, which is required for electronic structure calculations",
+      "the paper does not report spin_polarised, which is required for spin-polarized calculations",
+      "the paper does not report energy_threshold_ev (1e-05 eV) as SIESTA uses its own convergence criteria",
+      "the paper does not report force_threshold_ev_ang (0.001 eV/Å) as SIESTA uses its own force thresholds"
+    ],
+    "derived_from": [
+      {
+        "setting": "basis",
+        "justification": "the paper does not report basis_size, but DZP is the standard production choice for light elements (C2Si)"
+      },
+      {
+        "setting": "mesh_cutoff_ry",
+        "justification": "the paper does not report mesh_cutoff_ry, but 300 Ry is chosen for light elements (C2Si) as a safe value"
+      },
+      {
+        "setting": "kgrid",
+        "justification": "the paper states k-meshes of 21×21×1 for self-consistent electronic structure calculations"
+      },
+      {
+        "setting": "xc",
+        "justification": "the paper states xc_functional: PBE"
+      },
+      {
+        "setting": "xc_authors",
+        "justification": "the paper states xc_functional: PBE"
+      }
+    ],
+    "basis": "DZP",
+    "mesh_cutoff_ry": 300.0,
+    "kgrid": [
+      21,
+      21,
+      1
+    ],
+    "xc": "GGA",
+    "xc_authors": "PBE"
+  },
+  "steps": [
+    {
+      "iteration": 1,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 300.0,
+        "kgrid": [
+          21,
+          21,
+          1
+        ]
+      },
+      "energy_ev": -878.869941,
+      "cell": [
+        4.718028,
+        4.715508,
+        18.725518
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": null,
+      "delta_cell_pct": null,
+      "seconds": 391.1,
+      "decision": "increase_mesh: mesh cutoff 300.0 -> 400.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 2,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 400.0,
+        "kgrid": [
+          21,
+          21,
+          1
+        ]
+      },
+      "energy_ev": -878.870077,
+      "cell": [
+        4.71809,
+        4.715408,
+        18.725972
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": -0.000022666666666282254,
+      "delta_cell_pct": 0.0021206622913112847,
+      "seconds": 478.3,
+      "decision": "stop: converged: dE = 0.0 meV/atom, dcell = 0.00% between the last two settings",
+      "error": null
+    }
+  ],
+  "our_value": 4.715408,
+  "our_a": 4.715408,
+  "our_b": 4.71809,
+  "verdict": "inconclusive",
+  "rationale": "calibration insufficient (2 distinct structure(s) calibrated of 6 required (CN2, PdSe2)); a threshold comparison is not defined. Provisional comparison was divergent: difference 6.93% exceeds the stated tolerance (1.00%); our SIESTA recomputation does not reproduce the published value",
+  "failure_class": null,
+  "abandoned_reason": null,
+  "critic_verdict": "pass",
+  "critic_reasoning": "The verification is sound for the claim about lattice_a. The symmetry check shows the cell retains tetragonal symmetry with b/a = 1.0006, consistent with the prototype. The convergence check confirms the run satisfied the arithmetic convergence test with delta_energy_mev_per_atom = 0.02 and delta_cell_pct = 0.002, both below the tolerances (5.0 and 0.5). The units check is not applicable here since the claim is about lattice_a in Angstroms, and the paper claim specifies unit 'A'. The literature_claims show that the paper reports lattice_a = 4.41 A for C2Si (written as SiC2), which matches the material formula. The difference in lattice_a (4.7154 vs 4.41) is physically plausible and not suspiciously close to a factor of 2 or unit conversion. The n_calculations = 2 and convergence history show the run converged properly. There are no concerns that would block the verdict.",
+  "critic_concerns": [
+    {
+      "category": "units",
+      "severity": "warning",
+      "detail": "The units check is not runnable because the state has no value to check. However, the paper claim specifies unit 'A' for lattice_a, and the result is in Angstroms (a=4.7154, b=4.7181), so the units are consistent. This is not a blocking concern as the claim specifies the unit and the result matches the expected unit system (SI units for lattice parameters).",
+      "check": "Verify that the paper claim specifies the unit for lattice_a and that the result is in the same unit (Angstroms)."
+    }
+  ],
+  "critic_tools_used": [
+    "check_symmetry",
+    "convergence_status",
+    "literature_claims"
+  ],
+  "provisional_verdict": null,
+  "config_fingerprint": "d42be0976558",
+  "tolerance_used": 0.01,
+  "total_seconds": 919.7,
+  "n_calculations": 2
+}

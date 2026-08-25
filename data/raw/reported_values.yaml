@@ -1,0 +1,476 @@
+# Values reported in the manuscript, with provenance and a recompute function.
+#
+# population: which set the value is computed over. These are NOT interchangeable:
+#   expert-labels    25 hand-labelled papers, 201 judgements — every accuracy figure
+#   audited-corpus   the pipeline's own output: 69 retrieved, 62 extracted, 57 audited
+#   hardware-logs    inference-server behaviour, from the shipped log excerpt
+#   tier2-targets    the 16 axis-matched lattice comparisons
+#
+# Authored input, immutable: this is the record of what the paper states. Verification
+# results are written to data/processed/verification_report.json.
+#
+# disposition:
+#   promote   recomputed from shipped artefacts by `verify:`
+#   pinned    not recomputable from data; `evidence:` names a log excerpt, file:line
+#   external  third-party value, cited not recomputed
+#
+# `note:` records how the population was defined, which is where these numbers actually
+# go wrong. A tolerance of 0.05 accepts the rounding the manuscript prints.
+
+# ---------------------------------------------------------------- extraction accuracy
+- id: extraction.precision
+  population: expert-labels
+  macro: PctPrecision
+  value: 95.7
+  tolerance: 0.05
+  unit: percent
+  section: "abstract; 3.3; Table 3"
+  disposition: promote
+  artefacts: [data/interim/labels_expert_merged.csv,
+              data/interim/extraction/rtx3050_q4_0/union_gated.jsonl]
+  verify: acv.verification.values:precision_presence
+  note: >
+    Positive class is "reported". Rows marked n/a carry no decision and are skipped,
+    which excludes the two abstract-only stub papers entirely.
+
+- id: extraction.recall
+  population: expert-labels
+  macro: PctRecall
+  value: 67.3
+  tolerance: 0.05
+  unit: percent
+  section: "abstract; 3.3; Table 3"
+  disposition: promote
+  artefacts: [data/interim/labels_expert_merged.csv,
+              data/interim/extraction/rtx3050_q4_0/union_gated.jsonl]
+  verify: acv.verification.values:recall_presence
+
+- id: extraction.f1
+  population: expert-labels
+  macro: PctFone
+  value: 79.0
+  tolerance: 0.05
+  unit: percent
+  section: "3.3; Table 3"
+  disposition: promote
+  artefacts: [data/interim/labels_expert_merged.csv,
+              data/interim/extraction/rtx3050_q4_0/union_gated.jsonl]
+  verify: acv.verification.values:f1_presence
+
+- id: extraction.recall_ci_low
+  population: expert-labels
+  macro: PctRecallLo
+  value: 59.8
+  tolerance: 0.05
+  unit: percent
+  section: "abstract; 3.3"
+  disposition: promote
+  artefacts: [data/interim/labels_expert_merged.csv,
+              data/interim/extraction/rtx3050_q4_0/union_gated.jsonl]
+  verify: acv.verification.values:recall_ci_low
+  note: Wilson interval; the normal approximation is unsafe at this sample size.
+
+- id: extraction.recall_ci_high
+  population: expert-labels
+  macro: PctRecallHi
+  value: 74.0
+  tolerance: 0.05
+  unit: percent
+  section: "abstract; 3.3"
+  disposition: promote
+  artefacts: [data/interim/labels_expert_merged.csv,
+              data/interim/extraction/rtx3050_q4_0/union_gated.jsonl]
+  verify: acv.verification.values:recall_ci_high
+
+- id: extraction.false_positives
+  population: expert-labels
+  value: 5
+  section: "3.3; 4"
+  disposition: promote
+  artefacts: [data/interim/labels_expert_merged.csv,
+              data/interim/extraction/rtx3050_q4_0/union_gated.jsonl]
+  verify: acv.verification.values:false_positives
+  note: "Localised to pseudopotential_type 2, energy_threshold_ev 2, k_mesh 1."
+
+- id: extraction.recall_eight_fields
+  population: expert-labels
+  macro: PctRecallEight
+  value: 69.8
+  tolerance: 0.05
+  unit: percent
+  section: "3.3"
+  disposition: promote
+  artefacts: [data/interim/labels_expert_merged.csv,
+              data/interim/extraction/rtx3050_q4_0/union_gated.jsonl]
+  verify: acv.verification.values:recall_eight_fields
+  note: >
+    Excludes basis_size, which applies only to numerical-orbital codes and is n/a for
+    every plane-wave paper.
+
+- id: extraction.basis_size_positives
+  population: expert-labels
+  value: 6
+  section: "3.3"
+  disposition: promote
+  artefacts: [data/interim/labels_expert_merged.csv,
+              data/interim/extraction/rtx3050_q4_0/union_gated.jsonl]
+  verify: acv.verification.values:basis_size_positives
+  note: None of the six was recovered; the extractor never reports basis size.
+
+# ------------------------------------------------------------------- the label set
+- id: labels.papers
+  population: expert-labels
+  macro: NlabelPapers
+  value: 25
+  section: "abstract; 2.3; 3.3"
+  disposition: promote
+  artefacts: [data/interim/labels_expert_merged.csv]
+  verify: acv.verification.values:papers_labelled
+  note: Of 27 labelled, two are abstract-only stubs contributing no scorable judgement.
+
+- id: labels.judgements
+  population: expert-labels
+  macro: NlabelJudgements
+  value: 201
+  section: "abstract; 3.3; Table 3"
+  disposition: promote
+  artefacts: [data/interim/labels_expert_merged.csv,
+              data/interim/extraction/rtx3050_q4_0/union_gated.jsonl]
+  verify: acv.verification.values:judgements_scored
+
+# --------------------------------------------------- per-configuration comparison
+- id: configuration.rtx3050_q4_0.mcc
+  population: expert-labels
+  macro: EvalRtxMcc
+  value: 0.414
+  tolerance: 0.0005
+  section: "abstract; 3.2; Table 3"
+  disposition: promote
+  artefacts: [data/interim/labels_expert_merged.csv,
+              data/interim/extraction/rtx3050_q4_0/union_gated.jsonl]
+  verify: acv.verification.values:rtx_mcc
+
+- id: configuration.tesla_t4_q4_0.mcc
+  population: expert-labels
+  macro: EvalTfourMcc
+  value: 0.530
+  tolerance: 0.0005
+  section: "abstract; 3.2; Table 3"
+  disposition: promote
+  artefacts: [data/interim/labels_expert_merged.csv,
+              data/interim/extraction/tesla_t4_q4_0/union_gated.jsonl]
+  verify: acv.verification.values:t4_q4_mcc
+  note: >
+    Same cache precision as the 4 GiB card; the difference is full GPU residency, which
+    is the larger of the two effects reported.
+
+- id: configuration.tesla_t4_f16.mcc
+  population: expert-labels
+  macro: EvalFfsixteenMcc
+  value: 0.560
+  tolerance: 0.0005
+  section: "abstract; 3.2; Table 3"
+  disposition: promote
+  artefacts: [data/interim/labels_expert_merged.csv,
+              data/interim/extraction/tesla_t4_f16/union_gated.jsonl]
+  verify: acv.verification.values:t4_f16_mcc
+
+- id: configuration.tesla_t4_f16.precision
+  population: expert-labels
+  macro: EvalFfsixteenPresP
+  value: 99.2
+  tolerance: 0.05
+  unit: percent
+  section: "3.2; Table 3"
+  disposition: promote
+  artefacts: [data/interim/labels_expert_merged.csv,
+              data/interim/extraction/tesla_t4_f16/union_gated.jsonl]
+  verify: acv.verification.values:t4_f16_precision
+
+- id: configuration.tesla_t4_q4_0.recall
+  population: expert-labels
+  macro: EvalTfourPresR
+  value: 78.8
+  tolerance: 0.05
+  unit: percent
+  section: "3.2; Table 3"
+  disposition: promote
+  artefacts: [data/interim/labels_expert_merged.csv,
+              data/interim/extraction/tesla_t4_q4_0/union_gated.jsonl]
+  verify: acv.verification.values:t4_q4_recall
+
+# ------------------------------------------------------------- metric orientation
+- id: orientation.absence_precision_bound
+  population: expert-labels
+  macro: EvalTfourAbsP
+  value: 47.0
+  tolerance: 0.05
+  unit: percent
+  section: "abstract; 3.3"
+  disposition: promote
+  artefacts: [data/interim/labels_expert_merged.csv,
+              data/interim/extraction/tesla_t4_q4_0/union_gated.jsonl]
+  verify: acv.verification.values:precision_absence_best
+  note: >
+    Best across configurations. Bounds every non-reporting rate in the paper: most
+    parameters flagged absent are present in the source and merely unrecovered.
+
+- id: orientation.constant_baseline_f1
+  population: expert-labels
+  macro: EvalBaselineF
+  value: 90.2
+  tolerance: 0.05
+  unit: percent
+  section: "3.3; Table 3 caption"
+  disposition: promote
+  artefacts: [data/interim/labels_expert_merged.csv]
+  verify: acv.verification.values:constant_baseline_f1
+  note: >
+    Presence-F1 of always answering "reported". Exceeds every real configuration, which
+    is why presence-F1 cannot be the headline and MCC is reported alongside.
+
+# --------------------------------------------------- hardware behaviour, from logs
+- id: hardware.model_loads
+  population: hardware-logs
+  value: 114
+  section: "3.2"
+  disposition: promote
+  artefacts: [data/raw/runtime_logs/ollama_layer_offload.txt]
+  verify: acv.verification.evidence:model_loads
+  note: >
+    Server-side model loads during the campaign, pinned to log excerpt.
+
+- id: hardware.layers_resident_min
+  population: hardware-logs
+  value: 23
+  section: "2.1; 3.2"
+  disposition: promote
+  artefacts: [data/raw/runtime_logs/ollama_layer_offload.txt]
+  verify: acv.verification.evidence:layers_resident_min
+  note: >
+    The split varied between loads at the same context size, which is why successive
+    passes evaluated the same prompt through different mixtures of CUDA and CPU kernels.
+
+- id: hardware.layers_resident_max
+  population: hardware-logs
+  value: 37
+  section: "2.1; 3.2"
+  disposition: promote
+  artefacts: [data/raw/runtime_logs/ollama_layer_offload.txt]
+  verify: acv.verification.evidence:layers_resident_max
+
+# ------------------------------------------------------- pass-to-pass stability
+- id: stability.field_agreement_min
+  population: audited-corpus
+  value: 93.2
+  tolerance: 0.05
+  unit: percent
+  section: "3.2"
+  disposition: promote
+  artefacts: [data/interim/extraction/rtx3050_q4_0/pass_a.jsonl,
+              data/interim/extraction/rtx3050_q4_0/pass_b.jsonl,
+              data/interim/extraction/rtx3050_q4_0/pass_c.jsonl]
+  verify: acv.verification.evidence:pass_stability_min
+  note: Lowest agreement across the three pairs of passes on identical hardware.
+
+- id: stability.field_agreement_max
+  population: audited-corpus
+  value: 97.5
+  tolerance: 0.05
+  unit: percent
+  section: "3.2"
+  disposition: promote
+  artefacts: [data/interim/extraction/rtx3050_q4_0/pass_a.jsonl,
+              data/interim/extraction/rtx3050_q4_0/pass_b.jsonl,
+              data/interim/extraction/rtx3050_q4_0/pass_c.jsonl]
+  verify: acv.verification.evidence:pass_stability_max
+
+- id: stability.papers_differing_max
+  population: audited-corpus
+  value: 24
+  section: "3.2"
+  disposition: promote
+  artefacts: [data/interim/extraction/rtx3050_q4_0/pass_a.jsonl,
+              data/interim/extraction/rtx3050_q4_0/pass_b.jsonl,
+              data/interim/extraction/rtx3050_q4_0/pass_c.jsonl]
+  verify: acv.verification.evidence:papers_differing_max
+  note: Upper end of the 11-to-24 range the manuscript quotes.
+
+# ----------------------------------------------------------------------- external
+# ------------------------------------------------------------ Tier 2 recomputation
+- id: recomputation.comparisons
+  population: tier2-targets
+  macro: NclaimsTierTwo
+  value: 16
+  section: "3.5; Figure 5"
+  disposition: promote
+  artefacts: [data/processed/parity_points.jsonl]
+  verify: acv.verification.values:parity_comparisons
+  note: >
+    Axis-matched comparisons distilled from the SIESTA runs, which are ~77 MB of
+    regenerable scratch and are not redistributed.
+
+- id: recomputation.mae
+  population: tier2-targets
+  macro: MAEDeviation
+  value: 0.197
+  tolerance: 0.0005
+  unit: angstrom
+  section: "abstract; 3.5; Figure 5"
+  disposition: promote
+  artefacts: [data/processed/parity_points.jsonl]
+  verify: acv.verification.values:parity_mae
+
+- id: recomputation.mare
+  population: tier2-targets
+  macro: MAREDeviation
+  value: 4.5
+  tolerance: 0.05
+  unit: percent
+  section: "abstract; 3.5; Figure 5"
+  disposition: promote
+  artefacts: [data/processed/parity_points.jsonl]
+  verify: acv.verification.values:parity_mare
+
+# ------------------------------------------------- memory footprint, from the engine
+- id: hardware.min_vram_q4_cache
+  population: hardware-logs
+  value: 3.61
+  tolerance: 0.005
+  unit: gibibyte
+  section: "3.2; Table 2"
+  disposition: pinned
+  evidence: data/processed/evidence/memory_time_frontier.txt
+  note: >
+    Weight buffer plus KV cache at the corpus's widest window (28,672 tokens) plus the
+    compute buffer, from the inference engine's own allocation. Not derivable from any
+    analysis artefact; scripts/evidence/frontier.py rebuilds the table.
+
+- id: hardware.min_vram_f16_cache
+  population: hardware-logs
+  value: 6.44
+  tolerance: 0.005
+  unit: gibibyte
+  section: "3.2; Table 2"
+  disposition: pinned
+  evidence: data/processed/evidence/memory_time_frontier.txt
+
+# ------------------------------------------------------------------ retrieval funnel
+- id: corpus.records
+  population: audited-corpus
+  value: 298
+  macro: Ncorpus
+  section: "3.1"
+  disposition: promote
+  artefacts: [data/raw/corpus/corpus_298_locked.jsonl]
+  verify: acv.verification.corpus:corpus_records
+
+- id: corpus.open_access
+  population: audited-corpus
+  value: 135
+  macro: Noa
+  section: "3.1"
+  disposition: promote
+  artefacts: [data/raw/corpus/corpus_298_locked.jsonl]
+  verify: acv.verification.corpus:open_access_records
+
+- id: corpus.fulltext_retrieved
+  population: audited-corpus
+  value: 69
+  macro: Nfulltext
+  section: "3.1"
+  disposition: promote
+  artefacts: [data/raw/fulltext_manifest.tsv]
+  verify: acv.verification.corpus:fulltext_retrieved
+  note: Counted from the manifest; the article text itself is not redistributed.
+
+- id: corpus.extracted
+  population: audited-corpus
+  value: 62
+  macro: Nextractedok
+  section: "3.1"
+  disposition: promote
+  artefacts: [data/processed/reportability.jsonl]
+  verify: acv.verification.corpus:papers_extracted
+
+- id: corpus.excluded_not_pentagonal
+  population: audited-corpus
+  value: 5
+  macro: Nexcludednotpenta
+  section: "3.1"
+  disposition: promote
+  artefacts: [data/processed/reportability.jsonl,
+              data/interim/extraction/rtx3050_q4_0/union_gated.jsonl]
+  verify: acv.verification.corpus:papers_excluded_not_pentagonal
+  note: >
+    Excluded records carrying is_pentagonal_2d=False from the audited population (62 - 5 = 57).
+
+- id: corpus.audited
+  population: audited-corpus
+  value: 57
+  macro: Naudited
+  section: "abstract; 3.1"
+  disposition: promote
+  artefacts: [data/processed/extraction_summary.json]
+  verify: acv.verification.corpus:papers_audited
+
+- id: reporting.fully_reporting
+  population: audited-corpus
+  value: 19
+  macro: Nreproducible
+  section: "abstract; 3.3"
+  disposition: promote
+  artefacts: [data/processed/extraction_summary.json]
+  verify: acv.verification.corpus:papers_fully_reporting
+
+- id: reporting.mean_rate
+  population: audited-corpus
+  value: 68.3
+  tolerance: 0.05
+  unit: percent
+  macro: PctMeanReported
+  section: "3.3"
+  disposition: promote
+  artefacts: [data/processed/extraction_summary.json]
+  verify: acv.verification.corpus:mean_reporting_rate
+
+- id: reporting.preprint_papers
+  population: audited-corpus
+  value: 17
+  section: "3.1"
+  disposition: promote
+  artefacts: [data/processed/reportability.jsonl,
+              data/interim/extraction/rtx3050_q4_0/union_gated.jsonl]
+  verify: acv.verification.corpus:preprint_papers
+
+- id: reporting.preprint_complete
+  population: audited-corpus
+  value: 10
+  section: "3.1"
+  disposition: promote
+  artefacts: [data/processed/reportability.jsonl,
+              data/interim/extraction/rtx3050_q4_0/union_gated.jsonl]
+  verify: acv.verification.corpus:preprint_fully_reporting
+
+- id: reporting.publisher_complete
+  population: audited-corpus
+  value: 9
+  section: "3.1"
+  disposition: promote
+  artefacts: [data/processed/reportability.jsonl,
+              data/interim/extraction/rtx3050_q4_0/union_gated.jsonl]
+  verify: acv.verification.corpus:publisher_fully_reporting
+
+- id: reporting.preprint_gap_fisher
+  population: audited-corpus
+  value: 0.013
+  tolerance: 0.0005
+  section: "3.1"
+  disposition: promote
+  artefacts: [data/processed/reportability.jsonl,
+              data/interim/extraction/rtx3050_q4_0/union_gated.jsonl]
+  verify: acv.verification.corpus:preprint_publisher_fisher
+  note: >
+    Two-sided Fisher exact on 10/17 against 9/40. The population is the audited 57, not
+    the 62 extracted; splitting before the non-pentagonal exclusions gives 9/42 and
+    p = 0.012.

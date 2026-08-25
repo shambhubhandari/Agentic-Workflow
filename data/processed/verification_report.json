@@ -1,0 +1,322 @@
+[
+  {
+    "id": "extraction.precision",
+    "section": "abstract; 3.3; Table 3",
+    "status": "PASS",
+    "reported": 95.7,
+    "observed": 95.7,
+    "detail": ""
+  },
+  {
+    "id": "extraction.recall",
+    "section": "abstract; 3.3; Table 3",
+    "status": "PASS",
+    "reported": 67.3,
+    "observed": 67.3,
+    "detail": ""
+  },
+  {
+    "id": "extraction.f1",
+    "section": "3.3; Table 3",
+    "status": "PASS",
+    "reported": 79.0,
+    "observed": 79.0,
+    "detail": ""
+  },
+  {
+    "id": "extraction.recall_ci_low",
+    "section": "abstract; 3.3",
+    "status": "PASS",
+    "reported": 59.8,
+    "observed": 59.8,
+    "detail": ""
+  },
+  {
+    "id": "extraction.recall_ci_high",
+    "section": "abstract; 3.3",
+    "status": "PASS",
+    "reported": 74.0,
+    "observed": 74.0,
+    "detail": ""
+  },
+  {
+    "id": "extraction.false_positives",
+    "section": "3.3; 4",
+    "status": "PASS",
+    "reported": 5,
+    "observed": 5,
+    "detail": ""
+  },
+  {
+    "id": "extraction.recall_eight_fields",
+    "section": "3.3",
+    "status": "PASS",
+    "reported": 69.8,
+    "observed": 69.8,
+    "detail": ""
+  },
+  {
+    "id": "extraction.basis_size_positives",
+    "section": "3.3",
+    "status": "PASS",
+    "reported": 6,
+    "observed": 6,
+    "detail": ""
+  },
+  {
+    "id": "labels.papers",
+    "section": "abstract; 2.3; 3.3",
+    "status": "PASS",
+    "reported": 25,
+    "observed": 25,
+    "detail": ""
+  },
+  {
+    "id": "labels.judgements",
+    "section": "abstract; 3.3; Table 3",
+    "status": "PASS",
+    "reported": 201,
+    "observed": 201,
+    "detail": ""
+  },
+  {
+    "id": "configuration.rtx3050_q4_0.mcc",
+    "section": "abstract; 3.2; Table 3",
+    "status": "PASS",
+    "reported": 0.414,
+    "observed": 0.414,
+    "detail": ""
+  },
+  {
+    "id": "configuration.tesla_t4_q4_0.mcc",
+    "section": "abstract; 3.2; Table 3",
+    "status": "PASS",
+    "reported": 0.53,
+    "observed": 0.53,
+    "detail": ""
+  },
+  {
+    "id": "configuration.tesla_t4_f16.mcc",
+    "section": "abstract; 3.2; Table 3",
+    "status": "PASS",
+    "reported": 0.56,
+    "observed": 0.56,
+    "detail": ""
+  },
+  {
+    "id": "configuration.tesla_t4_f16.precision",
+    "section": "3.2; Table 3",
+    "status": "PASS",
+    "reported": 99.2,
+    "observed": 99.2,
+    "detail": ""
+  },
+  {
+    "id": "configuration.tesla_t4_q4_0.recall",
+    "section": "3.2; Table 3",
+    "status": "PASS",
+    "reported": 78.8,
+    "observed": 78.8,
+    "detail": ""
+  },
+  {
+    "id": "orientation.absence_precision_bound",
+    "section": "abstract; 3.3",
+    "status": "PASS",
+    "reported": 47.0,
+    "observed": 47.0,
+    "detail": ""
+  },
+  {
+    "id": "orientation.constant_baseline_f1",
+    "section": "3.3; Table 3 caption",
+    "status": "PASS",
+    "reported": 90.2,
+    "observed": 90.2,
+    "detail": ""
+  },
+  {
+    "id": "stability.field_agreement_min",
+    "section": "3.2",
+    "status": "PASS",
+    "reported": 93.2,
+    "observed": 93.2,
+    "detail": ""
+  },
+  {
+    "id": "stability.field_agreement_max",
+    "section": "3.2",
+    "status": "PASS",
+    "reported": 97.5,
+    "observed": 97.5,
+    "detail": ""
+  },
+  {
+    "id": "stability.papers_differing_max",
+    "section": "3.2",
+    "status": "PASS",
+    "reported": 24,
+    "observed": 24,
+    "detail": ""
+  },
+  {
+    "id": "corpus.records",
+    "section": "3.1",
+    "status": "PASS",
+    "reported": 298,
+    "observed": 298,
+    "detail": ""
+  },
+  {
+    "id": "corpus.open_access",
+    "section": "3.1",
+    "status": "PASS",
+    "reported": 135,
+    "observed": 135,
+    "detail": ""
+  },
+  {
+    "id": "corpus.fulltext_retrieved",
+    "section": "3.1",
+    "status": "PASS",
+    "reported": 69,
+    "observed": 69,
+    "detail": ""
+  },
+  {
+    "id": "corpus.extracted",
+    "section": "3.1",
+    "status": "PASS",
+    "reported": 62,
+    "observed": 62,
+    "detail": ""
+  },
+  {
+    "id": "corpus.excluded_not_pentagonal",
+    "section": "3.1",
+    "status": "PASS",
+    "reported": 5,
+    "observed": 5,
+    "detail": ""
+  },
+  {
+    "id": "corpus.audited",
+    "section": "abstract; 3.1",
+    "status": "PASS",
+    "reported": 57,
+    "observed": 57,
+    "detail": ""
+  },
+  {
+    "id": "reporting.fully_reporting",
+    "section": "abstract; 3.3",
+    "status": "PASS",
+    "reported": 19,
+    "observed": 19,
+    "detail": ""
+  },
+  {
+    "id": "reporting.mean_rate",
+    "section": "3.3",
+    "status": "PASS",
+    "reported": 68.3,
+    "observed": 68.3,
+    "detail": ""
+  },
+  {
+    "id": "reporting.preprint_papers",
+    "section": "3.1",
+    "status": "PASS",
+    "reported": 17,
+    "observed": 17,
+    "detail": ""
+  },
+  {
+    "id": "reporting.preprint_complete",
+    "section": "3.1",
+    "status": "PASS",
+    "reported": 10,
+    "observed": 10,
+    "detail": ""
+  },
+  {
+    "id": "reporting.publisher_complete",
+    "section": "3.1",
+    "status": "PASS",
+    "reported": 9,
+    "observed": 9,
+    "detail": ""
+  },
+  {
+    "id": "reporting.preprint_gap_fisher",
+    "section": "3.1",
+    "status": "PASS",
+    "reported": 0.013,
+    "observed": 0.013,
+    "detail": ""
+  },
+  {
+    "id": "hardware.model_loads",
+    "section": "3.2",
+    "status": "PASS",
+    "reported": 114,
+    "observed": 114,
+    "detail": ""
+  },
+  {
+    "id": "hardware.layers_resident_min",
+    "section": "2.1; 3.2",
+    "status": "PASS",
+    "reported": 23,
+    "observed": 23,
+    "detail": ""
+  },
+  {
+    "id": "hardware.layers_resident_max",
+    "section": "2.1; 3.2",
+    "status": "PASS",
+    "reported": 37,
+    "observed": 37,
+    "detail": ""
+  },
+  {
+    "id": "hardware.min_vram_q4_cache",
+    "section": "3.2; Table 2",
+    "status": "SKIP",
+    "reported": 3.61,
+    "observed": null,
+    "detail": "pinned to data/processed/evidence/memory_time_frontier.txt"
+  },
+  {
+    "id": "hardware.min_vram_f16_cache",
+    "section": "3.2; Table 2",
+    "status": "SKIP",
+    "reported": 6.44,
+    "observed": null,
+    "detail": "pinned to data/processed/evidence/memory_time_frontier.txt"
+  },
+  {
+    "id": "recomputation.comparisons",
+    "section": "3.5; Figure 5",
+    "status": "PASS",
+    "reported": 16,
+    "observed": 16,
+    "detail": ""
+  },
+  {
+    "id": "recomputation.mae",
+    "section": "abstract; 3.5; Figure 5",
+    "status": "PASS",
+    "reported": 0.197,
+    "observed": 0.197,
+    "detail": ""
+  },
+  {
+    "id": "recomputation.mare",
+    "section": "abstract; 3.5; Figure 5",
+    "status": "PASS",
+    "reported": 4.5,
+    "observed": 4.5,
+    "detail": ""
+  }
+]

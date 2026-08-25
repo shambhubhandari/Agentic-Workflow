@@ -1,0 +1,289 @@
+{
+  "paper_key": "10.1103_physrevmaterials.2.114003",
+  "doi": "10.1103/physrevmaterials.2.114003",
+  "formula": "P2Pt",
+  "structure_path": null,
+  "claimed_property": "lattice_a",
+  "claimed_value": 5.83,
+  "claimed_unit": "A",
+  "paper_method": {
+    "code": {
+      "reported": true,
+      "value": "vasp",
+      "evidence": "We use the Vienna Ab-initio Simulation Package (VASP, version 5.4.4) for all of the DFT calculations.",
+      "confidence": null
+    },
+    "code_version": {
+      "reported": true,
+      "value": "5.4.4",
+      "evidence": "We use the Vienna Ab-initio Simulation Package (VASP, version 5.4.4) for all of the DFT calculations.",
+      "confidence": null
+    },
+    "xc_functional": {
+      "reported": true,
+      "value": "PBE",
+      "evidence": "We also use both the Perdew-Burke-Ernzerhof (PBE) and HSE06 hybrid density functionals to approximate the exchange-correlation interactions.",
+      "confidence": null
+    },
+    "pseudopotential_type": {
+      "reported": true,
+      "value": "PAW",
+      "evidence": "The electron-ion interactions are described by the PBE version of the potential dataset generated from the projector-augmented wave (PAW) method.",
+      "confidence": null
+    },
+    "k_mesh": {
+      "reported": true,
+      "value": "12x12x12",
+      "evidence": "We use Γ-centered 12 × 12 × 12 and 12 × 12 × 1 k-point grids for the integration in the reciprocal space for bulk and single-layer PtP2, respectively.",
+      "confidence": null
+    },
+    "smearing": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "force_threshold_ev_ang": {
+      "reported": true,
+      "value": 0.01,
+      "evidence": "The unit cells used in both methods consist of two formula units. VASP fully optimizes the in-plane lattice constants and atomic positions of the two unit cells of single-layer PtP2 until the threshold (0.01 eV/˚A) of inter-atomic forces is reached.",
+      "confidence": null
+    },
+    "energy_threshold_ev": {
+      "reported": true,
+      "value": 1e-6,
+      "evidence": "At each step of the geometry optimizations, we set the total energy convergence to 10−6 eV.",
+      "confidence": null
+    },
+    "spin_polarised": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "dispersion_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "plane_wave_cutoff_ev": {
+      "reported": true,
+      "value": 550.0,
+      "evidence": "We use the plane waves with their kinetic cutoﬀenergy below 550 eV for approximating the total electron wave function.",
+      "confidence": null
+    },
+    "augmentation_cutoff_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "mesh_cutoff_ry": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "basis_size": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "pao_energy_shift_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "basis_split_norm": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "vacuum_spacing_ang": {
+      "reported": true,
+      "value": 18.0,
+      "evidence": "Each surface slab has a vacuum spacing of 18.0 ˚A that is sufficiently large to separate the image interactions.",
+      "confidence": null
+    },
+    "dipole_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "thickness_for_gpa_conversion_ang": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "elastic_units_reported": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    }
+  },
+  "stage": "compared",
+  "parameters": {
+    "reasoning": "The paper uses VASP with PBE functional, a 12x12x12 k-grid, plane-wave cutoff of 550 eV, and a vacuum spacing of 18.0 Å. We need to map to SIESTA (NAO basis).",
+    "unmapped": [
+      "the paper's plane-wave cutoff (550 eV) has no NAO equivalent, so a mesh cutoff of 300 Ry was chosen independently",
+      "the paper's energy threshold (1e-6 eV) has no direct equivalent in SIESTA, so a standard value of 1e-8 eV was chosen",
+      "the paper's force threshold (0.01 eV/Å) has no direct equivalent in SIESTA, so a standard value of 1e-3 eV/Å was chosen",
+      "the paper's vacuum spacing (18.0 Å) is not a SIESTA parameter but a system setup requirement; SIESTA requires exactly 1 division along the vacuum axis for 2D systems",
+      "the paper's k-grid (12x12x12) is not a SIESTA parameter but a k-point grid; SIESTA uses a 2D k-grid with 12x12 points for the in-plane and 1 for the out-of-plane",
+      "the paper's augmentation cutoff (not reported) has no equivalent in SIESTA's NAO basis",
+      "the paper's basis size (not reported) has no equivalent in SIESTA's NAO basis",
+      "the paper's basis split norm (not reported) has no equivalent in SIESTA's NAO basis",
+      "the paper's dipole correction (not reported) has no equivalent in SIESTA",
+      "the paper's dispersion correction (not reported) has no equivalent in SIESTA",
+      "the paper's elastic units (not reported) has no equivalent in SIESTA",
+      "the paper's pseudopotential type (PAW) has no direct equivalent in SIESTA's NAO basis",
+      "the paper's smearing (not reported) has no equivalent in SIESTA",
+      "the paper's spin polarised (not reported) has no equivalent in SIESTA",
+      "the paper's thickness for GPA conversion (not reported) has no equivalent in SIESTA",
+      "the paper's pao energy shift (not reported) has no equivalent in SIESTA"
+    ],
+    "derived_from": [
+      {
+        "setting": "basis",
+        "justification": "the paper does not specify an NAO basis, so DZP is chosen as the standard production basis for SIESTA"
+      },
+      {
+        "setting": "mesh_cutoff_ry",
+        "justification": "the paper does not specify a mesh cutoff, so 300 Ry is chosen for light elements (P2Pt) with a standard tolerance"
+      },
+      {
+        "setting": "kgrid",
+        "justification": "the paper states a 12x12x12 k-grid for bulk, but for 2D systems SIESTA requires a 2D grid with 12x12 points and 1 division along vacuum"
+      },
+      {
+        "setting": "xc",
+        "justification": "the paper states PBE functional, so SIESTA uses GGA/PBE"
+      },
+      {
+        "setting": "xc_authors",
+        "justification": "the paper states PBE functional, so SIESTA uses GGA/PBE"
+      }
+    ],
+    "basis": "DZP",
+    "mesh_cutoff_ry": 300.0,
+    "kgrid": [
+      12,
+      12,
+      1
+    ],
+    "xc": "GGA",
+    "xc_authors": "PBE"
+  },
+  "steps": [
+    {
+      "iteration": 1,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 300.0,
+        "kgrid": [
+          12,
+          12,
+          1
+        ]
+      },
+      "energy_ev": -7858.322909,
+      "cell": [
+        5.845961,
+        5.845024,
+        18.769598
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": null,
+      "delta_cell_pct": null,
+      "seconds": 287.4,
+      "decision": "increase_mesh: mesh cutoff 300.0 -> 400.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 2,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 400.0,
+        "kgrid": [
+          12,
+          12,
+          1
+        ]
+      },
+      "energy_ev": -7858.321938,
+      "cell": [
+        5.845615,
+        5.844943,
+        18.76626
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": 0.0001618333333984386,
+      "delta_cell_pct": 0.005918616289099458,
+      "seconds": 367.1,
+      "decision": "stop: converged: dE = 0.2 meV/atom, dcell = 0.01% between the last two settings",
+      "error": null
+    }
+  ],
+  "our_value": 5.844943,
+  "our_a": 5.844943,
+  "our_b": 5.845615,
+  "verdict": "inconclusive",
+  "rationale": "held at review (symmetry: The structure is reported as tetragonal, but the paper claims a lattice_a value of 5.83 Å. The prototype is tetragonal, which requires b/a ≈ 1. However, the computed values are a = 5.8449 and b = 5.8456, which show a slight deviation from b/a = 1. This suggests that the relaxation might not have stayed near b/a = 1, which is critical for a tetragonal structure. The paper's claim of a single lattice constant (5.83 Å) implies a cubic or tetragonal structure, but the computed values show a slight anisotropy (b/a ≈ 1.0001), which is close to 1 but not exactly. This could indicate that the relaxation did not stay near the tetragonal prototype, and the comparison is meaningless if the structure is not tetragonal. The human should check if the structure remains tetragonal (b/a ≈ 1) after relaxation, or if a different structure was relaxed that is not tetragonal. The paper's claim of a single lattice constant (5.83 Å) might be for a cubic structure, but the prototype is tetragonal, so this needs clarification. The check should be: 'Verify that the relaxed structure remains tetragonal (b/a ≈ 1) and that the paper's claim corresponds to a tetragonal structure.'; convention: The paper reports lattice_a in Å, but the convention for 2D stiffness (N/m vs. GPa) is unclear. The paper's claim of lattice_a = 5.83 Å is in angstroms, but the unit convention for stiffness (N/m vs. GPa) is not specified. This could lead to a mismatch in units if the paper uses a different convention. The human should check if the paper uses the same unit convention for lattice constants as the verification (Å vs. nm, etc.). The check should be: 'Confirm that the paper uses the same unit convention (Å for lattice constants) as the verification.'; calibration: The verification reports a difference between the published value and the SIESTA recomputation, but the threshold for comparison is not clearly stated. The paper's claim of lattice_a = 5.83 Å is compared to the verification's a = 5.8449 Å, but the threshold for significance is not specified. The human should check if the threshold for comparison is explicitly stated in the paper or the verification. The check should be: 'Check if the paper explicitly states a threshold for comparison (e.g., 0.01 Å) or if the difference is within a known tolerance.'; identity: The verification uses the material 'P2Pt', but the paper might be reporting a different composition or allotrope. The paper's claim of lattice_a = 5.83 Å could correspond to a different phase (allotrope) of P2Pt. The human should check if the material relaxed is the same as the paper reported. The check should be: 'Verify that the material relaxed (P2Pt) matches the paper's reported composition and phase.'). Provisional comparison was inconclusive: calibration insufficient (2 distinct structure(s) calibrated of 6 required (CN2, PdSe2)); a threshold comparison is not defined. Provisional comparison was consistent: difference 0.26% is within the stated tolerance (1.00%)",
+  "failure_class": null,
+  "abandoned_reason": null,
+  "critic_verdict": "hold",
+  "critic_reasoning": "The verification has been compared against the paper's claim for lattice_a, but there are critical issues that need to be addressed before a verdict can be issued. Let's break down the concerns based on the provided information and the required checks.",
+  "critic_concerns": [
+    {
+      "category": "symmetry",
+      "severity": "blocking",
+      "detail": "The structure is reported as tetragonal, but the paper claims a lattice_a value of 5.83 Å. The prototype is tetragonal, which requires b/a ≈ 1. However, the computed values are a = 5.8449 and b = 5.8456, which show a slight deviation from b/a = 1. This suggests that the relaxation might not have stayed near b/a = 1, which is critical for a tetragonal structure. The paper's claim of a single lattice constant (5.83 Å) implies a cubic or tetragonal structure, but the computed values show a slight anisotropy (b/a ≈ 1.0001), which is close to 1 but not exactly. This could indicate that the relaxation did not stay near the tetragonal prototype, and the comparison is meaningless if the structure is not tetragonal. The human should check if the structure remains tetragonal (b/a ≈ 1) after relaxation, or if a different structure was relaxed that is not tetragonal. The paper's claim of a single lattice constant (5.83 Å) might be for a cubic structure, but the prototype is tetragonal, so this needs clarification. The check should be: 'Verify that the relaxed structure remains tetragonal (b/a ≈ 1) and that the paper's claim corresponds to a tetragonal structure.'",
+      "check": "Verify that the relaxed structure remains tetragonal (b/a ≈ 1) and that the paper's claim corresponds to a tetragonal structure."
+    },
+    {
+      "category": "convention",
+      "severity": "blocking",
+      "detail": "The paper reports lattice_a in Å, but the convention for 2D stiffness (N/m vs. GPa) is unclear. The paper's claim of lattice_a = 5.83 Å is in angstroms, but the unit convention for stiffness (N/m vs. GPa) is not specified. This could lead to a mismatch in units if the paper uses a different convention. The human should check if the paper uses the same unit convention for lattice constants as the verification (Å vs. nm, etc.). The check should be: 'Confirm that the paper uses the same unit convention (Å for lattice constants) as the verification.'",
+      "check": "Confirm that the paper uses the same unit convention (Å for lattice constants) as the verification."
+    },
+    {
+      "category": "calibration",
+      "severity": "blocking",
+      "detail": "The verification reports a difference between the published value and the SIESTA recomputation, but the threshold for comparison is not clearly stated. The paper's claim of lattice_a = 5.83 Å is compared to the verification's a = 5.8449 Å, but the threshold for significance is not specified. The human should check if the threshold for comparison is explicitly stated in the paper or the verification. The check should be: 'Check if the paper explicitly states a threshold for comparison (e.g., 0.01 Å) or if the difference is within a known tolerance.'",
+      "check": "Check if the paper explicitly states a threshold for comparison (e.g., 0.01 Å) or if the difference is within a known tolerance."
+    },
+    {
+      "category": "identity",
+      "severity": "blocking",
+      "detail": "The verification uses the material 'P2Pt', but the paper might be reporting a different composition or allotrope. The paper's claim of lattice_a = 5.83 Å could correspond to a different phase (allotrope) of P2Pt. The human should check if the material relaxed is the same as the paper reported. The check should be: 'Verify that the material relaxed (P2Pt) matches the paper's reported composition and phase.'",
+      "check": "Verify that the material relaxed (P2Pt) matches the paper's reported composition and phase."
+    },
+    {
+      "category": "residual",
+      "severity": "warning",
+      "detail": "The difference between the paper's claim (5.83 Å) and the verification (5.8449 Å) is 0.0149 Å, which is a small difference but not suspiciously close to a factor of 2 or 10. However, the difference is close to 0.015 Å, which might be within the expected tolerance for lattice constants. The human should check if this difference is physically plausible. The check should be: 'Assess if the difference (0.0149 Å) is physically plausible given the material and conditions.'",
+      "check": "Assess if the difference (0.0149 Å) is physically plausible given the material and conditions."
+    },
+    {
+      "category": "convergence",
+      "severity": "warning",
+      "detail": "The convergence history shows two iterations, both with converged SCF (converged_scf: true). The delta_energy_mev_per_atom is 0.16, which is below the tolerance of 5.0, and delta_cell_pct is 0.001, which is below the tolerance of 0.5. However, the convergence test is satisfied, so this is not a critical issue. The human should check if the convergence test was properly applied. The check should be: 'Confirm that the convergence test was satisfied (delta_energy_mev_per_atom < 5.0 and delta_cell_pct < 0.5) for both iterations.'",
+      "check": "Confirm that the convergence test was satisfied (delta_energy_mev_per_atom < 5.0 and delta_cell_pct < 0.5) for both iterations."
+    }
+  ],
+  "critic_tools_used": [
+    "convergence_status"
+  ],
+  "provisional_verdict": "inconclusive",
+  "config_fingerprint": "d42be0976558",
+  "tolerance_used": 0.01,
+  "total_seconds": 723.0,
+  "n_calculations": 2
+}

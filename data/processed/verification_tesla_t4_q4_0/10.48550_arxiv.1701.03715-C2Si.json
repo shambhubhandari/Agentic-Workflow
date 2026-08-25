@@ -1,0 +1,239 @@
+{
+  "paper_key": "10.48550_arxiv.1701.03715",
+  "doi": "10.48550/arxiv.1701.03715",
+  "formula": "C2Si",
+  "structure_path": null,
+  "claimed_property": "lattice_a",
+  "claimed_value": 4.41,
+  "claimed_unit": "A",
+  "paper_method": {
+    "code": {
+      "reported": true,
+      "value": "vasp",
+      "evidence": "The calculations are performed using the Vienna ab-initio simulation package (VASP)",
+      "confidence": null
+    },
+    "code_version": {
+      "reported": true,
+      "value": "not specified",
+      "evidence": "The calculations are performed using the Vienna ab-initio simulation package (VASP)",
+      "confidence": null
+    },
+    "xc_functional": {
+      "reported": true,
+      "value": "PBE",
+      "evidence": "The exchange-correlation energy is described by the generalized gradient approximation (GGA) using the Perdew-Burke-Ernzerhof (PBE) functional.",
+      "confidence": null
+    },
+    "pseudopotential_type": {
+      "reported": true,
+      "value": "projector-augmented-wave",
+      "evidence": "The calculationa are carried out by using the projector-augmented-wave pseudo potential method",
+      "confidence": null
+    },
+    "k_mesh": {
+      "reported": true,
+      "value": "13×13×1 for geometry optimization and 21×21×1 for self-consistent electronic structure calculations",
+      "evidence": "The Monkhorst-Pack scheme is performed for the Brillouin zone integration with k-point meshes of 13×13×1 and 21×21×1 for geometry optimization and self-consistent electronic structure calculations, respectively.",
+      "confidence": null
+    },
+    "smearing": {
+      "reported": false,
+      "value": null,
+      "evidence": "not reported",
+      "confidence": null
+    },
+    "force_threshold_ev_ang": {
+      "reported": true,
+      "value": 0.001,
+      "evidence": "the maximum Hellmann-Feynman force acting on each atom is 10−3 eV/Å",
+      "confidence": null
+    },
+    "energy_threshold_ev": {
+      "reported": true,
+      "value": 0.00001,
+      "evidence": "the energy convergence value between two consecutive steps is chosen as 10−5 eV",
+      "confidence": null
+    },
+    "spin_polarised": {
+      "reported": false,
+      "value": null,
+      "evidence": "not reported",
+      "confidence": null
+    },
+    "dispersion_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": "not reported",
+      "confidence": null
+    },
+    "plane_wave_cutoff_ev": {
+      "reported": true,
+      "value": 500.0,
+      "evidence": "a plane wave basis set with a kinetic energy cutoﬀof 500 eV",
+      "confidence": null
+    },
+    "augmentation_cutoff_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": "not reported",
+      "confidence": null
+    },
+    "mesh_cutoff_ry": {
+      "reported": false,
+      "value": null,
+      "evidence": "not reported",
+      "confidence": null
+    },
+    "basis_size": {
+      "reported": false,
+      "value": null,
+      "evidence": "not reported",
+      "confidence": null
+    },
+    "pao_energy_shift_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": "not reported",
+      "confidence": null
+    },
+    "basis_split_norm": {
+      "reported": false,
+      "value": null,
+      "evidence": "not reported",
+      "confidence": null
+    },
+    "vacuum_spacing_ang": {
+      "reported": true,
+      "value": 15.0,
+      "evidence": "To avoid artiﬁcial interaction between atom layers, the separation between the layers is set to be 15 Å for monolayer penta-SiC2.",
+      "confidence": null
+    },
+    "dipole_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": "not reported",
+      "confidence": null
+    },
+    "thickness_for_gpa_conversion_ang": {
+      "reported": false,
+      "value": null,
+      "evidence": "not reported",
+      "confidence": null
+    },
+    "elastic_units_reported": {
+      "reported": true,
+      "value": "N/m",
+      "evidence": "The calculated in-plane elastic constant C2D_11 = C2D_22 =140 N/m for penta-SiC2",
+      "confidence": null
+    }
+  },
+  "stage": "compared",
+  "parameters": {
+    "reasoning": "The paper uses VASP with PBE functional, plane-wave basis, 500 eV cutoff, 13x13x1 k-grid for geometry optimization and 21x21x1 for electronic structure. SIESTA uses NAO basis, so plane-wave cutoff has no equivalent. The paper states vacuum spacing of 15 Å for 2D monolayer, so vacuum axis must have exactly 1 division. For 2D systems, SIESTA requires vacuum axis to have 1 division. The paper does not specify NAO basis size, so we assume DZP as standard. The paper states k-mesh as 13x13x1 and 21x21x1, so we use kgrid = [13,13,1] for geometry and [21,21,1] for electronic. The paper uses PBE functional, so SIESTA uses GGA/PBE. The paper does not specify mesh_cutoff_ry, so we choose 200-400 Ry for light elements (Si and C are light elements) - 300 Ry is a safe choice. The paper does not specify basis_size, so we choose DZP as standard. The paper does not specify basis_split_norm, so we assume default. The paper does not specify augmentation_cutoff_ev, so we assume default. The paper does not specify smearing, so we assume default. The paper does not specify dipole_correction, so we assume default. The paper does not specify dispersion_correction, so we assume default. The paper does not specify pao_energy_shift, so we assume default. The paper does not specify thickness_for_gpa_conversion_ang, so we assume default. The paper does not specify elastic_units_reported, so we assume default. The paper does not specify energy_threshold_ev, so we assume default. The paper does not specify force_threshold_ev_ang, so we assume default. The paper does not specify vacuum_spacing_ang, but it states 15 Å for 2D monolayer, so we use 15.0 for vacuum spacing. The paper states vacuum spacing of 15 Å, so we set vacuum = 15.0. The paper does not specify k_mesh, but it states 13x13x1 and 21x21x1, so we use kgrid = [13,13,1] for geometry and [21,21,1] for electronic. The paper does not specify mesh_cutoff_ry, so we choose 300 Ry. The paper does not specify basis_size, so we choose DZP. The paper does not specify basis_split_norm, so we assume default. The paper does not specify augmentation_cutoff_ev, so we assume default. The paper does not specify pao_energy_shift, so we assume default. The paper does not specify smearing, so we assume default. The paper does not specify dispersion_correction, so we assume default. The paper does not specify thickness_for_gpa_conversion_ang, so we assume default. The paper does not specify elastic_units_reported, so we assume default. The paper does not specify energy_threshold_ev, so we assume default. The paper does not specify force_threshold_ev_ang, so we assume default.",
+    "unmapped": [
+      "the paper's plane-wave cutoff (500 eV) has no NAO equivalent, so a mesh cutoff of 300 Ry was chosen independently",
+      "the paper's k-mesh (13×13×1 and 21×21×1) has no direct equivalent in SIESTA's kgrid, but SIESTA uses a 2D kgrid with vacuum axis having exactly 1 division",
+      "the paper's vacuum spacing (15.0 Å) is used for the vacuum layer, but SIESTA requires the vacuum axis to have exactly 1 division for 2D systems",
+      "the paper does not specify a basis size, so SIESTA uses DZP as the standard production basis for light elements",
+      "the paper does not specify a mesh cutoff, so SIESTA uses 300 Ry as a safe choice for light elements (Si and C)"
+    ],
+    "derived_from": [
+      {
+        "setting": "basis",
+        "justification": "the paper does not specify a basis size, so SIESTA uses DZP as the standard production basis for light elements"
+      },
+      {
+        "setting": "mesh_cutoff_ry",
+        "justification": "the paper does not specify a mesh cutoff, so SIESTA uses 300 Ry as a safe choice for light elements (Si and C)"
+      },
+      {
+        "setting": "kgrid",
+        "justification": "the paper states k-mesh as 13×13×1 for geometry optimization and 21×21×1 for electronic structure calculations, so SIESTA uses kgrid = [13,13,1] for geometry and [21,21,1] for electronic"
+      },
+      {
+        "setting": "xc",
+        "justification": "the paper states xc_functional = PBE, so SIESTA uses GGA/PBE"
+      },
+      {
+        "setting": "xc_authors",
+        "justification": "the paper states xc_functional = PBE, so SIESTA uses GGA/PBE"
+      }
+    ],
+    "basis": "DZP",
+    "mesh_cutoff_ry": 300.0,
+    "kgrid": [
+      13,
+      13,
+      1
+    ],
+    "xc": "GGA",
+    "xc_authors": "PBE"
+  },
+  "steps": [
+    {
+      "iteration": 1,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 300.0,
+        "kgrid": [
+          13,
+          13,
+          1
+        ]
+      },
+      "energy_ev": -878.875732,
+      "cell": [
+        4.720649,
+        4.718782,
+        18.726236
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": null,
+      "delta_cell_pct": null,
+      "seconds": 249.6,
+      "decision": "increase_mesh: mesh cutoff 300.0 -> 400.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 2,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 400.0,
+        "kgrid": [
+          13,
+          13,
+          1
+        ]
+      },
+      "energy_ev": -878.875863,
+      "cell": [
+        4.72057,
+        4.718693,
+        18.726319
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": -0.000021833333335052885,
+      "delta_cell_pct": 0.001886079924862088,
+      "seconds": 337.2,
+      "decision": "stop: converged: dE = 0.0 meV/atom, dcell = 0.00% between the last two settings",
+      "error": null
+    }
+  ],
+  "our_value": 4.718693,
+  "our_a": 4.718693,
+  "our_b": 4.72057,
+  "verdict": "inconclusive",
+  "rationale": "calibration insufficient (2 distinct structure(s) calibrated of 6 required (CN2, PdSe2)); a threshold comparison is not defined. Provisional comparison was divergent: difference 7.00% exceeds the stated tolerance (1.00%); our SIESTA recomputation does not reproduce the published value",
+  "failure_class": null,
+  "abandoned_reason": null,
+  "critic_verdict": "unavailable",
+  "critic_reasoning": "ProviderError: qwen3:4b returned no schema-valid object: Unterminated string starting at: line 8 column 17 (char 549)",
+  "critic_concerns": [],
+  "critic_tools_used": [],
+  "provisional_verdict": null,
+  "config_fingerprint": "d42be0976558",
+  "tolerance_used": 0.01,
+  "total_seconds": 673.7,
+  "n_calculations": 2
+}

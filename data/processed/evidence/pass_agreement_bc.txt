@@ -1,0 +1,15 @@
+pass_b.jsonl  vs  pass_c.jsonl
+  papers compared      : 69
+  field decisions      : 1345/1380 agree = 97.5%
+  papers with any diff : 11/69
+     10.1021_acs.jpcc.5b04726                  2 field(s)   A= 9  B= 7
+     10.1021_acs.nanolett.6b03921              6 field(s)   A= 7  B=11
+     10.1021_acsomega.6c00774                  1 field(s)   A= 8  B= 9
+     10.1038_srep31840                         1 field(s)   A=11  B=10
+     10.1038_srep33060                         3 field(s)   A=11  B=10
+     10.1063_1.4930086                         3 field(s)   A=10  B= 7
+     10.1103_physrevlett.116.025501            3 field(s)   A= 2  B= 5
+     10.3389_fmats.2021.683503                 1 field(s)   A= 7  B= 8
+     10.48550_arxiv.1703.03789                 8 field(s)   A= 9  B= 3
+     10.48550_arxiv.1703.09071                 4 field(s)   A= 9  B=13
+     W7162894181                               3 field(s)   A=11  B=10

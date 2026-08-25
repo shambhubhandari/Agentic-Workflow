@@ -1,0 +1,36 @@
+# =============================================================================
+#                          ********* MODELS *********                          
+#                        Model directives and tracking.                        
+# =============================================================================
+provider: ollama                  # local only; there is no hosted path in this build
+
+default_model: qwen3:4b           # 4B, Q4_K_M, ~2.5 GB, Apache 2.0
+
+agents: {}                        # e.g. {extract: qwen3:14b}
+
+temperature: 0.0
+
+think: false
+
+num_predict: 2048
+# =============================================================================
+#                          ********* CONTEXT *********                         
+#                        LLM context window management.                        
+# =============================================================================
+context:
+  min: 4096
+  max: 32768
+  chars_per_token: 3.5            # deliberately low; overestimating tokens is the safe side
+  headroom_over_num_predict: 512
+  bucket: 4096
+
+host: http://localhost:11434
+keep_alive: 5m                    # a resident model competes with SIESTA for the same GPU
+timeout_s: 3600
+
+# =============================================================================
+#                          ********* PROMPTS *********                         
+#                       Instruction set version pinning.                       
+# =============================================================================
+prompts:
+  extract: extract_method_v2

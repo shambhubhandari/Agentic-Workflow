@@ -1,0 +1,248 @@
+{
+  "paper_key": "10.48550_arxiv.2210.12697",
+  "doi": "10.48550/arxiv.2210.12697",
+  "formula": "C",
+  "structure_path": null,
+  "claimed_property": "lattice_a",
+  "claimed_value": 3.637,
+  "claimed_unit": "A",
+  "paper_method": {
+    "code": {
+      "reported": true,
+      "value": "vasp",
+      "evidence": "We carry out state-of-the-art first-principles calculations based on density functional theory (DFT), as implemented with VASP [39].",
+      "confidence": null
+    },
+    "code_version": {
+      "reported": true,
+      "value": "not specified",
+      "evidence": "We carry out state-of-the-art first-principles calculations based on density functional theory (DFT), as implemented with VASP [39].",
+      "confidence": null
+    },
+    "xc_functional": {
+      "reported": true,
+      "value": "PBE",
+      "evidence": "The generalized gradient approximation (GGA) with Perdew-Burke-Ernzerhof (PBE) functional [40] is adopted to deal with the exchange-correlation interactions.",
+      "confidence": null
+    },
+    "pseudopotential_type": {
+      "reported": true,
+      "value": "PAW",
+      "evidence": "For the description of ion-electron potential, the projector augmented wave (PAW) method [41] is employed",
+      "confidence": null
+    },
+    "k_mesh": {
+      "reported": true,
+      "value": "2π×0.02 Å−1",
+      "evidence": "A Monkhorst-Pack k-point mesh with uniform spacing of 2π×0.02 Å−1 is used to sample the 2D Brillouin zone.",
+      "confidence": null
+    },
+    "smearing": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not explicitly stated in the paper.",
+      "confidence": null
+    },
+    "force_threshold_ev_ang": {
+      "reported": true,
+      "value": 0.001,
+      "evidence": "The convergence criteria of 10−8 eV and 0.001 eV/Å are used for the electronic iteration and Hellmann-Feynman force, respectively.",
+      "confidence": null
+    },
+    "energy_threshold_ev": {
+      "reported": true,
+      "value": 1e-8,
+      "evidence": "The convergence criteria of 10−8 eV and 0.001 eV/Å are used for the electronic iteration and Hellmann-Feynman force, respectively.",
+      "confidence": null
+    },
+    "spin_polarised": {
+      "reported": true,
+      "value": true,
+      "evidence": "Using spin-polarized DFT calculations.",
+      "confidence": null
+    },
+    "dispersion_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not explicitly stated in the paper.",
+      "confidence": null
+    },
+    "plane_wave_cutoff_ev": {
+      "reported": true,
+      "value": 600.0,
+      "evidence": "taking a cutoff energy of 600 eV for the plane-wave basis.",
+      "confidence": null
+    },
+    "augmentation_cutoff_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not explicitly stated in the paper.",
+      "confidence": null
+    },
+    "mesh_cutoff_ry": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not explicitly stated in the paper.",
+      "confidence": null
+    },
+    "basis_size": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not explicitly stated in the paper.",
+      "confidence": null
+    },
+    "pao_energy_shift_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not explicitly stated in the paper.",
+      "confidence": null
+    },
+    "basis_split_norm": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not explicitly stated in the paper.",
+      "confidence": null
+    },
+    "vacuum_spacing_ang": {
+      "reported": true,
+      "value": 25.0,
+      "evidence": "A large vacuum layer (25 Å) is added to the perpendicular direction of penta-graphene, so as to avoid the spurious interactions between the adjacent periodic images.",
+      "confidence": null
+    },
+    "dipole_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not explicitly stated in the paper.",
+      "confidence": null
+    },
+    "thickness_for_gpa_conversion_ang": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not explicitly stated in the paper.",
+      "confidence": null
+    },
+    "elastic_units_reported": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not explicitly stated in the paper.",
+      "confidence": null
+    }
+  },
+  "stage": "compared",
+  "parameters": {
+    "reasoning": "The paper uses a 2D monolayer of carbon (C) with a plane-wave cutoff of 600 eV and PBE functional. SIESTA uses NAO basis, so plane-wave parameters have no direct equivalent. The paper states a vacuum spacing of 25 Å, which must be set to 1 division for 2D systems. The k-mesh is given as 2π×0.02 Å⁻¹, which translates to a grid with spacing 0.02 Å⁻¹. The paper does not specify mesh_cutoff_ry, so we choose 200-400 Ry for light elements. The basis size is assumed to be DZP as standard for production. The paper uses PAW pseudopotentials, which SIESTA supports. The paper states energy_threshold_ev and force_threshold_ev_ang, which SIESTA supports. The paper does not mention smearing, so we assume it's not needed. The paper does not specify augmentation_cutoff_ev, so we skip it. The paper uses PBE functional, so xc_authors is GGA/PBE. The paper does not state basis_size, basis_split_norm, etc., so we assume DZP. The paper does not state kgrid explicitly, but we derive it from the k-spacing. The paper does not state mesh_cutoff_ry, so we choose 200-400 Ry. The paper does not state smearing, so we skip it. The paper does not state vacuum_spacing, but we set it to 25 Å (1 division for 2D).",
+    "unmapped": [
+      "the paper's plane-wave cutoff (600 eV) has no NAO equivalent, so a mesh cutoff of 200 Ry was chosen independently",
+      "the paper's k-mesh (2π×0.02 Å⁻¹) has no direct equivalent in SIESTA, so a grid with spacing 0.02 Å⁻¹ was derived from it",
+      "the paper's basis_size is not reported, so DZP was assumed as the standard production basis",
+      "the paper's vacuum_spacing (25 Å) has no equivalent in SIESTA for 2D systems, so it must be set to 1 division along the vacuum axis",
+      "the paper's smearing is not reported, so SIESTA does not require it for this system"
+    ],
+    "derived_from": [
+      {
+        "setting": "basis",
+        "justification": "the paper does not state a basis size, so DZP was assumed as the standard production basis"
+      },
+      {
+        "setting": "mesh_cutoff_ry",
+        "justification": "the paper does not state a mesh cutoff, so 200 Ry was chosen for light elements"
+      },
+      {
+        "setting": "kgrid",
+        "justification": "the paper states a k-spacing of 2π×0.02 Å⁻¹, so a grid with spacing 0.02 Å⁻¹ was derived"
+      },
+      {
+        "setting": "xc",
+        "justification": "the paper states PBE functional, so GGA/PBE was used"
+      },
+      {
+        "setting": "xc_authors",
+        "justification": "the paper states PBE functional, so GGA/PBE was used"
+      }
+    ],
+    "basis": "DZP",
+    "mesh_cutoff_ry": 200.0,
+    "kgrid": [
+      1,
+      1,
+      1
+    ],
+    "xc": "GGA",
+    "xc_authors": "PBE"
+  },
+  "steps": [
+    {
+      "iteration": 1,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 200.0,
+        "kgrid": [
+          1,
+          1,
+          1
+        ]
+      },
+      "energy_ev": -978.830714,
+      "cell": [
+        4.489899,
+        3.940789,
+        18.593352
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": null,
+      "delta_cell_pct": null,
+      "seconds": 205.7,
+      "decision": "increase_mesh: mesh cutoff 200.0 -> 300.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 2,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 300.0,
+        "kgrid": [
+          1,
+          1,
+          1
+        ]
+      },
+      "energy_ev": -978.830949,
+      "cell": [
+        4.494881,
+        3.939784,
+        18.614807
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": -0.00003916666668146718,
+      "delta_cell_pct": 0.11096017972787454,
+      "seconds": 373.2,
+      "decision": "stop: converged: dE = 0.0 meV/atom, dcell = 0.11% between the last two settings",
+      "error": null
+    }
+  ],
+  "our_value": 3.939784,
+  "our_a": 3.939784,
+  "our_b": 4.494881,
+  "verdict": "inconclusive",
+  "rationale": "held at review (symmetry: The b/a ratio is 1.141, which departs from tetragonal (b/a = 1) by 14.1%. The relaxation has left the prototype, so the comparison is against a different structure. The check should confirm that the structure remains tetragonal with b/a close to 1 after relaxation.). Provisional comparison was inconclusive: calibration insufficient (2 distinct structure(s) calibrated of 6 required (CN2, PdSe2)); a threshold comparison is not defined. Provisional comparison was divergent: difference 8.33% exceeds the stated tolerance (1.00%); our SIESTA recomputation does not reproduce the published value",
+  "failure_class": null,
+  "abandoned_reason": null,
+  "critic_verdict": "hold",
+  "critic_reasoning": "The symmetry check shows that the b/a ratio is 1.141, which departs from the tetragonal prototype (b/a = 1) by 14.1%. This indicates that the relaxation has left the prototype, meaning the comparison is against a different structure. The claim states that the material must stay near b/a = 1 for tetragonal, but the result shows a significant deviation. This is a blocking concern because the comparison is meaningless if the structure has changed.",
+  "critic_concerns": [
+    {
+      "category": "symmetry",
+      "severity": "blocking",
+      "detail": "The b/a ratio is 1.141, which departs from tetragonal (b/a = 1) by 14.1%. The relaxation has left the prototype, so the comparison is against a different structure. The check should confirm that the structure remains tetragonal with b/a close to 1 after relaxation.",
+      "check": "Verify that the relaxed structure remains tetragonal with b/a close to 1 (e.g., within 5% deviation) by checking the symmetry and lattice parameters."
+    }
+  ],
+  "critic_tools_used": [
+    "check_symmetry"
+  ],
+  "provisional_verdict": "inconclusive",
+  "config_fingerprint": "d42be0976558",
+  "tolerance_used": 0.01,
+  "total_seconds": 635.5,
+  "n_calculations": 2
+}

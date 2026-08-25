@@ -1,0 +1,9 @@
+{
+  "n_claims_checked": 6,
+  "verdicts": {
+    "no_reference": 2,
+    "skipped": 4
+  },
+  "n_with_reference": 0,
+  "median_rel_error_pct": null
+}

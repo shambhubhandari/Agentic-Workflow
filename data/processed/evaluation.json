@@ -1,0 +1,127 @@
+{
+  "n_records": 69,
+  "n_with_text": 69,
+  "n_reported_fields": 475,
+  "grounding": {
+    "exact": 362,
+    "fuzzy": 111,
+    "absent": 0,
+    "no_evidence": 2,
+    "rate": 0.9957894736842106
+  },
+  "value_support": {
+    "supported": 161,
+    "unsupported": 8,
+    "rate": 0.9526627218934911,
+    "via": {
+      "direct": 156,
+      "nm->A": 4,
+      "nm->A (inverse)": 1
+    }
+  },
+  "by_field": {
+    "xc_functional": {
+      "n": 49,
+      "grounded": 49,
+      "rate": 1.0
+    },
+    "k_mesh": {
+      "n": 49,
+      "grounded": 49,
+      "rate": 1.0
+    },
+    "code": {
+      "n": 48,
+      "grounded": 48,
+      "rate": 1.0
+    },
+    "pseudopotential_type": {
+      "n": 44,
+      "grounded": 44,
+      "rate": 1.0
+    },
+    "code_version": {
+      "n": 39,
+      "grounded": 39,
+      "rate": 1.0
+    },
+    "vacuum_spacing_ang": {
+      "n": 37,
+      "grounded": 37,
+      "rate": 1.0
+    },
+    "plane_wave_cutoff_ev": {
+      "n": 36,
+      "grounded": 36,
+      "rate": 1.0
+    },
+    "energy_threshold_ev": {
+      "n": 35,
+      "grounded": 35,
+      "rate": 1.0
+    },
+    "force_threshold_ev_ang": {
+      "n": 34,
+      "grounded": 34,
+      "rate": 1.0
+    },
+    "spin_polarised": {
+      "n": 20,
+      "grounded": 20,
+      "rate": 1.0
+    },
+    "dispersion_correction": {
+      "n": 16,
+      "grounded": 16,
+      "rate": 1.0
+    },
+    "smearing": {
+      "n": 16,
+      "grounded": 15,
+      "rate": 0.9375
+    },
+    "elastic_units_reported": {
+      "n": 12,
+      "grounded": 12,
+      "rate": 1.0
+    },
+    "augmentation_cutoff_ev": {
+      "n": 12,
+      "grounded": 11,
+      "rate": 0.9166666666666666
+    },
+    "basis_size": {
+      "n": 6,
+      "grounded": 6,
+      "rate": 1.0
+    },
+    "dipole_correction": {
+      "n": 6,
+      "grounded": 6,
+      "rate": 1.0
+    },
+    "thickness_for_gpa_conversion_ang": {
+      "n": 4,
+      "grounded": 4,
+      "rate": 1.0
+    },
+    "pao_energy_shift_ev": {
+      "n": 4,
+      "grounded": 4,
+      "rate": 1.0
+    },
+    "basis_split_norm": {
+      "n": 4,
+      "grounded": 4,
+      "rate": 1.0
+    },
+    "mesh_cutoff_ry": {
+      "n": 4,
+      "grounded": 4,
+      "rate": 1.0
+    }
+  },
+  "provenance": {
+    "config_fingerprint": "1df1d9d0bd33"
+  }
+}

@@ -1,0 +1,34 @@
+version: 1
+
+review_verification:
+  description: >
+    Review a completed verification before any verdict is written. You are given the
+    claim, our relaxed result, the structural prototype, the calibration class applied,
+    and the convergence history.
+
+    Raise a concern for anything that would make the comparison unsound:
+
+      symmetry     Has the relaxation left the prototype? A tetragonal penta structure
+                   must stay near b/a = 1. If it did not, we relaxed a different material
+                   and the comparison is meaningless.
+      convention   Are we comparing like with like? Papers disagree on which axis is "a",
+                   and on N/m versus GPa for 2D stiffness.
+      threshold    Was the difference compared against a threshold that is actually stated?
+                   A missing calibration is not a blocking concern; the deviation is reported directly
+                   between the published value and our SIESTA recomputation, and do not
+                   attribute it to paper or basis. Raise this only if a verdict rests on a
+                   number the reader cannot see.
+      identity     Does the relaxed material match the paper's reported material? One
+                   composition can cover several distinct allotropes.
+      residual     Is the difference physically plausible, or is it suspiciously close to
+                   a factor of 2, 10, or a unit conversion?
+      convergence  Did the run actually satisfy the arithmetic convergence test, or is
+                   this a single point?
+
+    Judge only what the evidence supports. If nothing is wrong, say so plainly — holding
+    every verdict is as useless as holding none.
+  expected_output: >
+    A Review with a verdict of `pass` or `hold`, and a list of concerns each carrying a
+    category, a severity, and the specific check a human should run. A `hold` blocks the
+    verdict entirely.
+  agent: critic

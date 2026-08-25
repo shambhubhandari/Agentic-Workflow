@@ -1,0 +1,248 @@
+{
+  "paper_key": "10.1021_acs.jpcc.5b04726",
+  "doi": "10.1021/acs.jpcc.5b04726",
+  "formula": "C2Si",
+  "structure_path": null,
+  "claimed_property": "lattice_a",
+  "claimed_value": 4.41,
+  "claimed_unit": "A",
+  "paper_method": {
+    "code": {
+      "reported": true,
+      "value": "vasp",
+      "evidence": "All the calculations on pentagonal graphene and pSiC2, were performed by using the plane-wave basis Vienna ab initio simulation package (VASP) code",
+      "confidence": null
+    },
+    "code_version": {
+      "reported": true,
+      "value": "15",
+      "evidence": "implementing the Perdew-Burke-Ernzerhof exchange correlation functional",
+      "confidence": null
+    },
+    "xc_functional": {
+      "reported": true,
+      "value": "pbe",
+      "evidence": "implementing the Perdew-Burke-Ernzerhof exchange correlation functional",
+      "confidence": null
+    },
+    "pseudopotential_type": {
+      "reported": true,
+      "value": "projector augmented wave",
+      "evidence": "the projector augmented wave method was used to describe the electron-ion interaction",
+      "confidence": null
+    },
+    "k_mesh": {
+      "reported": true,
+      "value": "20×20×1",
+      "evidence": "A 20×20×20 grid was used for the sampling of the Brillouin zone during geometry optimization",
+      "confidence": null
+    },
+    "smearing": {
+      "reported": false,
+      "value": null,
+      "evidence": "No information provided in the paper",
+      "confidence": null
+    },
+    "force_threshold_ev_ang": {
+      "reported": true,
+      "value": 3.0,
+      "evidence": "the convergence of force was set to 3 meV/Å",
+      "confidence": null
+    },
+    "energy_threshold_ev": {
+      "reported": true,
+      "value": 100.0,
+      "evidence": "100 k-points in between high-symmetry points were used to obtain the well defined band structures",
+      "confidence": null
+    },
+    "spin_polarised": {
+      "reported": false,
+      "value": null,
+      "evidence": "No spin polarization were included through the calculations due to the paramagnetic character of the structures",
+      "confidence": null
+    },
+    "dispersion_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": "No information provided in the paper",
+      "confidence": null
+    },
+    "plane_wave_cutoff_ev": {
+      "reported": true,
+      "value": 500.0,
+      "evidence": "The cutoff energy for plane waves was chosen to be 500 eV",
+      "confidence": null
+    },
+    "augmentation_cutoff_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": "No information provided in the paper",
+      "confidence": null
+    },
+    "mesh_cutoff_ry": {
+      "reported": false,
+      "value": null,
+      "evidence": "No information provided in the paper",
+      "confidence": null
+    },
+    "basis_size": {
+      "reported": false,
+      "value": null,
+      "evidence": "No information provided in the paper",
+      "confidence": null
+    },
+    "pao_energy_shift_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": "No information provided in the paper",
+      "confidence": null
+    },
+    "basis_split_norm": {
+      "reported": false,
+      "value": null,
+      "evidence": "No information provided in the paper",
+      "confidence": null
+    },
+    "vacuum_spacing_ang": {
+      "reported": true,
+      "value": 20.0,
+      "evidence": "the vacuum space to avoid interaction between periodical image cells was of at least 20 Å",
+      "confidence": null
+    },
+    "dipole_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": "No information provided in the paper",
+      "confidence": null
+    },
+    "thickness_for_gpa_conversion_ang": {
+      "reported": false,
+      "value": null,
+      "evidence": "No information provided in the paper",
+      "confidence": null
+    },
+    "elastic_units_reported": {
+      "reported": false,
+      "value": null,
+      "evidence": "No information provided in the paper",
+      "confidence": null
+    }
+  },
+  "stage": "compared",
+  "parameters": {
+    "reasoning": "The paper uses VASP with plane waves, so SIESTA's NAO basis must be chosen. The paper states a 20×20×20 k-grid for geometry optimization, but SIESTA requires exactly 1 division along the vacuum axis for 2D systems. The paper reports a plane-wave cutoff of 500 eV, but SIESTA has no NAO equivalent for plane-wave cutoffs. The paper states a vacuum spacing of 20 Å, which SIESTA uses as vacuum spacing. The paper uses PBE functional, which SIESTA supports as GGA/PBE. The paper does not state an NAO basis size, so DZP is chosen as standard. The paper does not state a mesh cutoff in Ry, so 300 Ry is chosen for light elements. The paper does not state a k-spacing, so a 20×20×1 grid is derived from the 20×20×20 grid with vacuum axis set to 1 division. The paper does not state a pseudopotential, but the paper states 'projector augmented wave', so SIESTA uses PAW. The paper does not state a force threshold or energy threshold, but SIESTA requires them, so they are set to standard values. The paper does not state a smearing or spin polarization, so they are set to standard values. The paper does not state a basis split norm or augmentation cutoff, so they are set to standard values.",
+    "unmapped": [
+      "the paper's plane-wave cutoff (500 eV) has no NAO equivalent, so a mesh cutoff of 300 Ry was chosen independently",
+      "the paper's k-grid (20×20×20) has no direct equivalent for 2D systems, so a 20×20×1 grid was derived from it",
+      "the paper's vacuum spacing (20 Å) has no equivalent in SIESTA's vacuum spacing, so it was used directly",
+      "the paper's energy threshold (100 k-points) has no equivalent in SIESTA's energy threshold, so a standard value was chosen",
+      "the paper's force threshold (3 meV/Å) has no equivalent in SIESTA's force threshold, so a standard value was chosen",
+      "the paper's pseudopotential type (projector augmented wave) has no direct equivalent in SIESTA's NAO basis, so PAW was used directly"
+    ],
+    "derived_from": [
+      {
+        "setting": "basis",
+        "justification": "the paper does not state an NAO basis size, so DZP is chosen as standard"
+      },
+      {
+        "setting": "mesh_cutoff_ry",
+        "justification": "the paper does not state a mesh cutoff in Ry, so 300 Ry was chosen for light elements"
+      },
+      {
+        "setting": "kgrid",
+        "justification": "the paper states a 20×20×20 k-grid, but for 2D systems the vacuum axis must have exactly 1 division, so a 20×20×1 grid was derived"
+      },
+      {
+        "setting": "xc",
+        "justification": "the paper states PBE functional, which SIESTA supports as GGA/PBE"
+      },
+      {
+        "setting": "xc_authors",
+        "justification": "the paper states PBE functional, so authors are Perdew, Burke, and Ernzerhof"
+      }
+    ],
+    "basis": "DZP",
+    "mesh_cutoff_ry": 300.0,
+    "kgrid": [
+      20,
+      20,
+      1
+    ],
+    "xc": "GGA",
+    "xc_authors": "PBE"
+  },
+  "steps": [
+    {
+      "iteration": 1,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 300.0,
+        "kgrid": [
+          20,
+          20,
+          1
+        ]
+      },
+      "energy_ev": -878.868814,
+      "cell": [
+        4.716175,
+        4.712321,
+        18.723891
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": null,
+      "delta_cell_pct": null,
+      "seconds": 465.0,
+      "decision": "increase_mesh: mesh cutoff 300.0 -> 400.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 2,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 400.0,
+        "kgrid": [
+          20,
+          20,
+          1
+        ]
+      },
+      "energy_ev": -878.868961,
+      "cell": [
+        4.716145,
+        4.712317,
+        18.724049
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": -0.000024499999994986865,
+      "delta_cell_pct": 0.0006361087109734573,
+      "seconds": 544.7,
+      "decision": "stop: converged: dE = 0.0 meV/atom, dcell = 0.00% between the last two settings",
+      "error": null
+    }
+  ],
+  "our_value": 4.712317,
+  "verdict": "divergent",
+  "rationale": "difference 6.86% exceeds the stated tolerance (1.00%); our SIESTA recomputation does not reproduce the published value",
+  "failure_class": null,
+  "abandoned_reason": null,
+  "critic_verdict": "pass",
+  "critic_reasoning": "The verification is sound. The symmetry check shows the structure retains tetragonal symmetry with b/a = 1.0008, which is close to 1. The convergence history shows two iterations with SCF convergence and minimal cell changes. The units are not specified in the provided data, but the paper claim uses angstroms and the result is in angstroms (a=4.7123, b=4.7161). The structure file is not provided, but the symmetry check confirms the structure is tetragonal. The threshold is not an issue as the comparison is against the published value directly. The difference in lattice parameter is 0.30 angstroms, which is physically plausible and not suspiciously close to a factor of 2 or 10. The convergence test was satisfied with delta_energy_mev_per_atom = 0.02 < tolerance of 5.0 and delta_cell_pct = 0.0 < tolerance of 0.5. All checks pass without issues that would block the verdict.",
+  "critic_concerns": [
+    {
+      "category": "convergence",
+      "severity": "warning",
+      "detail": "The convergence history shows two iterations with SCF convergence, but the delta_energy_mev_per_atom is 0.02, which is below the tolerance of 5.0, so it's acceptable. However, the delta_cell_pct is 0.0, which is very small but not a concern as the structure is stable.",
+      "check": "Verify that the energy convergence criteria were met for the SCF and cell relaxation."
+    }
+  ],
+  "critic_tools_used": [
+    "convergence_status",
+    "check_symmetry"
+  ],
+  "provisional_verdict": null,
+  "config_fingerprint": "1df1d9d0bd33",
+  "tolerance_used": 0.01,
+  "total_seconds": 1068.4,
+  "n_calculations": 2
+}
