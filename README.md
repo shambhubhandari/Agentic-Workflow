@@ -1,4 +1,4 @@
-# ACV: How good is a 4B open-weights local LLM for agentic DFT workflows? A reproducibility case study
+# How good is a 4B open-weights local LLM for agentic DFT workflows? A reproducibility case study
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
