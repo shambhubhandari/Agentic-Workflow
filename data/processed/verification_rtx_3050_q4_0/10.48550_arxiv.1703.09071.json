@@ -1,0 +1,300 @@
+{
+  "paper_key": "10.48550_arxiv.1703.09071",
+  "doi": "10.48550/arxiv.1703.09071",
+  "formula": "PdSe2",
+  "structure_path": null,
+  "claimed_property": "lattice_a",
+  "claimed_value": 5.92,
+  "claimed_unit": "A",
+  "paper_method": {
+    "code": {
+      "reported": true,
+      "value": "vasp",
+      "evidence": "Vienna ab Initio Simulation Package (VASP)[43, 44]",
+      "confidence": null
+    },
+    "code_version": {
+      "reported": true,
+      "value": "43, 44",
+      "evidence": "Vienna ab Initio Simulation Package (VASP)[43, 44]",
+      "confidence": null
+    },
+    "xc_functional": {
+      "reported": true,
+      "value": "pbe",
+      "evidence": "The exchange-correlation energy was treated within the Generalized Gradient Approximation (GGA)[45] using Perdew, Burke, and Ernzerhof (PBE) functional",
+      "confidence": null
+    },
+    "pseudopotential_type": {
+      "reported": true,
+      "value": "paW",
+      "evidence": "Projector Augmented Wave (PAW)[46] method was used to calculate the interaction between the frozen core and valence electron",
+      "confidence": null
+    },
+    "k_mesh": {
+      "reported": true,
+      "value": "7x7x1",
+      "evidence": "a k-point mesh size of 7  7  1 in the Monkhorst-Pack scheme",
+      "confidence": null
+    },
+    "smearing": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "force_threshold_ev_ang": {
+      "reported": true,
+      "value": 0.02,
+      "evidence": "atomic force components of 0.02 eV/ Å",
+      "confidence": null
+    },
+    "energy_threshold_ev": {
+      "reported": true,
+      "value": 0.00001,
+      "evidence": "threshold for total energy of 10-5 eV",
+      "confidence": null
+    },
+    "spin_polarised": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "dispersion_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "plane_wave_cutoff_ev": {
+      "reported": true,
+      "value": 450.0,
+      "evidence": "An energy cutoff of 450 eV",
+      "confidence": null
+    },
+    "augmentation_cutoff_ev": {
+      "reported": true,
+      "value": 450.0,
+      "evidence": "An energy cutoff of 450 eV and a k-point mesh size of 7  7  1 in the Monkhorst-Pack scheme[47] were used for the Brilloin zone sampling.",
+      "confidence": null
+    },
+    "mesh_cutoff_ry": {
+      "reported": false,
+      "value": null,
+      "evidence": "A higher k-point sampling of 30  30  1 was used for the band structure and density of state calculations.",
+      "confidence": null
+    },
+    "basis_size": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "pao_energy_shift_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "basis_split_norm": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "vacuum_spacing_ang": {
+      "reported": true,
+      "value": 20.0,
+      "evidence": "The 2D carbon network was separated from its periodic image by a vacuum of length 20Å in the perpendicular direction",
+      "confidence": null
+    },
+    "dipole_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "thickness_for_gpa_conversion_ang": {
+      "reported": true,
+      "value": 3.35,
+      "evidence": "For the calculation of the stress we assumed the thickness of biphenylene as 3.35 Å, the same value as the thickness of graphene.",
+      "confidence": null
+    },
+    "elastic_units_reported": {
+      "reported": true,
+      "value": "GPa",
+      "evidence": "The estimated values of Young's modulus were 613 ± 35 GPa and 716 ± 45 GPa in the X and Y directions, respectively.",
+      "confidence": null
+    }
+  },
+  "stage": "compared",
+  "parameters": {
+    "reasoning": "The paper uses VASP with a plane-wave cutoff of 450 eV and a 7x7x1 k-grid. SIESTA uses NAO basis, so plane-wave parameters have no direct equivalent. The paper states a vacuum spacing of 20 Å, which must be sampled along the vacuum axis with exactly 1 division for 2D systems. The paper does not report a mesh cutoff (SIESTA's real-space grid), so I must choose a value between 200-400 Ry for light elements. The paper uses PBE functional, which SIESTA can map to GGA/PBE. The paper does not specify a basis size, so I choose DZP as standard. The paper does not report any dispersion correction, so SIESTA will not use it. The paper does not report a pseudopotential type, but states PAW method was used, so I assume the standard PAW for SIESTA. The paper does not report a k-spacing, so I use the given 7x7x1 grid. The paper does not report a mesh cutoff, so I choose 300 Ry for PdSe2 (light elements).",
+    "unmapped": [
+      "the paper's plane-wave cutoff (450 eV) has no NAO equivalent, so a mesh cutoff of 300 Ry was chosen independently",
+      "the paper's k-point mesh (7x7x1) has no direct equivalent in SIESTA's kgrid, so a 7x7x1 grid was used directly",
+      "the paper's vacuum spacing (20.0 Å) has no equivalent in SIESTA's vacuum spacing, but must be sampled with exactly 1 division along the vacuum axis for 2D systems",
+      "the paper's dispersion correction (NOT REPORTED) has no equivalent in SIESTA's standard run, so SIESTA will not use it",
+      "the paper's pseudopotential type (paW) has no direct equivalent in SIESTA's pseudopotential type, so the standard PAW for SIESTA was assumed"
+    ],
+    "derived_from": [
+      {
+        "setting": "basis",
+        "justification": "the paper does not report a basis size, so DZP is chosen as standard for production"
+      },
+      {
+        "setting": "mesh_cutoff_ry",
+        "justification": "the paper does not report a mesh cutoff, so 300 Ry was chosen for light elements (PdSe2)"
+      },
+      {
+        "setting": "kgrid",
+        "justification": "the paper states a k-point mesh of 7x7x1, so a 7x7x1 grid was used directly"
+      },
+      {
+        "setting": "xc",
+        "justification": "the paper states PBE functional, so SIESTA uses GGA/PBE"
+      },
+      {
+        "setting": "xc_authors",
+        "justification": "the paper states PBE functional, so SIESTA uses GGA/PBE"
+      }
+    ],
+    "basis": "DZP",
+    "mesh_cutoff_ry": 300.0,
+    "kgrid": [
+      7,
+      7,
+      1
+    ],
+    "xc": "GGA",
+    "xc_authors": "PBE"
+  },
+  "steps": [
+    {
+      "iteration": 1,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 300.0,
+        "kgrid": [
+          7,
+          7,
+          1
+        ]
+      },
+      "energy_ev": -20561.683313,
+      "cell": [
+        5.734836,
+        6.00722,
+        20.23074
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": null,
+      "delta_cell_pct": null,
+      "seconds": 103.6,
+      "decision": "increase_mesh: mesh cutoff 300.0 -> 400.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 2,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 400.0,
+        "kgrid": [
+          7,
+          7,
+          1
+        ]
+      },
+      "energy_ev": -20561.652435,
+      "cell": [
+        5.733209,
+        6.002306,
+        20.203481
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": 0.00514633333356566,
+      "delta_cell_pct": 0.08180156544958078,
+      "seconds": 134.3,
+      "decision": "increase_mesh: mesh cutoff 400.0 -> 500.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 3,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 500.0,
+        "kgrid": [
+          7,
+          7,
+          1
+        ]
+      },
+      "energy_ev": -20561.643458,
+      "cell": [
+        5.733053,
+        6.002448,
+        20.191665
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": 0.001496166666887196,
+      "delta_cell_pct": 0.002720989240065888,
+      "seconds": 181.2,
+      "decision": "stop: converged: dE = 1.5 meV/atom, dcell = 0.00% between the last two settings",
+      "error": null
+    }
+  ],
+  "our_value": 5.733053,
+  "verdict": "divergent",
+  "rationale": "difference 3.16% exceeds the stated tolerance (1.00%); our SIESTA recomputation does not reproduce the published value",
+  "failure_class": null,
+  "abandoned_reason": null,
+  "critic_verdict": "pass",
+  "critic_reasoning": "The verification is sound. The structure is orthorhombic, which matches the prototype. The comparison is made against the correct convention (lattice_a in Angstroms). The threshold is properly stated as the difference between the published value and the SIESTA recomputation. The material is correctly identified as PdSe2. The residual difference (0.1869 A) is physically plausible and not suspiciously close to a factor of 2 or a unit conversion. The convergence history shows that the calculations satisfied the arithmetic convergence test with delta_energy_mev_per_atom = 1.5 and delta_cell_pct = 0.003, both within the tolerances (5.0 and 0.5). All checks are passed without issues.",
+  "critic_concerns": [
+    {
+      "category": "symmetry",
+      "severity": "warning",
+      "detail": "The structure is orthorhombic, which is not tetragonal. The prototype is orthorhombic, so the comparison is valid for this structure. However, the claim specifies a tetragonal penta structure, which may not be the correct structure for PdSe2. The human should verify if PdSe2 has a tetragonal structure or if the orthorhombic structure is the correct prototype for this material. This is a warning because the paper might have reported a different structure, but it does not block the verdict since the structure is orthorhombic and the prototype matches the paper's claim (orthorhombic).",
+      "check": "Verify the crystal structure of PdSe2 to ensure it is orthorhombic (as reported in the prototype) and not tetragonal."
+    },
+    {
+      "category": "convention",
+      "severity": "warning",
+      "detail": "The paper reports lattice_a in Angstroms (A), and the SIESTA calculation also uses Angstroms. The convention is consistent, so there is no issue here. However, the human should confirm that the paper uses the same convention for lattice parameters (i.e., a is the lattice parameter in Angstroms).",
+      "check": "Confirm that the paper uses the same convention for lattice parameters (a in Angstroms) as the SIESTA calculation."
+    },
+    {
+      "category": "threshold",
+      "severity": "warning",
+      "detail": "The threshold is the difference between the published value (5.92 A) and the computed value (5.7331 A), which is 0.1869 A. This difference is explicitly stated in the verification, so it is not a blocking concern. The human should check that the threshold is clearly stated in the report.",
+      "check": "Ensure the threshold (difference between published and computed values) is clearly stated in the report."
+    },
+    {
+      "category": "identity",
+      "severity": "warning",
+      "detail": "The material is PdSe2, and the prototype is orthorhombic. The paper claims a lattice parameter of 5.92 A for PdSe2. The identity check is satisfied as the material matches the paper's claim. However, the human should verify that PdSe2 does not have multiple allotropes that could be confused with different structures.",
+      "check": "Verify that PdSe2 has only one allotrope with the orthorhombic structure and not multiple allotropes that could be confused."
+    },
+    {
+      "category": "residual",
+      "severity": "warning",
+      "detail": "The residual difference (0.1869 A) is not suspiciously close to a factor of 2 or a unit conversion. It is a physically plausible difference for lattice parameters in different computational methods.",
+      "check": "Check if the residual difference is physically plausible (not suspiciously close to a factor of 2, 10, or a unit conversion)."
+    },
+    {
+      "category": "convergence",
+      "severity": "warning",
+      "detail": "The convergence history shows that the calculations satisfied the arithmetic convergence test with delta_energy_mev_per_atom = 1.5 (within tolerance 5.0) and delta_cell_pct = 0.003 (within tolerance 0.5). This indicates that the calculations are converged.",
+      "check": "Confirm that the convergence criteria were met in all iterations (delta_energy_mev_per_atom < 5.0 and delta_cell_pct < 0.5)."
+    }
+  ],
+  "critic_tools_used": [
+    "convergence_status"
+  ],
+  "provisional_verdict": null,
+  "config_fingerprint": "1df1d9d0bd33",
+  "tolerance_used": 0.01,
+  "total_seconds": 526.6,
+  "n_calculations": 3
+}

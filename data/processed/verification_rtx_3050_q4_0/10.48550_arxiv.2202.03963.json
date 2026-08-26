@@ -1,0 +1,281 @@
+{
+  "paper_key": "10.48550_arxiv.2202.03963",
+  "doi": "10.48550/arxiv.2202.03963",
+  "formula": "PdSe2",
+  "structure_path": null,
+  "claimed_property": "lattice_a",
+  "claimed_value": 5.74,
+  "claimed_unit": "A",
+  "paper_method": {
+    "code": {
+      "reported": true,
+      "value": "quantum_espresso",
+      "evidence": "The calculations for the band structure were carried with standard density functional theory (DFT) method using the QUANTUM ESPRESSO (QE) package [34]",
+      "confidence": null
+    },
+    "code_version": {
+      "reported": true,
+      "value": "v2.0",
+      "evidence": "The calculations for the band structure were carried with standard density functional theory (DFT) method using the QUANTUM ESPRESSO (QE) package [34]",
+      "confidence": null
+    },
+    "xc_functional": {
+      "reported": true,
+      "value": "PBE",
+      "evidence": "The calculations for the band structure were carried with standard density functional theory (DFT) method using the QUANTUM ESPRESSO (QE) package [34]",
+      "confidence": null
+    },
+    "pseudopotential_type": {
+      "reported": true,
+      "value": "PAW",
+      "evidence": "A projected augmented wave (PAW) method was employed for the basis set with an energy cutoﬀof 650 eV.",
+      "confidence": null
+    },
+    "k_mesh": {
+      "reported": true,
+      "value": "15x15x1",
+      "evidence": "A Monkhorst-Pack grid of 15 × 15 × 1 was chosen",
+      "confidence": null
+    },
+    "smearing": {
+      "reported": true,
+      "value": "none",
+      "evidence": "The energy convergence tolerance was set to 10−8 Ry.",
+      "confidence": null
+    },
+    "force_threshold_ev_ang": {
+      "reported": true,
+      "value": 0.0001,
+      "evidence": "The mono-layer structure was relaxed with a force tolerance of 10−4 eV/˚A.",
+      "confidence": null
+    },
+    "energy_threshold_ev": {
+      "reported": true,
+      "value": 1e-8,
+      "evidence": "The energy convergence tolerance was set to 10−8 Ry.",
+      "confidence": null
+    },
+    "spin_polarised": {
+      "reported": true,
+      "value": true,
+      "evidence": "The inclusion of SOC is crucial for the results obtained",
+      "confidence": null
+    },
+    "dispersion_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "plane_wave_cutoff_ev": {
+      "reported": true,
+      "value": 100.0,
+      "evidence": "The energy cutoﬀfor the plane wave basis was 100 Ry",
+      "confidence": null
+    },
+    "augmentation_cutoff_ev": {
+      "reported": true,
+      "value": 20.0,
+      "evidence": "a vacuum distance of 20 ˚A in the perpendicular direction to the monolayer",
+      "confidence": null
+    },
+    "mesh_cutoff_ry": {
+      "reported": false,
+      "value": null,
+      "evidence": "The energy cutoﬀfor the plane wave basis was 100 Ry",
+      "confidence": null
+    },
+    "basis_size": {
+      "reported": true,
+      "value": "12B",
+      "evidence": "Two models were implemented; a twelve-band (12B) model including the four uppermost valence band and the eight lowest conduction bands",
+      "confidence": null
+    },
+    "pao_energy_shift_ev": {
+      "reported": true,
+      "value": 0.7,
+      "evidence": "The calculation also yields a puckering distance of 0.7 ˚A",
+      "confidence": null
+    },
+    "basis_split_norm": {
+      "reported": true,
+      "value": 0.7,
+      "evidence": "The calculation also yields a puckering distance of 0.7 ˚A",
+      "confidence": null
+    },
+    "vacuum_spacing_ang": {
+      "reported": true,
+      "value": 20.0,
+      "evidence": "a vacuum distance of 20 ˚A in the perpendicular direction to the monolayer",
+      "confidence": null
+    },
+    "dipole_correction": {
+      "reported": true,
+      "value": true,
+      "evidence": "The inclusion of SOC is crucial for the results obtained",
+      "confidence": null
+    },
+    "thickness_for_gpa_conversion_ang": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "elastic_units_reported": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    }
+  },
+  "stage": "compared",
+  "parameters": {
+    "reasoning": "The paper describes a 2D PdSe2 monolayer calculation using Quantum ESPRESSO with a plane-wave cutoff of 100 Ry, a 15x15x1 k-grid, and a PAW pseudopotential. SIESTA uses NAO basis, so plane-wave parameters have no direct equivalent. The paper states a vacuum spacing of 20 Å, which must be 1 division in the vacuum direction for 2D systems. The basis size is 12B (12 bands), which corresponds to a DZP basis in SIESTA (standard for 2D systems). The paper mentions a puckering distance of 0.7 Å, which is used for the basis_split_norm. The functional is PBE, so SIESTA uses GGA/PBE. The paper does not report mesh_cutoff_ry, so we choose 200-400 Ry (300 Ry for light elements). The paper does not state dispersion correction, so it's not included. The paper uses a 2D system, so vacuum axis must have 1 division. The paper states a force tolerance of 0.0001 eV/Å, which maps to SIESTA's force_threshold_ev_ang. The paper states energy tolerance of 1e-8 Ry, which maps to SIESTA's energy_threshold_ev. The paper uses SOC, so spin_polarised is True. The paper does not report pseudopotential type, but it's PAW, so we use PAW in SIESTA. The paper does not report mesh_cutoff_ry, so we choose 300 Ry. The paper states a 12B basis, which maps to DZP basis. The paper does not state k-spacing, so we use 15x15x1 grid. The paper uses PBE functional, so SIESTA uses GGA/PBE. The paper does not report dispersion correction, so it's not included. The paper does not report elastic units, so it's not included. The paper does not report thickness for GPA conversion, so it's not included. The paper states a vacuum spacing of 20 Å, which maps to 1 division in vacuum. The paper states a puckering distance of 0.7 Å, which maps to basis_split_norm=0.7. The paper states a force tolerance of 0.0001 eV/Å, which maps to force_threshold_ev_ang=0.0001. The paper states an energy tolerance of 1e-8 Ry, which maps to energy_threshold_ev=1e-8. The paper uses PBE functional, so SIESTA uses GGA/PBE. The paper does not report mesh_cutoff_ry, so we choose 300 Ry. The paper does not report dispersion correction, so it's not included. The paper does not report elastic units, so it's not included. The paper does not report thickness for GPA conversion, so it's not included. The paper states a vacuum spacing of 20 Å, which maps to 1 division in vacuum. The paper states a 12B basis, which maps to DZP basis. The paper states a puckering distance of 0.7 Å, which maps to basis_split_norm=0.7. The paper states a force tolerance of 0.0001 eV/Å, which maps to force_threshold_ev_ang=0.0001. The paper states an energy tolerance of 1e-8 Ry, which maps to energy_threshold_ev=1e-8. The paper uses PBE functional, so SIESTA uses GGA/PBE. The paper does not report mesh_cutoff_ry, so we choose 300 Ry. The paper does not report dispersion correction, so it's not included. The paper does not report elastic units, so it's not included. The paper does not report thickness for GPA conversion, so it's not included.",
+    "unmapped": [
+      "the paper's plane-wave cutoff (100 Ry) has no NAO equivalent, so a mesh cutoff of 300 Ry was chosen independently",
+      "the paper's dispersion correction (NOT REPORTED) has no equivalent in SIESTA's standard run, so it was omitted",
+      "the paper's elastic units (NOT REPORTED) has no equivalent in SIESTA, so it was omitted",
+      "the paper's thickness for GPA conversion (NOT REPORTED) has no equivalent in SIESTA, so it was omitted",
+      "the paper's vacuum spacing (20.0 Å) has no direct equivalent in SIESTA's vacuum axis, but it was used to set the vacuum axis to 1 division"
+    ],
+    "derived_from": [
+      {
+        "setting": "basis",
+        "justification": "the paper states a 12B model (12 bands), which corresponds to a DZP basis in SIESTA (standard for 2D systems)"
+      },
+      {
+        "setting": "mesh_cutoff_ry",
+        "justification": "the paper does not report a mesh cutoff, so a standard value of 300 Ry was chosen for light elements"
+      },
+      {
+        "setting": "kgrid",
+        "justification": "the paper states a 15x15x1 k-grid, so kgrid is set to 15x15x1"
+      },
+      {
+        "setting": "xc",
+        "justification": "the paper states PBE functional, so SIESTA uses GGA/PBE"
+      },
+      {
+        "setting": "xc_authors",
+        "justification": "the paper states PBE functional, so SIESTA uses GGA/PBE (PBE is the standard for PBE)"
+      }
+    ],
+    "basis": "DZP",
+    "mesh_cutoff_ry": 300.0,
+    "kgrid": [
+      15,
+      15,
+      1
+    ],
+    "xc": "GGA",
+    "xc_authors": "PBE"
+  },
+  "steps": [
+    {
+      "iteration": 1,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 300.0,
+        "kgrid": [
+          15,
+          15,
+          1
+        ]
+      },
+      "energy_ev": -20561.68293,
+      "cell": [
+        5.742193,
+        6.015404,
+        20.211944
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": null,
+      "delta_cell_pct": null,
+      "seconds": 269.7,
+      "decision": "increase_mesh: mesh cutoff 300.0 -> 400.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 2,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 400.0,
+        "kgrid": [
+          15,
+          15,
+          1
+        ]
+      },
+      "energy_ev": -20561.652114,
+      "cell": [
+        5.736375,
+        6.011946,
+        20.185103
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": 0.005135999999765772,
+      "delta_cell_pct": 0.10132017506204588,
+      "seconds": 310.4,
+      "decision": "increase_mesh: mesh cutoff 400.0 -> 500.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 3,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 500.0,
+        "kgrid": [
+          15,
+          15,
+          1
+        ]
+      },
+      "energy_ev": -20561.643134,
+      "cell": [
+        5.735371,
+        6.012063,
+        20.175359
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": 0.0014966666664501342,
+      "delta_cell_pct": 0.017502342507245517,
+      "seconds": 352.0,
+      "decision": "stop: converged: dE = 1.5 meV/atom, dcell = 0.02% between the last two settings",
+      "error": null
+    }
+  ],
+  "our_value": 5.735371,
+  "verdict": "consistent",
+  "rationale": "difference 0.08% is within the stated tolerance (1.00%)",
+  "failure_class": null,
+  "abandoned_reason": null,
+  "critic_verdict": "pass",
+  "critic_reasoning": "The verification is sound for the following reasons: ...",
+  "critic_concerns": [
+    {
+      "category": "symmetry",
+      "severity": "warning",
+      "detail": "The b/a ratio is 1.0482, which is within the tolerance of 0.05 for the expected penta structure (b/a ~ 1.025). The prototype is orthorhombic, and the structure is consistent with the expected symmetry.",
+      "check": "Verify that the b/a ratio is within 0.05 of the expected 1.025 for the penta structure."
+    },
+    {
+      "category": "convergence",
+      "severity": "warning",
+      "detail": "The convergence history shows that the run satisfied the arithmetic convergence test (delta_energy_mev_per_atom = 1.5 < tolerance of 5.0, delta_cell_pct = 0.018 < tolerance of 0.5).",
+      "check": "Confirm that the convergence criteria were met in all iterations."
+    }
+  ],
+  "critic_tools_used": [
+    "check_symmetry",
+    "expected_symmetry",
+    "calibration_for_structure",
+    "convergence_status",
+    "literature_claims",
+    "literature_methods"
+  ],
+  "provisional_verdict": null,
+  "config_fingerprint": "1df1d9d0bd33",
+  "tolerance_used": 0.01,
+  "total_seconds": 1044.0,
+  "n_calculations": 3
+}

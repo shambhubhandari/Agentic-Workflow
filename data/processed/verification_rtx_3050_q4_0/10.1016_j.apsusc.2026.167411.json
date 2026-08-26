@@ -1,0 +1,279 @@
+{
+  "paper_key": "10.1016_j.apsusc.2026.167411",
+  "doi": "10.1016/j.apsusc.2026.167411",
+  "formula": "PdTe2",
+  "structure_path": null,
+  "claimed_property": "lattice_a",
+  "claimed_value": 6.03,
+  "claimed_unit": "A",
+  "paper_method": {
+    "code": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "code_version": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "xc_functional": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "pseudopotential_type": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "k_mesh": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "smearing": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "force_threshold_ev_ang": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "energy_threshold_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "spin_polarised": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "dispersion_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "plane_wave_cutoff_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "augmentation_cutoff_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "mesh_cutoff_ry": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "basis_size": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "pao_energy_shift_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "basis_split_norm": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "vacuum_spacing_ang": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "dipole_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "thickness_for_gpa_conversion_ang": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    },
+    "elastic_units_reported": {
+      "reported": false,
+      "value": null,
+      "evidence": null,
+      "confidence": null
+    }
+  },
+  "stage": "compared",
+  "parameters": {
+    "reasoning": "The paper describes a PdTe2 (6 atoms) 2D monolayer system. Since it's a 2D system, the vacuum axis must have exactly 1 division (kgrid[2] = 1). The paper does not report any plane-wave parameters, so we cannot map plane-wave cutoffs or k-meshes. SIESTA uses NAO basis, so we choose DZP as the standard basis. The paper does not specify the functional, so we use PBE (GGA) as the default. The mesh_cutoff_ry must be chosen independently (200-400 Ry for light elements). The paper does not report any parameters that SIESTA needs but the paper didn't state, so we list those in unmapped.",
+    "unmapped": [
+      "the paper's plane-wave cutoff (not reported) has no NAO equivalent, so a mesh cutoff of 200 Ry was chosen for light elements",
+      "the paper's k-mesh (not reported) has no equivalent in SIESTA for 2D systems, so a kgrid with 1 division along vacuum axis was used",
+      "the paper's basis size (not reported) has no equivalent in SIESTA, so DZP was chosen as the standard basis",
+      "the paper's functional (not reported) has no equivalent in SIESTA for hybrid/meta-GGA functionals, so PBE was used as the default",
+      "the paper's mesh cutoff (not reported) has no equivalent in SIESTA, so 200 Ry was chosen for light elements"
+    ],
+    "derived_from": [
+      {
+        "setting": "basis",
+        "justification": "DZP is the standard production choice for SIESTA, as the paper did not report basis size"
+      },
+      {
+        "setting": "mesh_cutoff_ry",
+        "justification": "200 Ry was chosen for light elements, as the paper did not report a mesh cutoff"
+      },
+      {
+        "setting": "kgrid",
+        "justification": "kgrid[2] = 1 for 2D systems, as the paper did not report k-mesh"
+      },
+      {
+        "setting": "xc",
+        "justification": "PBE was used as the default functional, as the paper did not report functional"
+      },
+      {
+        "setting": "xc_authors",
+        "justification": "PBE was used as the default functional, as the paper did not report functional"
+      }
+    ],
+    "basis": "DZP",
+    "mesh_cutoff_ry": 200.0,
+    "kgrid": [
+      1,
+      1,
+      1
+    ],
+    "xc": "GGA",
+    "xc_authors": "PBE"
+  },
+  "steps": [
+    {
+      "iteration": 1,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 200.0,
+        "kgrid": [
+          1,
+          1,
+          1
+        ]
+      },
+      "energy_ev": -18782.513764,
+      "cell": [
+        6.520467,
+        6.493193,
+        19.855884
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": null,
+      "delta_cell_pct": null,
+      "seconds": 57.6,
+      "decision": "increase_mesh: mesh cutoff 200.0 -> 300.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 2,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 300.0,
+        "kgrid": [
+          1,
+          1,
+          1
+        ]
+      },
+      "energy_ev": -18782.468892,
+      "cell": [
+        6.517645,
+        6.490376,
+        19.814898
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": 0.00747866666642949,
+      "delta_cell_pct": 0.043383894487648886,
+      "seconds": 91.1,
+      "decision": "increase_mesh: mesh cutoff 300.0 -> 400.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 3,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 400.0,
+        "kgrid": [
+          1,
+          1,
+          1
+        ]
+      },
+      "energy_ev": -18782.45704,
+      "cell": [
+        6.516817,
+        6.490001,
+        19.802513
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": 0.0019753333332725256,
+      "delta_cell_pct": 0.012703975132126297,
+      "seconds": 140.4,
+      "decision": "stop: converged: dE = 2.0 meV/atom, dcell = 0.01% between the last two settings",
+      "error": null
+    }
+  ],
+  "our_value": 6.490001,
+  "verdict": "inconclusive",
+  "rationale": "held at review (symmetry: The prototype is orthorhombic, but the computed b/a ratio (1.0041) suggests a tetragonal structure. This indicates the relaxation did not stay near the prototype, making the comparison meaningless.; convention: The paper uses 'lattice_a' in Angstroms (6.03 A), but the units check is not runnable, indicating a unit mismatch that must be resolved before comparison.). Provisional comparison was divergent: difference 7.63% exceeds the stated tolerance (1.00%); our SIESTA recomputation does not reproduce the published value",
+  "failure_class": null,
+  "abandoned_reason": null,
+  "critic_verdict": "hold",
+  "critic_reasoning": "The verification has a critical issue with the units and the structural prototype. The paper claims lattice_a in Angstroms (6.03 A), but the computed result is in Angstroms (a=6.49 A, b=6.5168 A). However, the units check shows 'not runnable: the state has no value to check', which means the units comparison is not properly handled. Additionally, the structural prototype is orthorhombic, but the paper claims a tetragonal penta structure (b/a ≈ 1.0041), which is inconsistent with the orthorhombic prototype. This mismatch means the comparison is meaningless.",
+  "critic_concerns": [
+    {
+      "category": "symmetry",
+      "severity": "blocking",
+      "detail": "The prototype is orthorhombic, but the computed b/a ratio (1.0041) suggests a tetragonal structure. This indicates the relaxation did not stay near the prototype, making the comparison meaningless.",
+      "check": "Verify that the structure is orthorhombic by checking the symmetry of the relaxed structure."
+    },
+    {
+      "category": "convention",
+      "severity": "blocking",
+      "detail": "The paper uses 'lattice_a' in Angstroms (6.03 A), but the units check is not runnable, indicating a unit mismatch that must be resolved before comparison.",
+      "check": "Confirm the unit convention used in the paper and the computational output to ensure consistency."
+    }
+  ],
+  "critic_tools_used": [
+    "check_symmetry",
+    "convergence_status",
+    "literature_claims",
+    "literature_methods"
+  ],
+  "provisional_verdict": "divergent",
+  "config_fingerprint": "2afed659cb94",
+  "tolerance_used": 0.01,
+  "total_seconds": 390.3,
+  "n_calculations": 3
+}

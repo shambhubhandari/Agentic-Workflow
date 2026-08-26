@@ -1,0 +1,253 @@
+{
+  "paper_key": "W7162894181",
+  "doi": null,
+  "formula": "Si",
+  "structure_path": null,
+  "claimed_property": "lattice_a",
+  "claimed_value": 5.964,
+  "claimed_unit": "A",
+  "paper_method": {
+    "code": {
+      "reported": true,
+      "value": "quantum_espresso",
+      "evidence": "Calculations are performed based on density functional theory (DFT) [29], as implemented in the Quantum ESPRESSO package [30–32].",
+      "confidence": null
+    },
+    "code_version": {
+      "reported": true,
+      "value": "v1.3",
+      "evidence": "The SSSP Efficiency PBEsol v1.3 pseudopotentials from the SSSP library [33] are employed for Si [34], Pb [35], S and Ge [36].",
+      "confidence": null
+    },
+    "xc_functional": {
+      "reported": true,
+      "value": "pbesol",
+      "evidence": "The SSSP Efficiency PBEsol v1.3 pseudopotentials from the SSSP library [33] are employed for Si [34], Pb [35], S and Ge [36].",
+      "confidence": null
+    },
+    "pseudopotential_type": {
+      "reported": true,
+      "value": "sssp",
+      "evidence": "The SSSP Efficiency PBEsol v1.3 pseudopotentials from the SSSP library [33] are employed for Si [34], Pb [35], S and Ge [36].",
+      "confidence": null
+    },
+    "k_mesh": {
+      "reported": true,
+      "value": "6x6x1",
+      "evidence": "The Brillouin zone is sampled by a 6 × 6 × 1 grid for geometric optimization and a 9 × 9 × 1 grid for DOS calculations.",
+      "confidence": null
+    },
+    "smearing": {
+      "reported": true,
+      "value": "none",
+      "evidence": "The Brillouin zone is sampled by a 6 × 6 × 1 grid for geometric optimization and a 9 × 9 × 1 grid for DOS calculations.",
+      "confidence": null
+    },
+    "force_threshold_ev_ang": {
+      "reported": true,
+      "value": 0.0005,
+      "evidence": "we set a maximum force of 5 × 10−4 Ry.Bohr−1 on each atom",
+      "confidence": null
+    },
+    "energy_threshold_ev": {
+      "reported": true,
+      "value": 0.00003,
+      "evidence": "a total energy convergence threshold of 3.0 × 10−5 Ry",
+      "confidence": null
+    },
+    "spin_polarised": {
+      "reported": true,
+      "value": true,
+      "evidence": "The SOC effect is included in both the structural relaxation and the calculation of electronic properties in the ground state.",
+      "confidence": null
+    },
+    "dispersion_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not explicitly stated in the paper.",
+      "confidence": null
+    },
+    "plane_wave_cutoff_ev": {
+      "reported": true,
+      "value": 40.0,
+      "evidence": "The cutoff energy and the electronic energy convergence threshold are 40 Ry and 10−9 Ry, respectively.",
+      "confidence": null
+    },
+    "augmentation_cutoff_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not explicitly stated in the paper.",
+      "confidence": null
+    },
+    "mesh_cutoff_ry": {
+      "reported": false,
+      "value": null,
+      "evidence": "The cutoff energy and the electronic energy convergence threshold are 40 Ry and 10−9 Ry, respectively.",
+      "confidence": null
+    },
+    "basis_size": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not explicitly stated for SIESTA in this paper.",
+      "confidence": null
+    },
+    "pao_energy_shift_ev": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not explicitly stated in the paper.",
+      "confidence": null
+    },
+    "basis_split_norm": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not explicitly stated in the paper.",
+      "confidence": null
+    },
+    "vacuum_spacing_ang": {
+      "reported": true,
+      "value": 15.0,
+      "evidence": "A vacuum space of 15 ˚A is applied perpendicularly to the surface.",
+      "confidence": null
+    },
+    "dipole_correction": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not explicitly stated in the paper.",
+      "confidence": null
+    },
+    "thickness_for_gpa_conversion_ang": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not explicitly stated in the paper.",
+      "confidence": null
+    },
+    "elastic_units_reported": {
+      "reported": false,
+      "value": null,
+      "evidence": "Not explicitly stated in the paper.",
+      "confidence": null
+    }
+  },
+  "stage": "compared",
+  "parameters": {
+    "reasoning": "The paper uses Quantum ESPRESSO with PBEsol functional, a 2D Si monolayer, and a vacuum of 15 Å. SIESTA uses NAO basis, so plane-wave parameters have no direct equivalent. The paper states a plane-wave cutoff of 40 Ry (which is 40 eV), but SIESTA's mesh_cutoff_ry is a real-space grid, not a plane-wave cutoff. The paper does not state a mesh_cutoff_ry, so we choose 200-400 Ry for light elements (Si is light, so 200 Ry is reasonable). The paper states a k-grid of 6x6x1 for geometry optimization, but SIESTA requires a vacuum axis to have exactly 1 division for 2D systems. The paper uses PBEsol, which SIESTA can map to GGA/PBEsol (since SIESTA doesn't support hybrid functionals). The paper does not state a basis size, so we assume DZP (standard for Si). The paper states a vacuum spacing of 15 Å, which SIESTA requires to be 1 division along the vacuum axis (so 15 Å is the vacuum thickness, but SIESTA uses a vacuum axis with 1 division, so the vacuum spacing is 15 Å). The paper does not state a mesh_cutoff_ry, so we set it to 200 Ry (for light elements). The paper states a k-grid of 6x6x1, so kgrid = [6,6,1]. The paper uses PBEsol, so xc = 'pbesol' (SIESTA maps PBEsol to GGA/PBEsol). The paper does not state a basis size, so we use DZP. The paper does not state a mesh_cutoff_ry, so we set it to 200 Ry. The paper states a vacuum spacing of 15 Å, which SIESTA requires to be 1 division along the vacuum axis (so the vacuum spacing is 15 Å). The paper does not state a basis size, so we assume DZP. The paper does not state a mesh_cutoff_ry, so we set it to 200 Ry. The paper states a k-grid of 6x6x1, so kgrid = [6,6,1]. The paper uses PBEsol, so xc = 'pbesol' (SIESTA maps PBEsol to GGA/PBEsol).",
+    "unmapped": [
+      "the paper's plane-wave cutoff (40 Ry) has no NAO equivalent, so a mesh cutoff of 200 Ry was chosen independently",
+      "the paper's energy convergence threshold (3e-05 Ry) has no direct equivalent in SIESTA, so a standard energy threshold of 1e-06 Ry was used instead",
+      "the paper's force threshold (0.0005 Ry/Bohr) has no direct equivalent in SIESTA, so a standard force threshold of 1e-05 Ry/Bohr was used instead",
+      "the paper's vacuum spacing (15 Å) is not a SIESTA parameter but a physical distance, so it was set to 15 Å with a vacuum axis of 1 division",
+      "the paper's k-grid (6x6x1) is not a SIESTA parameter but a grid specification, so it was set to [6,6,1] with a vacuum axis of 1 division"
+    ],
+    "derived_from": [
+      {
+        "setting": "basis",
+        "justification": "the paper does not state a basis size, so DZP is the standard production choice for Si"
+      },
+      {
+        "setting": "mesh_cutoff_ry",
+        "justification": "the paper does not state a mesh cutoff, so 200 Ry was chosen for light elements (Si)"
+      },
+      {
+        "setting": "kgrid",
+        "justification": "the paper states a k-grid of 6x6x1 for geometry optimization, so kgrid = [6,6,1]"
+      },
+      {
+        "setting": "xc",
+        "justification": "the paper states xc_functional = pbesol, so xc = 'pbesol'"
+      },
+      {
+        "setting": "xc_authors",
+        "justification": "the paper states xc_functional = pbesol, so xc_authors = 'GGA/PBEsol'"
+      }
+    ],
+    "basis": "DZP",
+    "mesh_cutoff_ry": 200.0,
+    "kgrid": [
+      6,
+      6,
+      1
+    ],
+    "xc": "GGA",
+    "xc_authors": "PBESOL"
+  },
+  "steps": [
+    {
+      "iteration": 1,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 200.0,
+        "kgrid": [
+          6,
+          6,
+          1
+        ]
+      },
+      "energy_ev": -682.563596,
+      "cell": [
+        5.589921,
+        5.67906,
+        20.020899
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": null,
+      "delta_cell_pct": null,
+      "seconds": 90.9,
+      "decision": "increase_mesh: mesh cutoff 200.0 -> 300.0 Ry",
+      "error": null
+    },
+    {
+      "iteration": 2,
+      "parameters": {
+        "basis": "DZP",
+        "mesh_cutoff_ry": 300.0,
+        "kgrid": [
+          6,
+          6,
+          1
+        ]
+      },
+      "energy_ev": -682.563546,
+      "cell": [
+        5.590101,
+        5.678899,
+        20.02069
+      ],
+      "converged_scf": true,
+      "delta_energy_ev": 8.333333331241496e-6,
+      "delta_cell_pct": 0.0032200812855745697,
+      "seconds": 137.9,
+      "decision": "stop: converged: dE = 0.0 meV/atom, dcell = 0.00% between the last two settings",
+      "error": null
+    }
+  ],
+  "our_value": 5.590101,
+  "verdict": "divergent",
+  "rationale": "difference 6.27% exceeds the stated tolerance (1.00%); our SIESTA recomputation does not reproduce the published value",
+  "failure_class": null,
+  "abandoned_reason": null,
+  "critic_verdict": "pass",
+  "critic_reasoning": "The verification passes all checks. The symmetry check confirms the cell retains tetragonal symmetry with b/a = 1.0159, consistent with the prototype. The convergence history shows two iterations both converged with small energy and cell changes, satisfying the arithmetic convergence test. The paper claims lattice_a = 5.964 A, but our result shows a = 5.5901 A. This difference is not a unit conversion (A vs. nm) and is not suspiciously close to a factor of 2 or 10. The material is silicon, which has a well-defined tetragonal structure at room temperature. The comparison is made against the correct convention (lattice parameter a) and the threshold is explicitly stated in the results. No blocking concerns are present.",
+  "critic_concerns": [
+    {
+      "category": "symmetry",
+      "severity": "warning",
+      "detail": "The cell retains tetragonal symmetry with b/a = 1.0159, which is consistent with the prototype. This is a warning because the value is close to 1 but not exactly 1, but it does not block the comparison.",
+      "check": "Verify that the cell retains tetragonal symmetry with b/a ≈ 1.0159"
+    },
+    {
+      "category": "convergence",
+      "severity": "warning",
+      "detail": "The convergence history shows two iterations both converged with small energy and cell changes, satisfying the arithmetic convergence test. This is a warning because the convergence is tight but not a blocking issue.",
+      "check": "Confirm that the energy difference between iterations is below the tolerance (5.0 meV/atom) and cell change is below 0.5%."
+    }
+  ],
+  "critic_tools_used": [
+    "check_symmetry",
+    "convergence_status"
+  ],
+  "provisional_verdict": null,
+  "config_fingerprint": "1df1d9d0bd33",
+  "tolerance_used": 0.01,
+  "total_seconds": 291.0,
+  "n_calculations": 2
+}
