@@ -4,7 +4,7 @@
 #   expert-labels    25 hand-labelled papers, 201 judgements — every accuracy figure
 #   audited-corpus   the pipeline's own output: 69 retrieved, 62 extracted, 57 audited
 #   hardware-logs    inference-server behaviour, from the shipped log excerpt
-#   tier2-targets    the 16 axis-matched lattice comparisons
+#   tier2-targets    the 8 axis-matched lattice comparisons that survive the Critic
 #
 # Authored input, immutable: this is the record of what the paper states. Verification
 # results are written to data/processed/verification_report.json.
@@ -296,27 +296,109 @@
   verify: acv.verification.evidence:papers_differing_max
   note: Upper end of the 11-to-24 range the manuscript quotes.
 
+# ------------------------------------ cache precision against the computed physics
+- id: cache.shared_targets
+  population: tier2-targets
+  macro: NcacheShared
+  value: 8
+  section: "3.4"
+  disposition: promote
+  artefacts: [data/processed/verification_tesla_t4_q4_0,
+              data/processed/verification_tesla_t4_f16]
+  verify: acv.verification.values:cache_shared_targets
+
+- id: cache.cell_agreement
+  population: tier2-targets
+  macro: CacheCellMax
+  value: 0.0052
+  tolerance: 0.00005
+  unit: angstrom
+  section: "3.4"
+  disposition: promote
+  artefacts: [data/processed/verification_tesla_t4_q4_0,
+              data/processed/verification_tesla_t4_f16]
+  verify: acv.verification.values:cache_cell_agreement
+  note: >
+    Largest in-plane cell difference between the two KV-cache precisions, over every
+    target run under both. Compared cell-to-cell, not through the parity plot: the
+    question is whether cache precision changes the electronic structure, not what a
+    paper reported. Held targets are kept, since a held structure still tests the engine.
+
+# --------------------------------------------------------- multi-pass union (Table 2)
+- id: union.pass_one_fields
+  population: audited-corpus
+  macro: NfieldsPassOne
+  value: 435
+  section: "3.2; Table 2"
+  disposition: promote
+  artefacts: [data/interim/extraction/rtx3050_q4_0/pass_a.jsonl]
+  verify: acv.verification.values:pass_fields_one
+
+- id: union.pass_two_fields
+  population: audited-corpus
+  macro: NfieldsPassTwo
+  value: 440
+  section: "3.2; Table 2"
+  disposition: promote
+  artefacts: [data/interim/extraction/rtx3050_q4_0/pass_b.jsonl]
+  verify: acv.verification.values:pass_fields_two
+
+- id: union.pass_three_fields
+  population: audited-corpus
+  macro: NfieldsPassThree
+  value: 439
+  section: "3.2; Table 2"
+  disposition: promote
+  artefacts: [data/interim/extraction/rtx3050_q4_0/pass_c.jsonl]
+  verify: acv.verification.values:pass_fields_three
+
+- id: union.recovered_over_best
+  population: audited-corpus
+  macro: Nrecovered
+  value: 35
+  section: "3.2"
+  disposition: promote
+  artefacts: [data/interim/extraction/rtx3050_q4_0/union_gated.jsonl]
+  verify: acv.verification.values:union_recovered_over_best
+  note: >
+    Not a plain superset difference: combine() resolves plane-wave/mesh cutoff collisions
+    after merging, so the union holds 475 of the 484 fields the naive union would carry.
+
 # ----------------------------------------------------------------------- external
 # ------------------------------------------------------------ Tier 2 recomputation
 - id: recomputation.comparisons
   population: tier2-targets
   macro: NclaimsTierTwo
-  value: 16
+  value: 8
   section: "3.5; Figure 5"
   disposition: promote
   artefacts: [data/processed/parity_points.jsonl]
   verify: acv.verification.values:parity_comparisons
   note: >
     Axis-matched comparisons distilled from the SIESTA runs, which are ~77 MB of
-    regenerable scratch and are not redistributed.
+    regenerable scratch and are not redistributed. Targets the Critic held are excluded:
+    a relaxation that left its prototype measures the starting geometry rather than the
+    published physics, so it is reported in the text as a raw deviation, never plotted.
+    Magnitudes are compared, never axis labels (acv.guardrails.epistemic.decide_cell), which
+    requires both in-plane constants; a paper reporting only one leaves the comparison
+    underdetermined and is reported in the text rather than plotted.
+
+- id: recomputation.prototypes
+  population: tier2-targets
+  macro: NprototypesTierTwo
+  value: 3
+  section: "3.5"
+  disposition: promote
+  artefacts: [data/processed/parity_points.jsonl]
+  verify: acv.verification.values:parity_prototypes
 
 - id: recomputation.mae
   population: tier2-targets
   macro: MAEDeviation
-  value: 0.197
+  value: 0.110
   tolerance: 0.0005
   unit: angstrom
-  section: "abstract; 3.5; Figure 5"
+  section: "3.5; Figure 5"
   disposition: promote
   artefacts: [data/processed/parity_points.jsonl]
   verify: acv.verification.values:parity_mae
@@ -324,13 +406,44 @@
 - id: recomputation.mare
   population: tier2-targets
   macro: MAREDeviation
-  value: 4.5
+  value: 2.3
   tolerance: 0.05
   unit: percent
   section: "abstract; 3.5; Figure 5"
   disposition: promote
   artefacts: [data/processed/parity_points.jsonl]
   verify: acv.verification.values:parity_mare
+
+- id: recomputation.median
+  population: tier2-targets
+  macro: MedianDeviation
+  value: 1.1
+  tolerance: 0.05
+  unit: percent
+  section: "3.5"
+  disposition: promote
+  artefacts: [data/processed/parity_points.jsonl]
+  verify: acv.verification.values:parity_median
+
+- id: recomputation.bias
+  population: tier2-targets
+  macro: BiasDeviation
+  value: 0.090
+  tolerance: 0.0005
+  unit: angstrom
+  section: "3.5"
+  disposition: promote
+  artefacts: [data/processed/parity_points.jsonl]
+  verify: acv.verification.values:parity_bias
+
+- id: recomputation.within_two_percent
+  population: tier2-targets
+  macro: NwithinTwoPct
+  value: 6
+  section: "3.5; Figure 5"
+  disposition: promote
+  artefacts: [data/processed/parity_points.jsonl]
+  verify: acv.verification.values:parity_within_two
 
 # ------------------------------------------------- memory footprint, from the engine
 - id: hardware.min_vram_q4_cache

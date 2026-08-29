@@ -1,16 +1,14 @@
-{"campaign": "rtx3050_q4_0", "formula": "C2Si", "axis": "a", "claimed": 4.41, "ours": 4.7123171449824985}
-{"campaign": "rtx3050_q4_0", "formula": "C2Si", "axis": "b", "claimed": 4.41, "ours": 4.716145}
-{"campaign": "rtx3050_q4_0", "formula": "BN2", "axis": "a", "claimed": 3.63, "ours": 3.899009}
-{"campaign": "rtx3050_q4_0", "formula": "BN2", "axis": "b", "claimed": 3.63, "ours": 4.125443630639982}
-{"campaign": "rtx3050_q4_0", "formula": "NiP2", "axis": "a", "claimed": 5.55, "ours": 5.516330653159218}
-{"campaign": "rtx3050_q4_0", "formula": "NiP2", "axis": "b", "claimed": 5.55, "ours": 5.524411}
-{"campaign": "rtx3050_q4_0", "formula": "PdSe2", "axis": "a", "claimed": 5.748, "ours": 5.734682}
-{"campaign": "rtx3050_q4_0", "formula": "PdSe2", "axis": "b", "claimed": 5.923, "ours": 6.012215080307507}
-{"campaign": "rtx3050_q4_0", "formula": "PdTe2", "axis": "b", "claimed": 6.44, "ours": 6.476251040768339}
-{"campaign": "rtx3050_q4_0", "formula": "C2Si", "axis": "a", "claimed": 4.41, "ours": 4.718692568275242}
-{"campaign": "rtx3050_q4_0", "formula": "C2Si", "axis": "b", "claimed": 4.41, "ours": 4.72057}
-{"campaign": "rtx3050_q4_0", "formula": "PdSe2", "axis": "a", "claimed": 5.74, "ours": 5.735371}
-{"campaign": "rtx3050_q4_0", "formula": "PdSe2", "axis": "b", "claimed": 5.91, "ours": 6.012062740609749}
-{"campaign": "rtx3050_q4_0", "formula": "C", "axis": "a", "claimed": 3.68, "ours": 3.852081}
-{"campaign": "rtx3050_q4_0", "formula": "C", "axis": "b", "claimed": 4.87, "ours": 4.5674946647588985}
-{"campaign": "rtx3050_q4_0", "formula": "Si", "axis": "a", "claimed": 5.964, "ours": 5.590101}
+{"campaign": "rtx3050_q4_0", "formula": "C2Si", "axis": "a", "claimed": 4.41, "ours": 4.7123171449824985, "held": false}
+{"campaign": "rtx3050_q4_0", "formula": "C2Si", "axis": "b", "claimed": 4.41, "ours": 4.716145, "held": false}
+{"campaign": "rtx3050_q4_0", "formula": "BN2", "axis": "a", "claimed": 3.63, "ours": 3.899009, "held": true}
+{"campaign": "rtx3050_q4_0", "formula": "BN2", "axis": "b", "claimed": 3.63, "ours": 4.125443630639982, "held": true}
+{"campaign": "rtx3050_q4_0", "formula": "NiP2", "axis": "a", "claimed": 5.55, "ours": 5.516330653159218, "held": false}
+{"campaign": "rtx3050_q4_0", "formula": "NiP2", "axis": "b", "claimed": 5.55, "ours": 5.524411, "held": false}
+{"campaign": "rtx3050_q4_0", "formula": "PdSe2", "axis": "a", "claimed": 5.748, "ours": 5.734682, "held": false}
+{"campaign": "rtx3050_q4_0", "formula": "PdSe2", "axis": "b", "claimed": 5.923, "ours": 6.012215080307507, "held": false}
+{"campaign": "rtx3050_q4_0", "formula": "C2Si", "axis": "a", "claimed": 4.41, "ours": 4.718692568275242, "held": true}
+{"campaign": "rtx3050_q4_0", "formula": "C2Si", "axis": "b", "claimed": 4.41, "ours": 4.72057, "held": true}
+{"campaign": "rtx3050_q4_0", "formula": "PdSe2", "axis": "a", "claimed": 5.74, "ours": 5.735371, "held": false}
+{"campaign": "rtx3050_q4_0", "formula": "PdSe2", "axis": "b", "claimed": 5.91, "ours": 6.012062740609749, "held": false}
+{"campaign": "rtx3050_q4_0", "formula": "C", "axis": "a", "claimed": 3.68, "ours": 3.852081, "held": true}
+{"campaign": "rtx3050_q4_0", "formula": "C", "axis": "b", "claimed": 4.87, "ours": 4.5674946647588985, "held": true}

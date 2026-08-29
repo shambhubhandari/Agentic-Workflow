@@ -92,7 +92,7 @@ The pipeline is fully local: no hosted model is called at any point.
 **First-principles verification**
 
 - SIESTA under MPI, with the pseudopotentials shipped in `data/external/`
-- 16 axis-matched lattice comparisons; MAE 0.197 Å, MARE 4.5 %
+- 8 axis-matched lattice comparisons; MAE 0.110 Å, MARE 2.3 %
 - Verdicts describe the recomputation, never the paper. There is deliberately no outcome
   meaning "verified" or "refuted"
 

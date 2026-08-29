@@ -49,7 +49,7 @@ batches into the 201 scorable judgements every reported metric is computed from.
 ## processed
 
 Reportability, evaluation and extraction summaries; per-configuration verification
-records; `parity_points.jsonl` (the 16 axis-matched lattice comparisons, distilled so the
+records; `parity_points.jsonl` (the 8 axis-matched lattice comparisons, distilled so the
 parity figure needs no SIESTA scratch); `numbers.tex` (the generated macros); and
 `verification_report.json`, written by `make values`.
 

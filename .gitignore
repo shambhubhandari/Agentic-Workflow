@@ -59,3 +59,7 @@ manuscript/References_pdf/
 # --- development snapshots ----------------------------------------------------
 backup/
 .ipynb_checkpoints/
+
+# The manuscript is deliberately absent (see README): a code repository is
+# not where a paper belongs, and a journal submission must not be posted publicly.
+manuscript/

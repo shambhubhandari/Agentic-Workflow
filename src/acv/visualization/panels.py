@@ -424,7 +424,7 @@ def _load_points():
     src = ROOT / "data" / "processed" / "parity_points.jsonl"
     if not src.exists():
         return []
-    return [(r["formula"], r["axis"], r["claimed"], r["ours"])
+    return [(r["formula"], r["axis"], r["claimed"], r["ours"], bool(r.get("held")))
             for r in (_json.loads(x) for x in src.read_text().splitlines() if x.strip())]
 
 
@@ -438,9 +438,10 @@ def _emit_points(pts) -> None:
     out = ROOT / "data" / "processed" / "parity_points.jsonl"
     out.parent.mkdir(parents=True, exist_ok=True)
     with out.open("w", encoding="utf-8") as fh:
-        for formula, axis, claimed, ours in pts:
+        for formula, axis, claimed, ours, held in pts:
             fh.write(_json.dumps({"campaign": "rtx3050_q4_0", "formula": formula,
-                                  "axis": axis, "claimed": claimed, "ours": ours}) + "\n")
+                                  "axis": axis, "claimed": claimed, "ours": ours,
+                                  "held": held}) + "\n")
 
 def fig_parity():
     """Parity plot: recomputed against published lattice constants."""
@@ -496,14 +497,29 @@ def fig_parity():
     pts = []
     for f in sorted((ROOT / "data/processed/verification").glob("*.json")):
         d = json.loads(f.read_text())
+        # A target the Critic held left its prototype symmetry, so the relaxation
+        # measures the starting geometry rather than the published physics. It is drawn
+        # faded, for disclosure, and carries a flag so every statistic can exclude it:
+        # the reported deviation describes reproduction, not prototype entrapment.
+        held = d.get("critic_verdict") == "hold"
         a, b = cell(d["paper_key"], d.get("formula"))
         if a is None:
             continue
         props = lit.get(d["paper_key"], {}).get(d.get("formula"), {})
-        for axis, ours, key in (("a", a, "lattice_a"), ("b", b, "lattice_b")):
-            claimed = min(props.get(key, []), default=None)
-            if claimed:
-                pts.append((d.get("formula", "?"), axis, claimed, ours))
+        pub = [min(props[k]) for k in ("lattice_a", "lattice_b") if props.get(k)]
+        # An in-plane cell is unordered and papers do not agree on which axis is "a"
+        # (see acv.guardrails.epistemic.decide_cell, which sorts for exactly this
+        # reason). Sorting compares magnitudes rather than labels, and it needs BOTH
+        # constants. A paper reporting only one leaves the comparison underdetermined:
+        # pairing it against "a" by convention manufactured a spurious 5.1% on PdTe2,
+        # and pairing it against the nearer axis would instead pick the better of two by
+        # construction, biasing the deviation downward. Neither is a measurement, so
+        # such targets are reported in the text and never plotted.
+        if len(pub) < 2:
+            continue
+        lo, hi = sorted(pub)
+        pts.append((d.get("formula", "?"), "a", lo, a, held))
+        pts.append((d.get("formula", "?"), "b", hi, b, held))
     if pts:
         _emit_points(pts)
     else:
@@ -514,17 +530,24 @@ def fig_parity():
     def pretty_formula(f):
         return "$\\mathrm{" + re.sub(r"(\d+)", r"_{\1}", f) + "}$"
 
-    mats = sorted({p[0] for p in pts})
+    # Every statistic is computed over the retained targets alone; held ones are shown
+    # but never counted, which is why `scored` and not `pts` feeds the numbers below.
+    scored = [q for q in pts if not q[4]]
+    # Colour keys every composition on the plot, held ones included: a reader has to be
+    # able to name the targets that left their prototype, since they are the evidence for
+    # the entrapment argument. Exclusion is carried by the open, faded marker and its own
+    # legend entry, not by hiding which compound it was.
+    mats = sorted({q[0] for q in pts})
     slots = [BLUE, ORANGE, AQUA, YELLOW, "#e87ba4", "#4a3aa7", "#008300"]
     colour = {m: slots[i % len(slots)] for i, m in enumerate(mats)}
 
-    errs = [o - c for _, _, c, o in pts]
-    mae = statistics.mean(abs(e) for e in errs)
-    mare = statistics.mean(100 * abs(o - c) / c for _, _, c, o in pts)
-    me = statistics.mean(errs)
+    # MAE, MARE and bias are quoted in the text from the same artefact this figure
+    # reads, so printing them here too would only be a second place for them to drift
+    # -- and the block sat over the data. The figure carries the points; the prose
+    # carries the numbers.
 
     fig, (ax,) = panel_grid(1, fig_w=COL_SINGLE, left=0.62)
-    vals = [v for _, _, c, o in pts for v in (c, o)]
+    vals = [v for _, _, c, o, _h in pts for v in (c, o)]
     lo, hi = min(vals) - 0.35, max(vals) + 0.35
     ax.fill_between([lo, hi], [lo * 0.98, hi * 0.98], [lo * 1.02, hi * 1.02],
                     color=GRID, alpha=0.6, zorder=1, linewidth=0)
@@ -532,31 +555,25 @@ def fig_parity():
     d = lo + 0.09 * (hi - lo)
     ax.text(d + 0.10, d - 0.10, "$y = x$", fontsize=6.5, color=INK_3, rotation=45,
             rotation_mode="anchor", ha="center", va="top", zorder=5)
-    # Plot T4 repetitions directly from verification records.
-    def campaign(rel):
-        out = []
-        for f in sorted((ROOT / rel).glob("*.json")):
-            r = json.loads(f.read_text())
-            c, o = r.get("claimed_value"), r.get("our_value")
-            prop = str(r.get("claimed_property") or "")
-            if c and o and prop.startswith("lattice_"):
-                out.append((r.get("formula", "?"), prop.split("_")[-1], float(c), float(o)))
-        return out
-
-    t4q4 = campaign("data/processed/verification_tesla_t4_q4_0")
-    t4f16 = campaign("data/processed/verification_tesla_t4_f16")
-
-    for mat, axis, claimed, ours in t4q4:                      # grey rings, drawn first
-        ax.scatter(claimed, ours, s=52, facecolor="none", edgecolor=INK_3,
-                   linewidth=1.1, marker="o" if axis == "a" else "^", zorder=3)
-    for mat, axis, claimed, ours in t4f16:                     # filled, dark edge
-        ax.scatter(claimed, ours, s=34, color=colour.get(mat, INK_3),
-                   marker="o" if axis == "a" else "^",
-                   edgecolor=INK, linewidth=0.8, zorder=4)
-    for mat, axis, claimed, ours in pts:                       # published run, small
-        ax.scatter(claimed, ours, s=18, color=colour[mat],
-                   marker="o" if axis == "a" else "^",
-                   edgecolor=SURFACE, linewidth=0.5, zorder=5)
+    # The T4 repetitions are deliberately NOT overlaid here. They answer a different
+    # question -- whether cache precision changes the computed physics -- which is a
+    # recomputed-against-recomputed comparison, not a published-against-recomputed one.
+    # Plotting them on parity axes forced them to inherit this figure's selection rules,
+    # and they were being drawn unfiltered beside a filtered series at a different MARE,
+    # which invited exactly the wrong reading. The comparison is reported in the text
+    # instead, over every target run under both precisions (values:cache_cell_agreement).
+    for mat, axis, claimed, ours, held in pts:
+        if held:                       # disclosed, not counted: drawn behind and faded
+            ax.scatter(claimed, ours, s=30, facecolor="none", edgecolor=colour[mat],
+                       marker="o" if axis == "a" else "^",
+                       linewidth=1.0, alpha=0.75, zorder=3)
+    # Alpha, not jitter: a near-square cell genuinely puts its two axes on top of one
+    # another, and nudging a point to make it countable would misplace the datum.
+    for mat, axis, claimed, ours, held in pts:
+        if not held:
+            ax.scatter(claimed, ours, s=30, color=colour[mat], alpha=0.8,
+                       marker="o" if axis == "a" else "^",
+                       edgecolor=INK, linewidth=0.5, zorder=5)
     ax.set_xlim(lo, hi)
     ax.set_ylim(lo, hi)
     ax.set_aspect("equal")
@@ -565,18 +582,6 @@ def fig_parity():
     ax.xaxis.set_major_locator(ticker.MultipleLocator(1.0))
     ax.yaxis.set_major_locator(ticker.MultipleLocator(1.0))
 
-    # Statistics block in the empty lower-right, clear of the legend.
-    ax.text(0.97, 0.03,
-            f"4 GiB, q4_0:  $n$ = {len(pts)}\n"
-            f"MAE = {mae:.3f} $\\mathrm{{\\AA}}$ · MARE = {mare:.1f}%\n"
-            f"bias = {me:+.3f} $\\mathrm{{\\AA}}$ · band: $\\pm$2%\n"
-            + (f"T4, f16:  $n$ = {len(t4f16)} · MARE = "
-               f"{statistics.mean(100*abs(o-c)/c for _,_,c,o in t4f16):.1f}%\n" if t4f16 else "")
-            + (f"T4, q4_0:  $n$ = {len(t4q4)} · MARE = "
-               f"{statistics.mean(100*abs(o-c)/c for _,_,c,o in t4q4):.1f}%" if t4q4 else ""),
-            transform=ax.transAxes, fontsize=6.5, color=INK,
-            ha="right", va="bottom", linespacing=1.6)
-
     handles = [plt.Line2D([], [], marker="s", linestyle="", color=colour[m],
                           markeredgecolor=SURFACE, markersize=4,
                           label=pretty_formula(m)) for m in mats]
@@ -584,12 +589,9 @@ def fig_parity():
                            label="$a$ axis"),
                 plt.Line2D([], [], marker="^", linestyle="", color=INK_3, markersize=4,
                            label="$b$ axis"),
-                plt.Line2D([], [], marker="o", linestyle="", color=INK_3, markersize=2.6,
-                           label="4 GiB, q4_0"),
-                plt.Line2D([], [], marker="o", linestyle="", color=INK_3, markersize=4.6,
-                           markeredgecolor=INK, label="T4, f16"),
                 plt.Line2D([], [], marker="o", linestyle="", markerfacecolor="none",
-                           color=INK_3, markersize=5.4, label="T4, q4_0")]
+                           color=INK_3, markersize=4, alpha=0.85,
+                           label="Critic held (not scored)")]
     ax.legend(handles=handles, loc="upper left", fontsize=6, ncol=2,
               handletextpad=0.2, columnspacing=0.7, labelspacing=0.28,
               borderpad=0.2, borderaxespad=0.5)
@@ -602,8 +604,14 @@ ALL = [fig_run_agreement, fig_precision_recall,
        fig_reporting_gaps, fig_parity]
 
 
-def build_all(verbose: bool = True) -> list:
-    made = []
+def build_all(verbose: bool = True) -> tuple[list, list]:
+    """Build every figure; return (paths written, names that failed).
+
+    One figure's failure must not stop the others, but it must not be silent either:
+    callers exit non-zero on a non-empty failure list, which is what stops a stale PDF
+    from riding through a build that reported success.
+    """
+    made, failed = [], []
     for fn in ALL:
         try:
             path = fn()
@@ -611,10 +619,14 @@ def build_all(verbose: bool = True) -> list:
                 made.append(path)
                 if verbose:
                     print(f"  {path.name:<30}{(fn.__doc__ or '').splitlines()[0]}")
-        except Exception as exc:
+        except Exception as exc:                                     # noqa: BLE001
+            failed.append(fn.__name__)
             print(f"  {fn.__name__:<30}FAILED: {type(exc).__name__}: {exc}")
-    return made
+    return made, failed
 
 
 if __name__ == "__main__":
-    build_all()
+    import sys
+    _, _failed = build_all()
+    if _failed:
+        sys.exit(f"{len(_failed)} figure(s) failed: {', '.join(_failed)}")
