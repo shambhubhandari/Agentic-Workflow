@@ -262,6 +262,36 @@ def _cache_agreement() -> Optional[tuple[int, float]]:
     return (len(diffs), max(diffs)) if diffs else None
 
 
+def _rtx_agents() -> Optional[dict]:
+    """Agent invocation counts for the published RTX 3050 campaign.
+
+    A translator call belongs to the campaign only if the convergence agent also ran that
+    day: the stability probe re-ran a SINGLE input 13 times on 2026-08-19 with no SIESTA
+    step behind it, while every campaign day drove translator, convergence and critic
+    together. Collapses come from the verification records rather than the log, which is
+    an excerpt and does not carry the `critic/failed` rows.
+    """
+    import collections
+    log = PROC / "agent_log_rtx_3050_q4_0.jsonl"
+    if not log.exists():
+        return None
+    rows = [json.loads(x) for x in log.read_text(encoding="utf-8").splitlines() if x.strip()]
+    counts = collections.Counter(r["agent"] for r in rows)
+    days = {r["ts"][:10] for r in rows if r["agent"] == "convergence"}
+    return {"translator": sum(1 for r in rows
+                              if r["agent"] == "translator" and r["ts"][:10] in days),
+            "convergence": counts["convergence"], "critic": counts["critic"],
+            "critic_tools": counts["critic:tool"],
+            "sets": len({json.dumps({k: (r.get("applied") or {}).get(k)
+                                     for k in ("basis", "kgrid", "mesh_cutoff_ry",
+                                               "xc", "xc_authors")}, sort_keys=True)
+                         for r in rows
+                         if r["agent"] == "translator" and r["ts"][:10] in days}),
+            "collapses": sum(1 for p in (PROC / "verification").glob("*.json")
+                             if json.loads(p.read_text(encoding="utf-8")).get("critic_verdict")
+                             == "unavailable")}
+
+
 def _passes() -> Optional[dict]:
     """Per-pass field counts and collapse counts behind Table~\\ref{tab:union}.
 
@@ -435,8 +465,10 @@ PINNED = {
     "PctGroundedPre": "93.3", "Nselfneg": "30", "PctSelfneg": "5.7", "Ntruncated": "9",
     "PctLocaliserNarrow": "58.2", "PctLocaliserWide": "71.1", "PctStabilityQfour": "78.9",
     "NdevExtractions": "509", "NtranslatorCalls": "18", "NconvCalls": "26",
-    "NcriticCalls": "14", "NcriticCollapse": "4", "NdevCampaigns": "ten",
-    "NcriticToolCalls": "52", "NdevTokens": "4.7", "PctPapersFlipped": "20",
+    # NcriticCalls now derived
+    "_unused_NcriticCalls": "14", "NcriticCollapse": "4", "NdevCampaigns": "ten",
+    # NcriticToolCalls now derived
+    "_unused_NcriticToolCalls": "52", "NdevTokens": "4.7", "PctPapersFlipped": "20",
     "PctGroundedRaw": "100.0",
 }
 
@@ -451,6 +483,7 @@ def main() -> None:
     arch = _arch_eval()
     t2 = _tier2()
     ps = _passes()
+    ag = _rtx_agents()
     cache = _cache_agreement()
 
     pct = lambda x: "n/a" if x is None else f"{100 * x:.1f}"
@@ -562,16 +595,18 @@ def main() -> None:
 % the cost argument -- the published result is one campaign, but reaching it took ten,
 % because each defect found invalidated every extraction that preceded the fix.
 \\newcommand{{\\NdevExtractions}}{{{pin('NdevExtractions')}}}
-% Agent activity. \\NverifRecords and \\NcriticChanged are counted from
-% data/processed/verification/*.json; the call and collapse counts come from the campaign
-% logs (logs/*.log, excluding the translator-stability probe), which this release does
-% not carry, and are emitted unchanged.
+% Agent activity, all counted from shipped artefacts: the call counts from
+% agent_log_rtx_3050_q4_0.jsonl, the collapse count from verification/*.json. Translator
+% excludes the 13-call stability probe of 2026-08-19, identified as the only day on which
+% no convergence agent ran -- a translator call with no SIESTA step behind it.
 \\newcommand{{\\NverifRecords}}{{{len(list((PROC / 'verification').glob('*.json')))}}}
-\\newcommand{{\\NtranslatorCalls}}{{{pin('NtranslatorCalls')}}}
-\\newcommand{{\\NconvCalls}}{{{pin('NconvCalls')}}}
-\\newcommand{{\\NcriticCalls}}{{{pin('NcriticCalls')}}}
-\\newcommand{{\\NcriticCollapse}}{{{pin('NcriticCollapse')}}}
-\\newcommand{{\\NcriticToolCalls}}{{{pin('NcriticToolCalls')}}}
+\\newcommand{{\\NtranslatorCalls}}{{{ag['translator']}}}
+\\newcommand{{\\NconvCalls}}{{{ag['convergence']}}}
+\\newcommand{{\\NcriticCalls}}{{{ag['critic']}}}
+\\newcommand{{\\NcriticCollapse}}{{{ag['collapses']}}}
+\\newcommand{{\\NcriticToolCalls}}{{{ag['critic_tools']}}}
+\\newcommand{{\\NtranslatorSets}}{{{ag['sets']}}}
+\\newcommand{{\\NallAgentCalls}}{{{ag['translator'] + ag['convergence'] + ag['critic']}}}
 \\newcommand{{\\NcriticChanged}}{{{sum(1 for p in (PROC / 'verification').glob('*.json') if json.loads(p.read_text(encoding='utf-8')).get('critic_verdict') == 'hold')}}}
 \\newcommand{{\\NdevCampaigns}}{{{pin('NdevCampaigns')}}}
 \\newcommand{{\\NdevTokens}}{{{pin('NdevTokens')}}}        % million input tokens, at 9.2k median/paper

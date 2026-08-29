@@ -259,3 +259,73 @@ def cache_shared_targets() -> int:
 def cache_cell_agreement() -> float:
     """Largest in-plane cell difference between the two cache precisions, in angstrom."""
     return round(max(max(p) for p in _cache_pairs()), 4)
+
+
+# ------------------------------------------------- agent activity, published campaign
+
+@cache
+def _rtx_agents() -> dict:
+    """Agent invocation counts for the published RTX 3050 campaign.
+
+    A translator call belongs to the campaign only if the convergence agent also ran
+    that day. The stability probe re-ran a SINGLE input 13 times on 2026-08-19 with no
+    SIESTA step behind it, so those calls have no downstream activity at all; every real
+    campaign day drove translator, convergence and critic together. Counting them as
+    campaign work would inflate the Translator row by three quarters.
+
+    Collapses are read from the verification records, not the log: the shipped log is an
+    excerpt and does not carry the `critic/failed` rows, whereas three records record
+    `critic_verdict: unavailable`, which _apply_critic writes only on collapse.
+    """
+    import collections
+    rows = [json.loads(x) for x in
+            (S.PROCESSED / "agent_log_rtx_3050_q4_0.jsonl").read_text(encoding="utf-8").splitlines()
+            if x.strip()]
+    counts = collections.Counter(r["agent"] for r in rows)
+    campaign_days = {r["ts"][:10] for r in rows if r["agent"] == "convergence"}
+    translator = sum(1 for r in rows
+                     if r["agent"] == "translator" and r["ts"][:10] in campaign_days)
+    collapses = sum(1 for p in (S.PROCESSED / "verification").glob("*.json")
+                    if json.loads(p.read_text(encoding="utf-8")).get("critic_verdict")
+                    == "unavailable")
+    return {"translator": translator, "convergence": counts["convergence"],
+            "critic": counts["critic"], "critic_tools": counts["critic:tool"],
+            "collapses": collapses}
+
+
+def rtx_translator_calls() -> int:
+    return _rtx_agents()["translator"]
+
+
+def rtx_convergence_calls() -> int:
+    return _rtx_agents()["convergence"]
+
+
+def rtx_critic_calls() -> int:
+    return _rtx_agents()["critic"]
+
+
+def rtx_critic_collapses() -> int:
+    return _rtx_agents()["collapses"]
+
+
+def rtx_critic_tool_calls() -> int:
+    return _rtx_agents()["critic_tools"]
+
+
+def rtx_translator_distinct_sets() -> int:
+    """Distinct SIESTA settings the Translator produced across the campaign.
+
+    Compared on the settings the run actually uses -- basis, k-grid, mesh cutoff and
+    functional. The `reasoning`, `derived_from` and `unmapped` fields carry free text
+    that differs on nearly every call and would make every output look distinct.
+    """
+    import collections
+    rows = [json.loads(x) for x in
+            (S.PROCESSED / "agent_log_rtx_3050_q4_0.jsonl").read_text(encoding="utf-8").splitlines()
+            if x.strip()]
+    days = {r["ts"][:10] for r in rows if r["agent"] == "convergence"}
+    keys = ("basis", "kgrid", "mesh_cutoff_ry", "xc", "xc_authors")
+    sets = {json.dumps({k: (r.get("applied") or {}).get(k) for k in keys}, sort_keys=True)
+            for r in rows if r["agent"] == "translator" and r["ts"][:10] in days}
+    return len(sets)

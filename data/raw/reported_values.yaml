@@ -296,6 +296,68 @@
   verify: acv.verification.evidence:papers_differing_max
   note: Upper end of the 11-to-24 range the manuscript quotes.
 
+# ----------------------------------------- agent activity, published RTX campaign
+- id: agents.translator_calls
+  population: audited-corpus
+  macro: NtranslatorCalls
+  value: 17
+  section: "3.4; Table 4"
+  disposition: promote
+  artefacts: [data/processed/agent_log_rtx_3050_q4_0.jsonl]
+  verify: acv.verification.values:rtx_translator_calls
+  note: >
+    Excludes the 13-call stability probe of 2026-08-19, identified from the log itself as
+    the only day on which no convergence agent ran and only one input was translated.
+
+- id: agents.translator_distinct_sets
+  population: audited-corpus
+  macro: NtranslatorSets
+  value: 11
+  section: "3.4"
+  disposition: promote
+  artefacts: [data/processed/agent_log_rtx_3050_q4_0.jsonl]
+  verify: acv.verification.values:rtx_translator_distinct_sets
+
+- id: agents.convergence_calls
+  population: audited-corpus
+  macro: NconvCalls
+  value: 24
+  section: "3.4; Table 4"
+  disposition: promote
+  artefacts: [data/processed/agent_log_rtx_3050_q4_0.jsonl]
+  verify: acv.verification.values:rtx_convergence_calls
+
+- id: agents.critic_calls
+  population: audited-corpus
+  macro: NcriticCalls
+  value: 13
+  section: "3.4; 4; Table 4"
+  disposition: promote
+  artefacts: [data/processed/agent_log_rtx_3050_q4_0.jsonl]
+  verify: acv.verification.values:rtx_critic_calls
+
+- id: agents.critic_collapses
+  population: audited-corpus
+  macro: NcriticCollapse
+  value: 3
+  section: "3.4; 4; Table 4"
+  disposition: promote
+  artefacts: [data/processed/verification]
+  verify: acv.verification.values:rtx_critic_collapses
+  note: >
+    Counted from verification/*.json, where three records carry critic_verdict
+    "unavailable" -- written by _apply_critic only when the Critic raises. The shipped
+    agent log is an excerpt and does not carry the corresponding critic/failed rows.
+
+- id: agents.critic_tool_calls
+  population: audited-corpus
+  macro: NcriticToolCalls
+  value: 48
+  section: "3.4; Table 4"
+  disposition: promote
+  artefacts: [data/processed/agent_log_rtx_3050_q4_0.jsonl]
+  verify: acv.verification.values:rtx_critic_tool_calls
+
 # ------------------------------------ cache precision against the computed physics
 - id: cache.shared_targets
   population: tier2-targets

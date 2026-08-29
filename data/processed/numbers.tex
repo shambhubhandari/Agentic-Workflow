@@ -104,16 +104,18 @@
 % the cost argument -- the published result is one campaign, but reaching it took ten,
 % because each defect found invalidated every extraction that preceded the fix.
 \newcommand{\NdevExtractions}{509}
-% Agent activity. \NverifRecords and \NcriticChanged are counted from
-% data/processed/verification/*.json; the call and collapse counts come from the campaign
-% logs (logs/*.log, excluding the translator-stability probe), which this release does
-% not carry, and are emitted unchanged.
+% Agent activity, all counted from shipped artefacts: the call counts from
+% agent_log_rtx_3050_q4_0.jsonl, the collapse count from verification/*.json. Translator
+% excludes the 13-call stability probe of 2026-08-19, identified as the only day on which
+% no convergence agent ran -- a translator call with no SIESTA step behind it.
 \newcommand{\NverifRecords}{12}
-\newcommand{\NtranslatorCalls}{18}
-\newcommand{\NconvCalls}{26}
-\newcommand{\NcriticCalls}{14}
-\newcommand{\NcriticCollapse}{4}
-\newcommand{\NcriticToolCalls}{52}
+\newcommand{\NtranslatorCalls}{17}
+\newcommand{\NconvCalls}{24}
+\newcommand{\NcriticCalls}{13}
+\newcommand{\NcriticCollapse}{3}
+\newcommand{\NcriticToolCalls}{48}
+\newcommand{\NtranslatorSets}{11}
+\newcommand{\NallAgentCalls}{54}
 \newcommand{\NcriticChanged}{4}
 \newcommand{\NdevCampaigns}{ten}
 \newcommand{\NdevTokens}{4.7}        % million input tokens, at 9.2k median/paper
