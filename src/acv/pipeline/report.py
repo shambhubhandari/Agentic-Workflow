@@ -66,7 +66,7 @@ def required_fields(code: Code) -> list[str]:
 # =============================================================================
 
 def score_one(rec: Extraction) -> ReportabilityScore:
-    code = rec.method.code.value if rec.method.code.reported else Code.UNKNOWN
+    code = rec.method.code.value if rec.method.code.reported else Code.NOT_STATED
     fields = required_fields(code)
 
     missing = [f for f in fields if not getattr(rec.method, f).reported]
