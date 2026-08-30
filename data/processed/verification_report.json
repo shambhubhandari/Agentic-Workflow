@@ -24,6 +24,22 @@
     "detail": ""
   },
   {
+    "id": "extraction.precision_ci_low",
+    "section": "abstract; 4",
+    "status": "PASS",
+    "reported": 90.3,
+    "observed": 90.3,
+    "detail": ""
+  },
+  {
+    "id": "extraction.precision_ci_high",
+    "section": "abstract; 4",
+    "status": "PASS",
+    "reported": 98.1,
+    "observed": 98.1,
+    "detail": ""
+  },
+  {
     "id": "extraction.recall_ci_low",
     "section": "abstract; 3.3",
     "status": "PASS",
@@ -157,6 +173,102 @@
     "status": "PASS",
     "reported": 24,
     "observed": 24,
+    "detail": ""
+  },
+  {
+    "id": "agents.translator_calls",
+    "section": "3.4; Table 4",
+    "status": "PASS",
+    "reported": 17,
+    "observed": 17,
+    "detail": ""
+  },
+  {
+    "id": "agents.translator_distinct_sets",
+    "section": "3.4",
+    "status": "PASS",
+    "reported": 11,
+    "observed": 11,
+    "detail": ""
+  },
+  {
+    "id": "agents.convergence_calls",
+    "section": "3.4; Table 4",
+    "status": "PASS",
+    "reported": 24,
+    "observed": 24,
+    "detail": ""
+  },
+  {
+    "id": "agents.critic_calls",
+    "section": "3.4; 4; Table 4",
+    "status": "PASS",
+    "reported": 13,
+    "observed": 13,
+    "detail": ""
+  },
+  {
+    "id": "agents.critic_collapses",
+    "section": "3.4; 4; Table 4",
+    "status": "PASS",
+    "reported": 3,
+    "observed": 3,
+    "detail": ""
+  },
+  {
+    "id": "agents.critic_tool_calls",
+    "section": "3.4; Table 4",
+    "status": "PASS",
+    "reported": 48,
+    "observed": 48,
+    "detail": ""
+  },
+  {
+    "id": "union.fields",
+    "section": "3.2; 3.3",
+    "status": "PASS",
+    "reported": 475,
+    "observed": 475,
+    "detail": ""
+  },
+  {
+    "id": "union.fields_grounded",
+    "section": "3.3",
+    "status": "PASS",
+    "reported": 473,
+    "observed": 473,
+    "detail": ""
+  },
+  {
+    "id": "union.pass_one_fields",
+    "section": "3.2; Table 2",
+    "status": "PASS",
+    "reported": 435,
+    "observed": 435,
+    "detail": ""
+  },
+  {
+    "id": "union.pass_two_fields",
+    "section": "3.2; Table 2",
+    "status": "PASS",
+    "reported": 440,
+    "observed": 440,
+    "detail": ""
+  },
+  {
+    "id": "union.pass_three_fields",
+    "section": "3.2; Table 2",
+    "status": "PASS",
+    "reported": 439,
+    "observed": 439,
+    "detail": ""
+  },
+  {
+    "id": "union.recovered_over_best",
+    "section": "3.2",
+    "status": "PASS",
+    "reported": 35,
+    "observed": 35,
     "detail": ""
   },
   {
@@ -296,27 +408,75 @@
     "detail": "pinned to data/processed/evidence/memory_time_frontier.txt"
   },
   {
+    "id": "cache.shared_targets",
+    "section": "3.4",
+    "status": "PASS",
+    "reported": 8,
+    "observed": 8,
+    "detail": ""
+  },
+  {
+    "id": "cache.cell_agreement",
+    "section": "3.4",
+    "status": "PASS",
+    "reported": 0.0052,
+    "observed": 0.0052,
+    "detail": ""
+  },
+  {
     "id": "recomputation.comparisons",
     "section": "3.5; Figure 5",
     "status": "PASS",
-    "reported": 16,
-    "observed": 16,
+    "reported": 8,
+    "observed": 8,
+    "detail": ""
+  },
+  {
+    "id": "recomputation.prototypes",
+    "section": "3.5",
+    "status": "PASS",
+    "reported": 3,
+    "observed": 3,
     "detail": ""
   },
   {
     "id": "recomputation.mae",
-    "section": "abstract; 3.5; Figure 5",
+    "section": "3.5; Figure 5",
     "status": "PASS",
-    "reported": 0.197,
-    "observed": 0.197,
+    "reported": 0.11,
+    "observed": 0.11,
     "detail": ""
   },
   {
     "id": "recomputation.mare",
     "section": "abstract; 3.5; Figure 5",
     "status": "PASS",
-    "reported": 4.5,
-    "observed": 4.5,
+    "reported": 2.3,
+    "observed": 2.3,
+    "detail": ""
+  },
+  {
+    "id": "recomputation.median",
+    "section": "3.5",
+    "status": "PASS",
+    "reported": 1.1,
+    "observed": 1.1,
+    "detail": ""
+  },
+  {
+    "id": "recomputation.bias",
+    "section": "3.5",
+    "status": "PASS",
+    "reported": 0.09,
+    "observed": 0.09,
+    "detail": ""
+  },
+  {
+    "id": "recomputation.within_two_percent",
+    "section": "3.5; Figure 5",
+    "status": "PASS",
+    "reported": 6,
+    "observed": 6,
     "detail": ""
   }
 ]
