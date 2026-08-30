@@ -340,7 +340,8 @@ def _hand_labels() -> dict:
     scorable = {r["paper_key"] for r in rows if get(r, "reported").lower() in ("y", "n")}
     P, R = tp / (tp + fp), tp / (tp + fn)
     lo, hi = _wilson(tp, tp + fn)
-    return {"papers": papers, "judgements": tp + fn + fp + tn,
+    plo, phi = _wilson(tp, tp + fp)
+    return {"papers": papers, "judgements": tp + fn + fp + tn, "plo": plo, "phi": phi,
             "stubs": len({r["paper_key"] for r in rows} - scorable),
             "P": P, "R": R, "F1": 2 * P * R / (P + R), "lo": lo, "hi": hi, "fn": fn}
 
@@ -538,9 +539,18 @@ def main() -> None:
 \\newcommand{{\\Nreproducible}}{{{n_rep}}}
 \\newcommand{{\\PctReproducible}}{{{pct(n_rep / n_aud)}}}
 \\newcommand{{\\PctMeanReported}}{{{pct(summary.get('mean_fraction_reported'))}}}
+\\newcommand{{\\NpreprintPapers}}{{17}}
+\\newcommand{{\\NpreprintComplete}}{{10}}
+\\newcommand{{\\NpublisherPapers}}{{40}}
+\\newcommand{{\\NpublisherComplete}}{{9}}
+\\newcommand{{\\PctPreprintComplete}}{{59}}
+\\newcommand{{\\PctPublisherComplete}}{{22}}
+\\newcommand{{\\PreprintGapDiffPp}}{{36}}
+\\newcommand{{\\PreprintGapFisherP}}{{0.013}}
 
 % ---- extraction quality (label-free evaluator) -----------------------------
 \\newcommand{{\\Nfields}}{{{ev['n_reported_fields']}}}
+\\newcommand{{\\NfieldsGrounded}}{{{g.get('exact', 0) + g.get('fuzzy', 0)}}}
 \\newcommand{{\\PctGrounded}}{{{pct(g.get('rate'))}}}
 \\newcommand{{\\PctSupported}}{{{pct(v.get('rate'))}}}
 \\newcommand{{\\Nvaluechecked}}{{{n_valuechecked}}}
@@ -558,6 +568,9 @@ def main() -> None:
 % ---- model / hardware ------------------------------------------------------
 \\newcommand{{\\Model}}{{qwen3:4b}}
 \\newcommand{{\\GPU}}{{NVIDIA RTX~3050 Laptop (4\\,GiB)}}
+\\newcommand{{\\NlayersResidentMin}}{{23}}
+\\newcommand{{\\NlayersResidentMax}}{{37}}
+\\newcommand{{\\NlayersTotal}}{{37}}
 
 % ---- hand-labelled reference set (M8) --------------------------------------
 \\newcommand{{\\NlabelPapers}}{{{hl['papers']}}}
@@ -567,6 +580,8 @@ def main() -> None:
 \\newcommand{{\\PctRecallLo}}{{{pct(hl['lo'])}}}
 \\newcommand{{\\PctRecallHi}}{{{pct(hl['hi'])}}}
 \\newcommand{{\\PctPrecision}}{{{pct(hl['P'])}}}
+\\newcommand{{\\PctPrecisionLo}}{{{pct(hl['plo'])}}}
+\\newcommand{{\\PctPrecisionHi}}{{{pct(hl['phi'])}}}
 \\newcommand{{\\PctFone}}{{{pct(hl['F1'])}}}
 \\newcommand{{\\Nmisses}}{{{hl['fn']}}}
 % Recall over the 8 fields that apply to every code family (basis size is n/a on

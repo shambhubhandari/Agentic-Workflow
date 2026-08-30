@@ -212,6 +212,27 @@ def pass_fields_one() -> int:
     return _passes()[0][0]
 
 
+@cache
+def _evaluation() -> dict:
+    """The label-free evaluator's summary over the shipped union."""
+    return json.loads((S.PROCESSED / "evaluation.json").read_text(encoding="utf-8"))
+
+
+def union_fields() -> int:
+    """Asserted method fields carrying an evidence string in the shipped union."""
+    return int(_evaluation()["n_reported_fields"])
+
+
+def union_fields_grounded() -> int:
+    """Of those, the ones whose evidence was located in the source text.
+
+    Exact substring plus the 6-word n-gram fallback; the remainder are the records
+    that carry no evidence string at all, which is a different defect.
+    """
+    g = _evaluation()["grounding"]
+    return int(g["exact"]) + int(g["fuzzy"])
+
+
 def pass_fields_two() -> int:
     return _passes()[0][1]
 
@@ -329,3 +350,13 @@ def rtx_translator_distinct_sets() -> int:
     sets = {json.dumps({k: (r.get("applied") or {}).get(k) for k in keys}, sort_keys=True)
             for r in rows if r["agent"] == "translator" and r["ts"][:10] in days}
     return len(sets)
+
+
+def precision_ci_low() -> float:
+    counts = _counts()
+    return round(metrics.wilson(counts["tp"], counts["tp"] + counts["fp"])[0], 1)
+
+
+def precision_ci_high() -> float:
+    counts = _counts()
+    return round(metrics.wilson(counts["tp"], counts["tp"] + counts["fp"])[1], 1)

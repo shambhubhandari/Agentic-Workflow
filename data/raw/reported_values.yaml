@@ -57,6 +57,33 @@
               data/interim/extraction/rtx3050_q4_0/union_gated.jsonl]
   verify: acv.verification.values:f1_presence
 
+- id: extraction.precision_ci_low
+  population: expert-labels
+  macro: PctPrecisionLo
+  value: 90.3
+  tolerance: 0.05
+  unit: percent
+  section: "abstract; 4"
+  disposition: promote
+  artefacts: [data/interim/labels_expert_merged.csv,
+              data/interim/extraction/rtx3050_q4_0/union_gated.jsonl]
+  verify: acv.verification.values:precision_ci_low
+  note: >
+    Precision is the figure that licenses using the output downstream, so it carries an
+    interval on the same footing as recall.
+
+- id: extraction.precision_ci_high
+  population: expert-labels
+  macro: PctPrecisionHi
+  value: 98.1
+  tolerance: 0.05
+  unit: percent
+  section: "abstract; 4"
+  disposition: promote
+  artefacts: [data/interim/labels_expert_merged.csv,
+              data/interim/extraction/rtx3050_q4_0/union_gated.jsonl]
+  verify: acv.verification.values:precision_ci_high
+
 - id: extraction.recall_ci_low
   population: expert-labels
   macro: PctRecallLo
@@ -242,6 +269,7 @@
 
 - id: hardware.layers_resident_min
   population: hardware-logs
+  macro: NlayersResidentMin
   value: 23
   section: "2.1; 3.2"
   disposition: promote
@@ -253,6 +281,7 @@
 
 - id: hardware.layers_resident_max
   population: hardware-logs
+  macro: NlayersResidentMax
   value: 37
   section: "2.1; 3.2"
   disposition: promote
@@ -387,6 +416,24 @@
     paper reported. Held targets are kept, since a held structure still tests the engine.
 
 # --------------------------------------------------------- multi-pass union (Table 2)
+- id: union.fields
+  population: audited-corpus
+  macro: Nfields
+  value: 475
+  section: "3.2; 3.3"
+  disposition: promote
+  artefacts: [data/processed/evaluation.json]
+  verify: acv.verification.values:union_fields
+
+- id: union.fields_grounded
+  population: audited-corpus
+  macro: NfieldsGrounded
+  value: 473
+  section: "3.3"
+  disposition: promote
+  artefacts: [data/processed/evaluation.json]
+  verify: acv.verification.values:union_fields_grounded
+
 - id: union.pass_one_fields
   population: audited-corpus
   macro: NfieldsPassOne
@@ -611,6 +658,7 @@
 
 - id: reporting.preprint_papers
   population: audited-corpus
+  macro: NpreprintPapers
   value: 17
   section: "3.1"
   disposition: promote
@@ -620,6 +668,7 @@
 
 - id: reporting.preprint_complete
   population: audited-corpus
+  macro: NpreprintComplete
   value: 10
   section: "3.1"
   disposition: promote
@@ -629,6 +678,7 @@
 
 - id: reporting.publisher_complete
   population: audited-corpus
+  macro: NpublisherComplete
   value: 9
   section: "3.1"
   disposition: promote
@@ -638,6 +688,7 @@
 
 - id: reporting.preprint_gap_fisher
   population: audited-corpus
+  macro: PreprintGapFisherP
   value: 0.013
   tolerance: 0.0005
   section: "3.1"
