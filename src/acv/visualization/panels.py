@@ -71,66 +71,6 @@ def _reported(rec: dict) -> set:
 
 
 # --------------------------------------------------------------------------- fig 1
-def fig_corpus_flow():
-    """PRISMA-style screening flow."""
-    corpus = _jsonl(ROOT / "data/raw/corpus/corpus_298_locked.jsonl")
-    fulltext = len(list((ROOT / "data/raw/fulltext").glob("*.txt")))
-    s = json.loads((ROOT / "data/processed/extraction_summary.json").read_text())
-    oa = sum(1 for r in corpus if r.get("oa_url"))
-
-    stages = [
-        ("Records identified\nOpenAlex, 16 seed terms", len(corpus), None),
-        ("Open-access location\navailable", oa,
-         f"No legal retrieval route\n$n$ = {len(corpus) - oa}"),
-        ("Full text retrieved\nand usable", fulltext,
-         f"Refused (HTTP 403), landing\npage or stub\n$n$ = {oa - fulltext}"),
-        ("Extraction\nsucceeded", s["n_extracted_ok"],
-         f"Not first-principles, or\nunparseable answer\n$n$ = {fulltext - s['n_extracted_ok']}"),
-        ("Pentagonal monolayer\n(audited population)", s["n_usable"],
-         f"Other structure families\n$n$ = {s['n_excluded_not_pentagonal']}"),
-    ]
-
-    # A schematic, not a plot: it has no panel box, so it takes the double-column
-    # canvas and a height set by the five stages.
-    fig = plt.figure(figsize=(COL_DOUBLE, 3.3))
-    ax = fig.add_axes([0.01, 0.01, 0.98, 0.98])
-    ax.set_xlim(0, 8.75)
-    ax.set_ylim(0, len(stages) * 2)
-    ax.axis("off")
-    bw, bh, bx = 4.0, 1.15, 0.2
-
-    for i, (label, n, excl) in enumerate(stages):
-        y = (len(stages) - i) * 2 - 1.5
-        final = i == len(stages) - 1
-        ax.add_patch(mpatches.FancyBboxPatch(
-            (bx, y), bw, bh, boxstyle="round,pad=0.02,rounding_size=0.06",
-            facecolor="#dce9fa" if final else FILL,
-            edgecolor=BLUE if final else INK_3,
-            linewidth=1.0 if final else 0.6, zorder=3))
-        ax.text(bx + 0.22, y + bh / 2, label, va="center", ha="left",
-                fontsize=7, color=INK, linespacing=1.4, zorder=4)
-        ax.text(bx + bw - 0.22, y + bh / 2, f"$n$ = {n}", va="center", ha="right",
-                fontsize=8, color=BLUE if final else INK, fontweight="bold", zorder=4)
-        if i < len(stages) - 1:
-            ax.annotate("", xy=(bx + bw / 2, y - 0.85), xytext=(bx + bw / 2, y),
-                        arrowprops=dict(arrowstyle="-|>", color=INK_3, linewidth=0.8,
-                                        mutation_scale=8))
-            ey = y - 0.42
-            ax.annotate("", xy=(bx + bw + 0.95, ey), xytext=(bx + bw / 2, ey),
-                        arrowprops=dict(arrowstyle="-|>", color=INK_3, linewidth=0.8,
-                                        mutation_scale=8))
-            nxt = stages[i + 1][2]
-            if nxt:
-                ax.add_patch(mpatches.FancyBboxPatch(
-                    (bx + bw + 0.95, ey - 0.50), 3.5, 1.0,
-                    boxstyle="round,pad=0.02,rounding_size=0.06",
-                    facecolor=SURFACE, edgecolor=INK_3, linewidth=0.6, zorder=3))
-                ax.text(bx + bw + 1.15, ey, nxt, va="center", ha="left",
-                        fontsize=6.5, color=INK_2, linespacing=1.4, zorder=4)
-
-    return _save(fig, "corpus_screening_flow")
-
-
 # --------------------------------------------------------------------------- fig 2
 def fig_run_agreement():
     """Bland-Altman agreement between two identical extraction passes."""
@@ -283,9 +223,6 @@ def fig_precision_recall():
     ax.axvline(R_q4 * 100, color=ORANGE, linewidth=0.8, linestyle=(0, (4, 3)), zorder=1)
     ax.axvline(R_f16 * 100, color=BLUE, linewidth=0.8, linestyle=(0, (4, 3)), zorder=1)
     ax.axvline(R_t4 * 100, color=INK_3, linewidth=0.7, linestyle=(0, (2, 2)), zorder=1)
-    ax.text(R_q4 * 100 - 2, -0.58,
-            f"overall {R_q4:.0%}\u2009\u2192\u2009{R_t4:.0%}\u2009\u2192\u2009{R_f16:.0%}",
-            fontsize=6.0, color=BLUE, va="center", ha="right")
     ax.set_yticks(y)
     ax.set_yticklabels([f"{label_of(r[0])}  ($n$={r[5]})" for r in rows_q4],
                        fontsize=6.5, color=INK)
@@ -356,9 +293,6 @@ def fig_precision_recall():
         sp.set_color(INK_2)
         sp.set_linewidth(1.2)
 
-    ax.text(0.5, 1.04, f"Precision: {P_q4:.1%} \u2192 {P_t4:.1%} \u2192 {P_f16:.1%}",
-            transform=ax.transAxes, ha="center", va="bottom", fontsize=6.2, color=BLUE, fontweight="bold")
-
     return _save(fig, "extraction_accuracy")
 
 
@@ -424,7 +358,8 @@ def _load_points():
     src = ROOT / "data" / "processed" / "parity_points.jsonl"
     if not src.exists():
         return []
-    return [(r["formula"], r["axis"], r["claimed"], r["ours"], bool(r.get("held")))
+    return [(r["formula"], r["axis"], r["claimed"], r["ours"], bool(r.get("held")),
+             r.get("doi"))
             for r in (_json.loads(x) for x in src.read_text().splitlines() if x.strip())]
 
 
@@ -438,10 +373,10 @@ def _emit_points(pts) -> None:
     out = ROOT / "data" / "processed" / "parity_points.jsonl"
     out.parent.mkdir(parents=True, exist_ok=True)
     with out.open("w", encoding="utf-8") as fh:
-        for formula, axis, claimed, ours, held in pts:
+        for formula, axis, claimed, ours, held, doi in pts:
             fh.write(_json.dumps({"campaign": "rtx3050_q4_0", "formula": formula,
                                   "axis": axis, "claimed": claimed, "ours": ours,
-                                  "held": held}) + "\n")
+                                  "held": held, "doi": doi}) + "\n")
 
 def fig_parity():
     """Parity plot: recomputed against published lattice constants."""
@@ -518,8 +453,11 @@ def fig_parity():
         if len(pub) < 2:
             continue
         lo, hi = sorted(pub)
-        pts.append((d.get("formula", "?"), "a", lo, a, held))
-        pts.append((d.get("formula", "?"), "b", hi, b, held))
+        # The source publication travels with the point: without it a plotted
+        # deviation cannot be traced back to the paper it is a deviation from.
+        doi = d.get("doi") or None
+        pts.append((d.get("formula", "?"), "a", lo, a, held, doi))
+        pts.append((d.get("formula", "?"), "b", hi, b, held, doi))
     if pts:
         _emit_points(pts)
     else:
@@ -547,7 +485,7 @@ def fig_parity():
     # carries the numbers.
 
     fig, (ax,) = panel_grid(1, fig_w=COL_SINGLE, left=0.62)
-    vals = [v for _, _, c, o, _h in pts for v in (c, o)]
+    vals = [v for _, _, c, o, _h, _d in pts for v in (c, o)]
     lo, hi = min(vals) - 0.35, max(vals) + 0.35
     ax.fill_between([lo, hi], [lo * 0.98, hi * 0.98], [lo * 1.02, hi * 1.02],
                     color=GRID, alpha=0.6, zorder=1, linewidth=0)
@@ -562,14 +500,14 @@ def fig_parity():
     # and they were being drawn unfiltered beside a filtered series at a different MARE,
     # which invited exactly the wrong reading. The comparison is reported in the text
     # instead, over every target run under both precisions (values:cache_cell_agreement).
-    for mat, axis, claimed, ours, held in pts:
+    for mat, axis, claimed, ours, held, _doi in pts:
         if held:                       # disclosed, not counted: drawn behind and faded
             ax.scatter(claimed, ours, s=30, facecolor="none", edgecolor=colour[mat],
                        marker="o" if axis == "a" else "^",
                        linewidth=1.0, alpha=0.75, zorder=3)
     # Alpha, not jitter: a near-square cell genuinely puts its two axes on top of one
     # another, and nudging a point to make it countable would misplace the datum.
-    for mat, axis, claimed, ours, held in pts:
+    for mat, axis, claimed, ours, held, _doi in pts:
         if not held:
             ax.scatter(claimed, ours, s=30, color=colour[mat], alpha=0.8,
                        marker="o" if axis == "a" else "^",
