@@ -1,4 +1,4 @@
-# How good is a 4B open-weights local LLM for agentic DFT workflows? A reproducibility case study
+# Evaluating a 4B open-weights local LLM for agentic DFT workflows: a literature reproducibility audit
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
@@ -8,7 +8,7 @@
 [![DFT: SIESTA](https://img.shields.io/badge/DFT-SIESTA-brightgreen.svg)](https://siesta-project.org/)
 [![Reproducible: make values](https://img.shields.io/badge/Reproducible-make%20values-success.svg)](#quick-start)
 
-**Repository for the study** *"How good is a 4B open-weights local LLM for agentic DFT workflows? A reproducibility case study"* — a pipeline that reads published first-principles papers on
+**Repository for the study** *"Evaluating a 4B open-weights local LLM for agentic DFT workflows: a literature reproducibility audit"* — a pipeline that reads published first-principles papers on
 pentagonal 2D monolayers, extracts the method each one used, and re-runs in SIESTA what
 can be re-run, entirely on local, open-weights models. Computed over a frozen 298-record
 OpenAlex query, 69 retrieved full texts, and 25 hand-labelled papers carrying 201 expert

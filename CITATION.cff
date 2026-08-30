@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "How good is a 4B open-weights local LLM for agentic DFT workflows? A reproducibility case study"
+title: "Evaluating a 4B open-weights local LLM for agentic DFT workflows: a literature reproducibility audit"
 message: "If you use this software, please cite it as below."
 type: software
 authors:

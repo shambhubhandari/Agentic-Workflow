@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "acv"
 version = "0.1.0"
-description = "How good is a 4B open-weights local LLM for agentic DFT workflows? A reproducibility case study"
+description = "Evaluating a 4B open-weights local LLM for agentic DFT workflows: a literature reproducibility audit"
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
