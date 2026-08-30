@@ -1,6 +1,6 @@
 # Evaluating a 4B open-weights local LLM for agentic DFT workflows: a literature reproducibility audit
 
-[![CI](https://github.com/shambhubhandari/Agentic-Workflow/actions/workflows/ci.yml/badge.svg)](https://github.com/shambhubhandari/Agentic-Workflow/actions/workflows/ci.yml)
+[![CI](https://github.com/shambhubhandari/Agentic-Workflow/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/shambhubhandari/Agentic-Workflow/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC_BY_4.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/)
