@@ -40,6 +40,10 @@ dist/
 .mypy_cache/
 .ipynb_checkpoints/
 
+# --- internal maintenance & generation scripts --------------------------------
+scripts/build_full*
+scripts/build_release*
+
 # --- siesta run artefacts loose in the tree -----------------------------------
 *.XV
 *.DM
