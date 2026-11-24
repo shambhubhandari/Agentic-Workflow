@@ -15,7 +15,7 @@ can be re-run, entirely on local, open-weights models. Computed over a frozen 29
 OpenAlex query, 69 retrieved full texts, and 25 hand-labelled papers carrying 201 expert
 judgements.
 
-![Pipeline Overview](figures/image.png)
+![Workflow Pipeline](figures/workflow_pipeline.gif)
 
 ## Quick start
 

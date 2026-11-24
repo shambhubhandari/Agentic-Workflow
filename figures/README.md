@@ -7,6 +7,7 @@ Figures are named by content to preserve referencing under manuscript reordering
 
 | file | appears as | shows |
 |---|---|---|
+| `workflow_pipeline.gif` / `.pdf` / `.png` | Figure 1 | end-to-end 4-stage neurosymbolic ACV workflow (`acv.visualization.workflow`) |
 | `pass_agreement.pdf` | Figure 2 | repeatability across two identical extraction passes |
 | `extraction_accuracy.pdf` | Figure 3 | per-field recall and precision against the expert labels |
 | `parameter_reporting_gaps.pdf` | Figure 4 | how often each required parameter is not located |
